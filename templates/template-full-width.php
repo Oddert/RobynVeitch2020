@@ -3,11 +3,12 @@
  * Template Name: Full Width
  * Template Post Type: post, page
  * 
- * @package Impact
+ * @package RobynVeitch
  * 
  */
 
  get_header();
+get_template_part('template-parts/navbar');
  ?>
 
  <main id="site-content" role="main">

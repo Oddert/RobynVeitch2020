@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Impact
+ * @package RobynVeitch
  */
 
 ?>
@@ -12,7 +12,7 @@
 <section class="no-results not-found">
 	<div data-oddert='template-parts_content-none.php'></div>
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'Impact' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'RobynVeitch' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -22,7 +22,7 @@
 			printf(
 				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'Impact' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'RobynVeitch' ),
 					array(
 						'a' => array(
 							'href' => array(),
@@ -35,14 +35,14 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'Impact' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'RobynVeitch' ); ?></p>
 			<?php
 			get_search_form();
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'Impact' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'RobynVeitch' ); ?></p>
 			<?php
 			get_search_form();
 

@@ -4,23 +4,24 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Impact
+ * @package RobynVeitch
  */
 
 get_header();
+get_template_part('template-parts/navbar');
 ?>
 
 	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found">
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'Impact' ); ?></h1>
+				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'RobynVeitch' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<div data-oddert='404.php'></div>
 
 			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'Impact' ); ?></p>
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'RobynVeitch' ); ?></p>
 
 					<?php
 					get_search_form();
@@ -29,7 +30,7 @@ get_header();
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'Impact' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'RobynVeitch' ); ?></h2>
 						<ul>
 							<?php
 							wp_list_categories(
@@ -47,8 +48,8 @@ get_header();
 
 					<?php
 					/* translators: %1$s: smiley */
-					$impact_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'Impact' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$impact_archive_content" );
+					$robynVeitch_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'RobynVeitch' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$robynVeitch_archive_content" );
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>

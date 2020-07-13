@@ -10,7 +10,7 @@
 module.exports = {
 
 	// Project options.
-	projectURL: 'impact.local', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
+	projectURL: 'robynVeitch.local', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
 	productURL: './', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 	browserAutoOpen: false,
 	injectChanges: true,
@@ -37,7 +37,7 @@ module.exports = {
 	imgDST: './img/', // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 	// Watch files paths.
-	watchStyles: './sass/**/*.scss', // Path to all *.scss files inside css folder and inside them.
+	watchStyles: './**/*.scss', // Path to all *.scss files inside css folder and inside them.
 	watchJsVendor: './js/vendor/*.js', // Path to all vendor JS files.
 	watchJsCustom: './js/custom/*.js', // Path to all custom JS files.
 	watchPhp: './**/*.php', // Path to all PHP files.
@@ -47,7 +47,7 @@ module.exports = {
 	translationFile: 'WPGULP.pot', // Name of the translation file.
 	translationDestination: './languages', // Where to save the translation files.
 	packageName: 'WPGULP', // Package name.
-	bugReport: 'https://github.com/Oddert/impact/issues', // Where can users report bugs.
+	bugReport: 'https://github.com/Oddert/robynVeitch/issues', // Where can users report bugs.
 	lastTranslator: 'Robyn Veitch robynfhveitch@gmail.com', // Last translator Email ID.
 	team: 'Robyn Veitch robynfhveitch@gmail.com', // Team's Email ID.
 

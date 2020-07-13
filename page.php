@@ -9,10 +9,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Impact
+ * @package RobynVeitch
  */
 
 get_header();
+get_template_part('template-parts/navbar');
 ?>
 
 	<main id="primary" class="site-main">

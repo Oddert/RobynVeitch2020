@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Impact
+ * @package RobynVeitch
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function impact_jetpack_setup() {
+function robynVeitch_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'impact_infinite_scroll_render',
+			'render'    => 'robynVeitch_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function impact_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'impact-style',
+				'stylesheet' => 'robynVeitch-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,12 +48,12 @@ function impact_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'impact_jetpack_setup' );
+add_action( 'after_setup_theme', 'robynVeitch_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function impact_infinite_scroll_render() {
+function robynVeitch_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

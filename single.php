@@ -4,10 +4,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Impact
+ * @package RobynVeitch
  */
 
 get_header();
+get_template_part('template-parts/navbar');
 ?>
 
 	<main id="primary" class="site-main">
@@ -22,8 +23,8 @@ get_header();
 
 			the_post_navigation(
 				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'Impact' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'Impact' ) . '</span> <span class="nav-title">%title</span>',
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'RobynVeitch' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'RobynVeitch' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
 

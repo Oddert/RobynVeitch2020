@@ -1,18 +1,18 @@
 {
-  "name": "impact",
+  "name": "robynVeitch",
   "description": "A bold WP theme.",
   "version": "1.0.0",
   "author": "Robyn Felicity Heather Veitch",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Oddert/impact.git"
+    "url": "git+https://github.com/Oddert/robynVeitch.git"
   },
-  "homepage": "https://github.com/Oddert/impact#readme",
+  "homepage": "https://github.com/Oddert/robynVeitch#readme",
   "issues": {
-    "url": "https://github.com/Oddert/impact/issues"
+    "url": "https://github.com/Oddert/robynVeitch/issues"
   },
   "bugs": {
-    "url": "https://github.com/Oddert/impact/issues"
+    "url": "https://github.com/Oddert/robynVeitch/issues"
   },
 	"browserslist": [
 		"extends @wordpress/browserslist-config"

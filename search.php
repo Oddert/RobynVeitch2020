@@ -4,10 +4,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Impact
+ * @package RobynVeitch
  */
 
 get_header();
+get_template_part('template-parts/navbar');
 ?>
 
 	<main id="primary" class="site-main">
@@ -20,7 +21,7 @@ get_header();
 				<h1 class="page-title">
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'Impact' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Search Results for: %s', 'RobynVeitch' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
 			</header><!-- .page-header -->

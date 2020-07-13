@@ -1,4 +1,4 @@
-=== Impact ===
+=== RobynVeitch ===
 Contributors: Robyn F H Veitch
 Requires at least: 4.5
 Tested up to: 5.4
@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Strong impactful wordpress theme aimed at users wishing to create layouts which grab the user's attention.
+Strong robynVeitchful wordpress theme aimed at users wishing to create layouts which grab the user's attention.
 
 == Installation ==
 
@@ -21,7 +21,7 @@ Strong impactful wordpress theme aimed at users wishing to create layouts which 
 
 = Does this theme support any plugins? =
 
-Impact includes support for WooCommerce and for Infinite Scroll in Jetpack.
+RobynVeitch includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

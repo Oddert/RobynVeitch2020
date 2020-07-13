@@ -1,18 +1,18 @@
 <?php
 /**
- * Impact functions and definitions
+ * RobynVeitch functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Impact
+ * @package RobynVeitch
  */
 
-if ( ! defined( '_IMPACT_VERSION' ) ) {
+if ( ! defined( '_ROBYNVEITCH_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_IMPACT_VERSION', '1.0.0' );
+	define( '_ROBYNVEITCH_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'impact_setup' ) ) :
+if ( ! function_exists( 'robynVeitch_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'impact_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function impact_setup() {
+	function robynVeitch_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Impact, use a find and replace
-		 * to change 'Impact' to the name of your theme in all the template files.
+		 * If you're building a theme based on RobynVeitch, use a find and replace
+		 * to change 'RobynVeitch' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'Impact', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'RobynVeitch', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'impact_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'Impact' ),
+				'menu-1' => esc_html__( 'Primary', 'RobynVeitch' ),
 			)
 		);
 
@@ -75,7 +75,7 @@ if ( ! function_exists( 'impact_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'impact_custom_background_args',
+				'robynVeitch_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -102,7 +102,7 @@ if ( ! function_exists( 'impact_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'impact_setup' );
+add_action( 'after_setup_theme', 'robynVeitch_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,25 +111,25 @@ add_action( 'after_setup_theme', 'impact_setup' );
  *
  * @global int $content_width
  */
-function impact_content_width() {
+function robynVeitch_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'impact_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'robynVeitch_content_width', 640 );
 }
-// add_action( 'after_setup_theme', 'impact_content_width', 0 );
+// add_action( 'after_setup_theme', 'robynVeitch_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function impact_widgets_init() {
+function robynVeitch_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'Impact' ),
+			'name'          => esc_html__( 'Sidebar', 'RobynVeitch' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'Impact' ),
+			'description'   => esc_html__( 'Add widgets here.', 'RobynVeitch' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -137,22 +137,25 @@ function impact_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'impact_widgets_init' );
+add_action( 'widgets_init', 'robynVeitch_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function impact_scripts() {
-	wp_enqueue_style( 'impact-style', get_stylesheet_uri(), array(), _IMPACT_VERSION );
-	wp_style_add_data( 'impact-style', 'rtl', 'replace' );
+function robynVeitch_scripts() {
+	wp_enqueue_style( 'robynVeitch-style', get_stylesheet_uri(), array(), _ROBYNVEITCH_VERSION );
+	wp_style_add_data( 'robynVeitch-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'impact-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _IMPACT_VERSION, true );
+	wp_enqueue_script( 'robynVeitch-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _ROBYNVEITCH_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'impact_scripts' );
+add_action( 'wp_enqueue_scripts', 'robynVeitch_scripts' );
+// function robynVeitch_styles() {
+// 	wp.e
+// }
 
 /**
  * Implement the Custom Header feature.

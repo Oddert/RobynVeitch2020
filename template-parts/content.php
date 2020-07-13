@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Impact
+ * @package RobynVeitch
  */
 
 ?>
@@ -24,14 +24,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				impact_posted_on();
-				impact_posted_by();
+				robynVeitch_posted_on();
+				robynVeitch_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php impact_post_thumbnail(); ?>
+	<?php robynVeitch_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -39,7 +39,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'Impact' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'RobynVeitch' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -52,7 +52,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Impact' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'RobynVeitch' ),
 				'after'  => '</div>',
 			)
 		);
@@ -60,6 +60,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php impact_entry_footer(); ?>
+		<?php robynVeitch_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

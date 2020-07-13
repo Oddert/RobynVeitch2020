@@ -1,21 +1,21 @@
 /*!
-Theme Name: Impact
-Theme URI: https://github.com/Oddert/impact
+Theme Name: RobynVeitch
+Theme URI: https://github.com/Oddert/robynVeitch
 Author: Robyn Felicity Heather Veitch
 Author URI: https://github.com/Oddert/
-Description: Bold, impactfull wp theme
+Description: Bold, robynVeitchfull wp theme
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: Impact
+Text Domain: RobynVeitch
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
 
-Impact is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+RobynVeitch is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -69,6 +69,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	padding: 0;
+	margin: 0;
 }
 
 /* Sections
@@ -649,7 +658,7 @@ textarea {
 --------------------------------------------- */
 .main-navigation {
 	display: block;
-	width: 100%;
+	// width: 100%;
 }
 
 .main-navigation ul {
@@ -747,10 +756,10 @@ textarea {
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
+// .post,
+// .page {
+// 	margin: 0 0 1.5em;
+// }
 
 .updated:not(.published) {
 	display: none;
@@ -967,3 +976,285 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+
+@mixin odd_shadow_before($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
+  &:before {
+    content: '';
+    background: $colour;
+    height: $height;
+    width: $width;
+    position: absolute;
+    top: $emphasisx;
+    left: $emphasisy;
+    z-index: $zindex;
+  }
+}
+
+@mixin odd_shadow_after($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
+  &:after {
+    content: '';
+    background: $colour;
+    height: $height;
+    width: $width;
+    position: absolute;
+    top: $emphasisy;
+    left: $emphasisx;
+    z-index: $zindex;
+  }
+}
+
+$header_shadow_emphesis_y: 15px;
+
+.site-header {
+	// position: relative;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background: #9A59B5;
+	.site-header__wrapper {
+		background: #9A59B5;
+		$header_height: 70px;
+		width: 100%;
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		.site-header__wrapper--inner {
+			width: 100%;
+			// width: 60%;
+			height: $header_height;
+			color: #ecf0f1;
+			display: flex;
+			justify-content: space-between;
+			.site-branding {
+				// flex: 1;
+				display: flex;
+				align-items: center;
+				.site-title {
+					margin: 0;
+					font-size: 24px;
+					padding: 0 20px 0 40px;
+				}
+				.custom-logo-link {
+					height: 100%;
+					display: flex;
+					align-items: center;
+					.custom-logo {
+						height: 50%;
+						max-width: $header_height;
+						object-fit: contain;
+					}
+				}
+			}
+			.main-navigation {
+				// flex: 1;
+				.menu-toggle {
+					display: none;
+				}
+				.menu-navbar-container {
+					// border: 1px dashed steelblue;
+					height: 100%;
+					display: flex;
+					// align-items: center;
+					ul {
+						li {
+							a {
+								height: 100%;
+								display: flex;
+								align-items: center;
+								color: #ecf0f1;
+								font-size: 18px;
+								padding: 0 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	$emphasisx: 5%;
+	$emphasisy: $header_shadow_emphesis_y;
+	$width: 100% - ($emphasisx * 2);
+	@include odd_shadow_before($emphasisy, $emphasisx, #8d44ad, -999, $width);
+}
+
+
+main.robyn-veitch-cv {
+	// NOTE: vw units work but do not allow the user to scale
+	// $cv_width: 50vw;
+	$cv_width: 900px;
+	$cv_height: $cv_width * 1.4142857142857144;
+	font-family: 'open sans', 'Avenir Next LT Pro', 'roboto', 'droid sans', 'helvetica', 'sans-serif', 'arial';
+
+	background: #ecf0f1;
+	.cv-container {
+		// margin: $header_shadow_emphesis_y 0 0 0;
+		padding: 150px 0;
+		// border: 1px dashed tomato;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		.cv {
+			background: #fff;
+			box-shadow: 0 20px 20px rgba(0,0,0,.3);
+			.cv-grid {
+				width: $cv_width;
+				height: $cv_height;
+				display: grid;
+				grid-template-columns: 5fr 11fr;
+				grid-template-rows: auto 1fr;
+				padding: .029vw .058vw;
+				padding: 40px 80px;
+				grid-gap: 0 40px;
+				.cv-title {
+					grid-column: 1 / -1;
+					text-align: right;
+					.cv-title__name {
+						letter-spacing: 3px;
+						font-weight: 400;
+						font-size: 30px;
+					}
+					.cv-title__tagline {
+						font-weight: 400;
+						font-size: 18px;
+						border-bottom: none;
+					}
+				}
+			}
+			p {
+				margin: 0;
+				padding: 0;
+			}
+			h3 {
+				border-bottom: 3px solid #9A59B5;
+				font-weight: 400;
+				font-size: 22px;
+				margin: 15px 0 10px;
+			}
+			h4 {
+				margin: 10px 0 0 0;
+			}
+			.cv-content__subtitle {
+				color: #7e8c8d;
+				margin: 0 0 10px 0;
+			}
+			.cv-references {
+				margin: 20px 0 0 0;
+				font-weight: 700;
+			}
+		}
+	}
+	.cv-download {
+		position: fixed;
+		bottom: 0;
+		right: 20px;
+		background: #fff;
+		box-shadow: -5px -5px 20px rgba(236,240,241,.1);
+		p {
+			margin: 0;
+			padding: 0;
+		}
+		padding: 20px 40px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		i, a {
+			margin: 0 5px;
+		}
+		.wp-block-file {
+			margin: 0;
+			a {
+				display: flex;
+				color: #2d3e50;
+				text-decoration: none;
+				&.wp-block-file__button {
+					display: none;
+				}
+				&:hover {
+					color: #3598db;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	main.robyn-veitch-cv {
+		$cv_width: 600px;
+		$cv_height: $cv_width * 1.4142857142857144;
+		font-size: .7em;
+		.cv-container .cv {
+			h3 {
+				font-size: 1.2em;
+			}
+			h4 {
+				font-size: 1.05em;
+				margin: .6em 0 0 0;
+			}
+			.cv-content__subtitle {
+				margin: 0 0 .6em 0;
+			}
+			.cv-references {
+				margin: .7em 0 0 0;
+			}
+			.cv-grid {
+				width: $cv_width;
+				height: $cv_height;
+				padding: 1em 3em;
+				grid-gap: 0 1.5em;
+				.cv-title {
+					.cv-title__name {
+						font-size: 1.4em;
+					}
+					.cv-title__tagline {
+						font-size: .8em;
+					}
+				} 
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	main.robyn-veitch-cv {
+		$cv_width: 500px;
+		$cv_height: $cv_width * 1.4142857142857144;
+		font-size: .55em;
+		.cv-container .cv {
+			.cv-grid {
+				width: $cv_width;
+				height: $cv_height;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+	main.robyn-veitch-cv {
+		$cv_width: 100vw;
+		$cv_height: $cv_width * 1.4142857142857144;
+		font-size: 1.7vw;
+		.cv-container .cv {
+			.cv-grid {
+				width: $cv_width;
+				height: $cv_height;
+			}
+		}
+	}
+}
+
+
+// @media screen and (max-width: 400px) {
+// 	main.robyn-veitch-cv {
+// 		$cv_width: 360px;
+// 		$cv_height: $cv_width * 1.4142857142857144;
+// 		font-size: .4em;
+// 		.cv-container .cv {
+// 			.cv-grid {
+// 				width: $cv_width;
+// 				height: $cv_height;
+// 			}
+// 		}
+// 	}
+// }
