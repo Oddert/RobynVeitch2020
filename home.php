@@ -9,9 +9,9 @@
 	show_admin_bar(False);
 ?>
 
-<div class='cover'></div>
+<div class='homepage-cover'></div>
 
-  <div class='site__main noscript'>
+  <div class='site__main homepage noscript'>
 
     <header class='header'>
       <!--   <h1>portfolio</h1> -->
@@ -23,28 +23,43 @@
       <nav>
         <ul>
           <li title='home' class='nav-home'>
-            <span>home</span>
-            <i class='fa fa-home'></i>
+            <a href='#landing'>
+              <span>home</span>
+              <i class='fa fa-home'></i>
+            </a>
           </li>
+          <!-- TODO: add cattegory filters -->
           <li title='design' class='nav-design'>
-            <span>industrial design</span>
-            <i class='fa fa-drafting-compass'></i>
+            <a href='#portfolio'>
+              <span>industrial design</span>
+              <i class='fa fa-drafting-compass'></i>
+            </a>
           </li>
           <li title='development' class='nav-development'>
-            <span>development</span>
-            <i class='fa fa-terminal'></i>
+            <a href='#portfolio'>
+              <span>development</span>
+              <i class='fa fa-terminal'></i>
+            </a>
           </li>
+          <!-- TODO: add blog page -->
           <li title='blog' class='nav-blog'>
-            <span>blog</span>
-            <i class='fa fa-rss'></i>
+            <a href='/blog'>
+              <span>blog</span>
+              <i class='fa fa-rss'></i>
+            </a>
           </li>
           <li title='about' class='nav-about'>
-            <span>about</span>
-            <i class='fa fa-user'></i>
+            <a href='#about'>
+              <span>about</span>
+              <i class='fa fa-user'></i>
+            </a>
           </li>
+          <!-- TODO: add services page -->
           <li title='contact' class='nav-contact'>
-            <span>services / contact</span>
-            <i class='fa fa-comment-dots'></i>
+            <a href='#about'>
+              <span>services / contact</span>
+              <i class='fa fa-comment-dots'></i>
+            </a>
           </li>
         </ul>
         <button class='nav-toggle'>
@@ -53,9 +68,9 @@
       </nav>
     </div>
 
-    <div class='main'>
+    <div class='homepage-main'>
 
-      <section class='landing'>
+      <section class='landing' id='landing'>
         <h1 class='landing-title'>Robyn F H Veitch</h1>
         <p class='landing-subtitle'>design • engineer • advocate</p>
       </section>
@@ -67,7 +82,7 @@
         </div>
       </div>
 
-      <section class='portfolio'>
+      <section class='portfolio' id='portfolio'>
         <div class='content'>
           <ul class='tags'>
             <li>
@@ -152,7 +167,7 @@
         <h2 class='section-title'>about</h2>
       </div>
 
-      <section class='about'>
+      <section class='about' id='about'>
         <div class='content'>
           <div class='intro'>
             <h2 class='intro-text'>Hello, my name is Robyn. I'm a problem solver.<span class='cursor'>|</span></h2>
@@ -164,7 +179,7 @@
         <div class='bio'>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
         </div>
-        <ul class='social-links'>
+        <ul class='social-links' id='contact'>
           <li class='social-link linkedin'>
             <a href='https://www.linkedin.com/in/robyn-veitch-582aa3b6/' title='Linkedin profile link'>
               <i class='fab fa-linkedin'></i>
@@ -183,17 +198,8 @@
         </ul>
       </section>
 
-      <!--   <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div> -->
-
       <div class='footer'>
+        <!-- TODO: add services page -->
         <div class='contact'>
           <a href='#'>
             <i class='fa fa-chevron-left'></i> Services + Contact
@@ -201,11 +207,12 @@
         </div>
         <div class='contact-wedge'></div>
         <div class='cv'>
-          <a href='#'>
+          <a href='/robyn-veitch-cv'>
             CV <i class='fa fa-chevron-right'></i>
           </a>
         </div>
         <div class='cv-wedge'></div>
+        <!-- TODO: add blog page -->
         <div class='blog'>
           <a href='#'>
             Blog <i class='fa fa-chevron-down'></i>
@@ -213,5 +220,5 @@
         </div>
       </div>
 
-    </div> <!-- .main -->
+    </div> <!-- .homepage-main -->
   </div> <!-- .site__main -->

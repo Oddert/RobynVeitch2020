@@ -12,6 +12,7 @@ get_template_part('template-parts/navbar');
  ?>
 
  <main id="site-content" role="main">
+     <div data-oddert='templates/template-full-width.php'></div>
     <?php
     
     if (have_posts()) {
