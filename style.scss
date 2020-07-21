@@ -61,7 +61,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 //===
 
-$default_color: #ecf0f1;
+$color_default__light: #ecf0f1;
+$color_default__light--lighter: #fff;
+$color_default__light--darker: #ccc;
+
+$color_default__dark: #2d3e50;
+
 $theme_primary: #9a59b5;
 $theme_primary-shadow: #8d44ad;
 $theme_primary-shadow--alt: #752C95;
@@ -809,8 +814,32 @@ $header_height: 70px;
         //   border: 1px dashed red;
 				// 	display: none;
         // }
+        transition: .1s linear;
         .menu-toggle {
           height: 100%;
+          padding: 0 40px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          transition: .1s linear;
+          i {
+            transition: .1s linear;
+            // color: $color_default__light;
+            color: $color_default__light--darker;
+            font-size: 30px;
+            &.fa-chevron-left {
+              display: inline-block;
+            }
+            &.fa-chevron-right {
+              display: none;
+            }
+          }
+          &:hover {
+            background: $theme_primary-shadow;
+            i {
+              color: $color_default__light;
+            }
+          }
         }
 				.menu-navbar-container {
 					// border: 1px dashed steelblue;
@@ -821,7 +850,8 @@ $header_height: 70px;
 					ul {
             height: 100%;
 						li {
-							a {
+              a {
+                transition: .1s linear;
 								height: 100%;
 								display: flex;
 								align-items: center;
@@ -1213,7 +1243,7 @@ main.robyn-veitch-cv {
 			margin: 0;
 			a {
 				display: flex;
-				color: #2d3e50;
+				color: $color_default__dark;
 				text-decoration: none;
 				&.wp-block-file__button {
 					display: none;
@@ -1406,7 +1436,7 @@ $foot_portion: $header / 2;
 
 
 // * {
-//   color: $default_color;
+//   color: $color_default__light;
 //   box-sizing: border-box;
 //   font-family: 'open sans', 'roboto', 'sans serif', 'helvetica', 'arial';
 // }
@@ -1439,7 +1469,7 @@ body .site .site__main.homepage {
   background-repeat: no-repeat;
 
   & * {
-    color: $default_color;
+    color: $color_default__light;
   }
 
   h1 {
@@ -1663,7 +1693,7 @@ body .site .site__main.homepage {
     }
     .landing-subtitle {
       background: #ecf0f1;
-      color: #2d3e50;
+      color: $color_default__dark;
       font-size: 1.5rem;
       padding: 20px 60px;
       margin: 50px 0 0 0;
@@ -1820,7 +1850,7 @@ section {
             // z-index: 1;
           }
           h3 {
-            color: #2d3e50;
+            color: $color_default__dark;
             // z-index: 1;
             font-size: 20px;
             font-weight: 700;
@@ -2220,9 +2250,27 @@ section {
     .site-header__wrapper {
       .site-header__wrapper--inner {
         .main-navigation {
+           
+          .menu-navbar-container {
+            ul {
+              li a {
+                opacity: 0;
+              }
+            }
+          }
+          
           &.toggled {
             .menu-toggle {
               margin-left: auto;
+              i {
+                color: $color_default__light;
+                &.fa-chevron-left {
+                  display: none;
+                }
+                &.fa-chevron-right {
+                  display: inline-block;
+                }
+              }
             }
             .menu-navbar-container {
               height: auto;
@@ -2233,7 +2281,9 @@ section {
                 flex-direction: column;
                 li {
                   a {
+                    opacity: 1;
                     padding: 20px 40px;
+                    border-right: 5px solid $theme_primary-shadow--alt;
                   }
                 }
               }
