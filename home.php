@@ -9,7 +9,6 @@
 	show_admin_bar(False);
 ?>
 
-<div class='homepage-cover'></div>
 
   <div class='site__main homepage noscript'>
 
@@ -17,7 +16,7 @@
       <!--   <h1>portfolio</h1> -->
     </header>
 
-    <!-- WARNING: body should have .noscript by default but I'm a riddy and made this on a platform where you can't add class to body. There is a line in the js which does this for me. :C -->
+    <!-- WARNING: body should have .noscript by default but I'm a riddy and made this on a platform (codepen) where you can't add class to body. There is a line in the js which does this for me. :C -->
 
     <div class='nav-container open'>
       <nav>
@@ -28,7 +27,6 @@
               <i class='fa fa-home'></i>
             </a>
           </li>
-          <!-- TODO: add cattegory filters -->
           <li title='design' class='nav-design'>
             <a href='#portfolio'>
               <span>industrial design</span>
@@ -41,7 +39,6 @@
               <i class='fa fa-terminal'></i>
             </a>
           </li>
-          <!-- TODO: add blog page -->
           <li title='blog' class='nav-blog'>
             <a href='/blog'>
               <span>blog</span>
@@ -63,7 +60,8 @@
           </li>
         </ul>
         <button class='nav-toggle'>
-          <i class='fa fa-chevron-right'></i>
+          <i class='fa fa-chevron-right nav-toggle__icon--close'></i>
+          <i class='fa fa-chevron-left nav-toggle__icon--open'></i>
         </button>
       </nav>
     </div>
@@ -82,41 +80,46 @@
         </div>
       </div>
 
-      <section class='portfolio' id='portfolio'>
-        <div class='content'>
+      <section class='portfolio'>
+        <div class='content' id='portfolio'>
           <ul class='tags'>
             <li>
-              <button class='tag-button'>
+              <button class='tag-button' data-folio-filter-tagname='industrial_design'>
                 industrial design
               </button>
             </li>
             <li>
-              <button class='tag-button'>
+              <button class='tag-button' data-folio-filter-tagname='web_development'>
                 web development
               </button>
             </li>
             <li>
-              <button class='tag-button active'>
+              <button class='tag-button active' data-folio-filter-tagname='app_development'>
                 app development
               </button>
             </li>
             <li>
-              <button class='tag-button'>
+              <button class='tag-button' data-folio-filter-tagname='service_design'>
                 service design
               </button>
             </li>
             <li>
-              <button class='tag-button active'>
+              <button class='tag-button active' data-folio-filter-tagname='social_design'>
                 social design
               </button>
             </li>
             <li>
-              <button class='tag-button'>
+              <button class='tag-button' data-folio-filter-tagname='microservices'>
                 microservices
               </button>
             </li>
             <li>
-              <button class='tag-button'>
+              <button class='tag-button' data-folio-filter-tagname='system_design'>
+                system design
+              </button>
+            </li>
+            <li>
+              <button class='tag-button' data-folio-filter-tagname='data_vis'>
                 data vis
               </button>
             </li>
@@ -124,35 +127,35 @@
 
           <div class='folio-items'>
 
-            <div class='folio-item'>
+            <div class='folio-item' data-folio-tags='["industial_design", "service_design"]'>
               <a href='#' class='folio-item__wrapper'>
                 <img src='https://res.cloudinary.com/oddert/image/upload/v1571354267/Portfolio/tube_style_map_alt_colors_edited_2.jpg' />
                 <h3>Margate Art Tour</h3>
               </a>
             </div>
 
-            <div class='folio-item'>
+            <div class='folio-item' data-folio-tags='["industrial_design", "social_design"]'>
               <a href='#' class='folio-item__wrapper'>
                 <img src='http://robynveitch.com/folios/polymat/img/polymat_banner.jpg' />
                 <h3>Polymat</h3>
               </a>
             </div>
 
-            <div class='folio-item'>
+            <div class='folio-item' data-folio-tags='["web_development", "microservices", "data_vis"]'>
               <button class='folio-item__wrapper'>
                 <img src='https://res.cloudinary.com/oddert/image/upload/v1571337553/Portfolio/30_days_js.png' />
                 <h3>#JS30</h3>
               </button>
             </div>
 
-            <div class='folio-item'>
+            <div class='folio-item' data-folio-tags='["social_design", "system_design"]'>
               <button class='folio-item__wrapper'>
                 <img src='http://robynveitch.com/folios/root_to_root/img/root_to_root_banner.jpg' />
                 <h3>Root to Root</h3>
               </button>
             </div>
 
-            <div class='folio-item'>
+            <div class='folio-item' data-folio-tags='["web_development", "data_vis"]'>
               <a href='#' class='folio-item__wrapper'>
                 <img src='https://res.cloudinary.com/oddert/image/upload/v1571337549/Portfolio/dungeon_crawler_banner.png' />
                 <h3>Rouge Like React</h3>
@@ -212,7 +215,6 @@
           </a>
         </div>
         <div class='cv-wedge'></div>
-        <!-- TODO: add blog page -->
         <div class='blog'>
           <a href='#'>
             Blog <i class='fa fa-chevron-down'></i>
@@ -221,4 +223,7 @@
       </div>
 
     </div> <!-- .homepage-main -->
-  </div> <!-- .site__main -->
+  </div> <!-- .site__main.homepage.noscript -->
+
+  
+  <div class='homepage-cover'></div>

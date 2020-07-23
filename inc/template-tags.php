@@ -27,11 +27,14 @@ if ( ! function_exists( 'robynVeitch_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'RobynVeitch' ),
+			esc_html_x( '%s', 'post date', 'RobynVeitch' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		$catt_list = get_the_category_list(' #');
+		$catt_string = has_category() ? '<span> / </span>' . '#' . $catt_list : '';
+
+		echo '<span class="posted-on">' . $posted_on . $catt_string . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;

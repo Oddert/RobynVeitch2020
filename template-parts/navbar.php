@@ -29,7 +29,12 @@
 					else :
 				?>
 					<p class="site-title">
-						<?= get_the_title(); ?>
+						<?php
+							$title = get_the_title(); 
+							if ( strlen($title) <= 60 ):
+								echo $title;
+							endif;
+						?>
 					</p>
 				<?php
 					endif;
