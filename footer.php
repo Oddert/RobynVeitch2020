@@ -24,7 +24,7 @@
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				#printf( esc_html__( 'Theme: %1$s by %2$s.', 'RobynVeitch' ), 'RobynVeitch', '<a href="http://underscores.me/">Underscores.me</a>' );
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'RobynVeitch' ), 'RobynVeitch', '<a href="http://oddert.github.io/">Robyn Veitch</a>' );
+				printf( esc_html__( 'Theme %1$s by author %2$s.', 'RobynVeitch' ), 'RobynVeitch', '<a href="/robyn-veitch-cv/">Robyn Veitch</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

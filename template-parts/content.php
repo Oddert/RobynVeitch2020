@@ -29,13 +29,16 @@
 			endif; 
 			$title = the_title('', '', false);
 
-			if ( strlen( $title ) > 60 ) :
-				if ( is_singular() ):
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				else:
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				endif;
-			endif;
+			$title_should_hide = 'preffer-topbar';
+			if ( strlen( $title ) > 60 ) {
+				$title_should_hide = '';
+			}
+
+			if ( is_singular() ) {
+				the_title( '<h1 class="entry-title ' . $title_should_hide . '">', '</h1>' );
+			} else {
+				the_title( '<h2 class="entry-title ' . $title_should_hide . '"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			}
 		?>
 	</header><!-- .entry-header -->
 

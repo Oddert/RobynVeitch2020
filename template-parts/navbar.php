@@ -27,16 +27,19 @@
 				</h1>
 				<?php
 					else :
-				?>
-					<p class="site-title">
-						<?php
-							$title = get_the_title(); 
-							if ( strlen($title) <= 60 ):
-								echo $title;
-							endif;
-						?>
-					</p>
-				<?php
+
+						$title = get_the_title(); 
+						$title_should_hide = 'preffer-topbar';
+						if ( strlen( $title ) > 60 ) {
+							$title_should_hide = '';
+						}
+
+						if ( is_singular() ) {
+							the_title( '<h1 class="site-title ' . $title_should_hide . '">', '</h1>' );
+						} else {
+							the_title( '<h2 class="site-title ' . $title_should_hide . '"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+						}
+					
 					endif;
 					
 					// $robynVeitch_description = get_bloginfo( 'description', 'display' );

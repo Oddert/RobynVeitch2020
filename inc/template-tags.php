@@ -70,10 +70,10 @@ if ( ! function_exists( 'robynVeitch_entry_footer' ) ) :
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'RobynVeitch' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( '', 'list item separator', 'RobynVeitch' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'RobynVeitch' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'RobynVeitch' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
@@ -83,7 +83,7 @@ if ( ! function_exists( 'robynVeitch_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'RobynVeitch' ),
+						__( 'Leave a Response<span class="screen-reader-text"> on %s</span>', 'RobynVeitch' ),
 						array(
 							'span' => array(
 								'class' => array(),

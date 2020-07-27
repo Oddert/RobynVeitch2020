@@ -39,7 +39,7 @@ if ( post_password_required() ) {
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s response to &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $robynVeitch_comment_count, 'comments title', 'RobynVeitch' ) ),
+					esc_html( _nx( '%1$s responses to %2$s', '%1$s responses to %2$s', $robynVeitch_comment_count, 'comments title', 'RobynVeitch' ) ),
 					number_format_i18n( $robynVeitch_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
@@ -55,6 +55,7 @@ if ( post_password_required() ) {
 				array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'avatar_size' => 100,
 				)
 			);
 			?>

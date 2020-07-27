@@ -94,7 +94,7 @@
               </button>
             </li>
             <li>
-              <button class='tag-button active' data-folio-filter-tagname='app_development'>
+              <button class='tag-button' data-folio-filter-tagname='app_development'>
                 app development
               </button>
             </li>
@@ -104,7 +104,7 @@
               </button>
             </li>
             <li>
-              <button class='tag-button active' data-folio-filter-tagname='social_design'>
+              <button class='tag-button' data-folio-filter-tagname='social_design'>
                 social design
               </button>
             </li>
