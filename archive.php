@@ -8,7 +8,7 @@
  */
 
 get_header();
-get_template_part('template-parts/navbar');
+get_template_part('template-parts/navigation/navbar');
 ?>
 
 	<main id="primary" class="site-main">
@@ -34,7 +34,7 @@ get_template_part('template-parts/navbar');
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/post/content', get_post_type() );
 
 			endwhile;
 
@@ -42,7 +42,7 @@ get_template_part('template-parts/navbar');
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/post/content', 'none' );
 
 		endif;
 		?>

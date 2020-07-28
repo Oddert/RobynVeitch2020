@@ -8,7 +8,7 @@
  */
 
 get_header();
-get_template_part('template-parts/navbar');
+get_template_part('template-parts/navigation/navbar');
 ?>
 
 	<main id="primary" class="site-main">
@@ -19,7 +19,7 @@ get_template_part('template-parts/navbar');
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/post/content', get_post_type() );
 
 				the_post_navigation(
 					array(

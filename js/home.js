@@ -10,9 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const content = document.querySelector('.homepage-main')
   const nav = document.querySelector('.nav-container')
   const navToggle = nav.querySelector('.nav-toggle')
+  const profileHeader = document.querySelector('.intro-text .text')
+  const tagClear = document.querySelector('.tag-clear .tag-clear__button')
 
   const pageTopBoundary = 150
   const pageBottomBoundary = 350
+
+  let typeAnimationTracker = 0
+  let typeAnimationTimer
+  let typeAnimationFinished = false
 
   let isScrolling
 
@@ -40,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const query = window.location.href.match(/focus=(\w+)/gi)
 
-    if (query.length) {
+    if (query && query.length) {
       filterTags.forEach(each => {
         const tagName = each.dataset.folioFilterTagname
         if (query.includes("focus=design")) folioFilters[tagName] = designTags.includes(tagName)
@@ -119,8 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
       else tag.classList.remove('active')
     })
   }
-  // -=-=-=-=-=-=-=-=-=-=-=-=- tested until -=-=-=-=-=-=-=-=-=-=-=-=-
 
+  profileHeader.innerHTML = ''
+
+  
   function checkSlide () {
     
     window.clearTimeout( isScrolling );
@@ -142,6 +150,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (siteMain.classList.contains('bottom')) siteMain.classList.remove('bottom')
       }
 
+      // console.log(content.scrollTop, profileHeader.offsetTop - 500)
+
+      if (
+        !typeAnimationFinished && 
+        content.scrollTop >= profileHeader.offsetTop - 500
+      ) {
+        initTypeAnimation()
+        typeAnimationFinished = true
+      }
+
       if (content.scrollTop < pageTopBoundary) {
         if (!siteMain.classList.contains('top')) siteMain.classList.add('top')
       } else {
@@ -150,9 +168,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
   }
+
+  const profileHeaderText = `Hello, my name is Robyn. I'm a problem solver.`
+
+  function updateText (length) {
+    profileHeader.innerHTML = profileHeaderText.substring(0, length + 1)
+  }
+
+  function initTypeAnimation () {
+    clearInterval(typeAnimationTimer)
+    typeAnimationTimer = 0
+    const interval = () => {
+      if (Math.floor(Math.random() * 100) > 68) {
+        updateText (typeAnimationTracker)
+        typeAnimationTracker ++
+      }
+      if (typeAnimationTracker >= profileHeaderText.length) {
+        console.log('CLEARING')
+        clearInterval (typeAnimationTimer)
+      }
+    }
+    typeAnimationTimer = setInterval (interval, 60)
+  }
+
+  function resetTags () {
+    // console.log('[resetTags]')
+    const tags = Object.keys(folioFilters)
+    tags.forEach(e => folioFilters[e] = false)
+    renderFolioTags()
+    renderFolioItems()
+  }
   
+  tagClear.onclick = resetTags
+  profileHeader.addEventListener('click', initTypeAnimation)
   content.addEventListener('scroll', debounce(checkSlide, 15))
 
+  // initTypeAnimation()
   initFolioFilters()
   
 })

@@ -5,7 +5,7 @@
  * @package RobynVeitch
  */
 	get_header();
-	// get_template_part('template-parts/navbar');
+	// get_template_part('template-parts/navigation/navbar');
 	show_admin_bar(False);
 ?>
 
@@ -28,13 +28,13 @@
             </a>
           </li>
           <li title='design' class='nav-design'>
-            <a href='#portfolio'>
+            <a href='?focus=design#portfolio'>
               <span>industrial design</span>
               <i class='fa fa-drafting-compass'></i>
             </a>
           </li>
           <li title='development' class='nav-development'>
-            <a href='#portfolio'>
+            <a href='?focus=development#portfolio'>
               <span>development</span>
               <i class='fa fa-terminal'></i>
             </a>
@@ -53,7 +53,7 @@
           </li>
           <!-- TODO: add services page -->
           <li title='contact' class='nav-contact'>
-            <a href='#about'>
+            <a href='/services'>
               <span>services / contact</span>
               <i class='fa fa-comment-dots'></i>
             </a>
@@ -70,7 +70,9 @@
 
       <section class='landing' id='landing'>
         <h1 class='landing-title'>Robyn F H Veitch</h1>
-        <p class='landing-subtitle'>design • engineer • advocate</p>
+        <p class='landing-subtitle'>
+          <span class='landing-subtitle-1'>design</span> • <span class='landing-subtitle-2'>engineer</span> • <span class='landing-subtitle-3'>advocate</span>
+        </p>
       </section>
       <!--   <section style='height: 200px; background: tomato; grid-column: 2 / 5;'></section> -->
 
@@ -82,6 +84,11 @@
 
       <section class='portfolio'>
         <div class='content' id='portfolio'>
+
+          <div class='tag-clear'>
+            <button class='tag-clear__button'>clear</button>
+          </div>
+
           <ul class='tags'>
             <li>
               <button class='tag-button' data-folio-filter-tagname='industrial_design'>
@@ -167,13 +174,20 @@
       </section>
 
       <div class='section-title'>
-        <h2 class='section-title'>about</h2>
+        <div class='section-title__inner'>
+          <h2 class='section-title'>about</h2>
+        </div>
       </div>
 
       <section class='about' id='about'>
         <div class='content'>
           <div class='intro'>
-            <h2 class='intro-text'>Hello, my name is Robyn. I'm a problem solver.<span class='cursor'>|</span></h2>
+            <h2 class='intro-text'>
+              <span class='text'>
+                Hello, my name is Robyn. I'm a problem solver.
+              </span>
+              <span class='cursor'>|</span>
+            </h2>
           </div>
           <div class='profile-picture'>
             <img src='https://res.cloudinary.com/oddert/image/upload/v1581962527/Portfolio/folio_profile.jpg' />

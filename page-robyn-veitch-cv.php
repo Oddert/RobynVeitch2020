@@ -5,7 +5,7 @@
  * @package RobynVeitch
  */
   get_header();
-  get_template_part('template-parts/navbar');
+  get_template_part('template-parts/navigation/navbar');
 ?>
 
 

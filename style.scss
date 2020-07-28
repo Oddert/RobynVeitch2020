@@ -74,6 +74,8 @@ $theme_primary: #9a59b5;
 $theme_primary-shadow: #8d44ad;
 $theme_primary-shadow--alt: #752C95;
 
+$off_eecf: #dbdfe0;
+
 @mixin odd_shadow_before($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
   &:before {
     content: '';
@@ -96,6 +98,7 @@ $theme_primary-shadow--alt: #752C95;
     top: $emphasisy;
     left: $emphasisx;
     z-index: $zindex;
+    position: absolute;
   }
 }
 
@@ -1642,7 +1645,7 @@ $header_height: 70px;
     position: absolute;
   }
   position: relative;
-  @include odd_shadow_after(1%, -10px, #ecf0f1, -1, 98%, 10px);
+  @include odd_shadow_after(1%, -10px, $off_eecf, -1, 98%, 10px);
 }
 
 .entry-footer {
@@ -2246,11 +2249,15 @@ body .site .site__main.homepage {
     }
     .landing-subtitle {
       background: #ecf0f1;
-      color: $color_default__dark;
       font-size: 1.5rem;
       padding: 20px 60px;
       margin: 50px 0 0 0;
-      white-space: pre-wrap;
+      // white-space: pre-wrap;
+      color: $color_default__dark;
+      span {
+        color: $color_default__dark;
+        margin: 0 10px;
+      }
     }
   }
 
@@ -2287,6 +2294,8 @@ body .site .site__main.homepage {
 
 .portfolio {
   @include section_standard;
+  $tag_button__inactive: #7A8A8A;
+  $tag_button__hover: #5A6A6A;
   grid-row: auto;
   background: none;
   // border: 1px dashed aquamarine;
@@ -2298,6 +2307,30 @@ body .site .site__main.homepage {
     box-shadow: 0 10px 10px 0 rgba(0,0,0,.2);
     margin: 200px 0 100px;
     padding: 50px 0;
+    .tag-clear {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 50px;
+      .tag-clear__button {
+        color: $tag_button__inactive;
+        // font-size: 1.2rem;
+        // letter-spacing: 2px;
+        font-weight: bold;
+        // text-decoration: underline;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        letter-spacing: 3px;
+        &:hover {
+          color: $tag_button__hover;
+          background: $off_eecf;
+        }
+        &:active {
+          background: #bec3c7;
+        }
+      }
+    }
     .tags {
       list-style-type: none;
       padding: 0;
@@ -2309,7 +2342,7 @@ body .site .site__main.homepage {
       li {
         .tag-button {
           cursor: pointer;
-          color: #7A8A8A;
+          color: $tag_button__inactive;
           font-weight: 700;
           font-size: 1rem;
           margin: 4px 20px;
@@ -2320,7 +2353,7 @@ body .site .site__main.homepage {
           border: 2px solid rgba(255,255,255,0); 
           transition: padding 0s;
           &:hover {
-            color: #5A6A6A;
+            color: $tag_button__hover;
           }
           &.active {
             border: 2px solid #aeb7b7; 
@@ -2473,8 +2506,13 @@ body .site .site__main.homepage {
       &:after {
         transition: .2s linear;
       }
+      // NOTE: again with the specific usecases for odd_shadow...
+      // this one does not require a wrapper but does need explicit
+      // z-index to be set in same elem as syle applied to 
+      position: relative;
+      z-index: 1;
       // zdebug
-      // @include odd_shadow_after(-14px, -14px, #ecf0f1, -1, $radius, $radius);
+      @include odd_shadow_after(-14px, -14px, #ecf0f1, -1, $radius, $radius);
       &:hover {
         // zdebug
         // @include odd_shadow_after(-24px, -24px, #fff, -1, $radius, $radius);
@@ -2613,7 +2651,7 @@ body .site .site__main.homepage {
 .section-title {
   $emphasis: 14px;
   // zdebug
-  // position: sticky; 
+  position: sticky; 
   top: 0px; 
   // zdebug
   // z-index: 100;
@@ -2622,11 +2660,22 @@ body .site .site__main.homepage {
   border: none;
   // background: none;
   
+  // NOTE: unable to get shadow working before section inner
+  // this could have somehting ot do with pos sticky given that
+  // other elems have worked withour a wrapper
+  // investgate this as a point before article write
   .section-title__inner {
     // zdebug
     // position: relative;
     // z-debug
     // z-index: 5;
+    position: relative;
+    z-index: 1;
+    &:after {
+      position: absolute;
+    }
+    @include odd_shadow_after($emphasis, $emphasis, #8d44ad, -1, 100%, 100%);
+    width: 500px;
   }
   h2 {
     padding: 10px 30px;
@@ -2649,6 +2698,7 @@ body .site .site__main.homepage {
     // zdebug
     // @include odd_shadow_before(0, 0, #9a59b5, -1);
     // @include odd_shadow_after($emphasis, $emphasis, #8d44ad, -200);
+    
     
   }
 }
