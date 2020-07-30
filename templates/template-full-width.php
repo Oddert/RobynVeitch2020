@@ -7,18 +7,18 @@
  * 
  */
 
- get_header();
-get_template_part('template-parts/navigation/navbar');
+    get_header();
+    get_template_part('template-parts/navigation/navbar');
  ?>
 
  <main id="site-content" role="main">
-     <div data-oddert='templates/template-full-width.php'></div>
+    <div data-oddert='templates/template-full-width.php'></div>
     <?php
     
     if (have_posts()) {
-        while (have_posts()) {
-            the_post();
-        }
+      while (have_posts()) {
+        the_post();
+      }
     }
 
     ?>
