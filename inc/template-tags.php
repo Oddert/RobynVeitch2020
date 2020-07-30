@@ -96,6 +96,12 @@ if ( ! function_exists( 'robynVeitch_entry_footer' ) ) :
 			echo '</span>';
 		}
 
+		robynveitch_edit_link();
+	}
+endif;
+
+if ( ! function_exists( 'robynVeitch_edit_link' ) ) :
+	function robynVeitch_edit_link () {
 		edit_post_link(
 			sprintf(
 				wp_kses(

@@ -27,6 +27,11 @@
 				printf( esc_html__( 'Theme %1$s by author %2$s.', 'RobynVeitch' ), 'RobynVeitch', '<a href="/robyn-veitch-cv/">Robyn Veitch</a>' );
 				?>
 		</div><!-- .site-info -->
+		<div class='site-copywrite'>
+			<?php 
+				printf( esc_html__( '© Copywrite Robyn Veitch %1$s. All rights reserved.', 'RobynVeitch' ), date("Y") );
+			?>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

@@ -234,15 +234,22 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .entry-header .post-thumbnail img{max-width:100%;max-height:100vh;-o-object-fit:contain;object-fit:contain}
 .entry-header .entry-meta{padding:40px}
 .entry-header .entry-meta .posted-on{margin-left:5vw;font-size:24px;font-weight:600;letter-spacing:1px}
+.entry-header .entry-meta .posted-on a{text-decoration:none;color:#2d3e50}
+.entry-header .entry-meta .posted-on a time{color:#2d3e50}
+.entry-header .entry-meta .posted-on a time:hover,.entry-header .entry-meta .posted-on a time:focus,.entry-header .entry-meta .posted-on a time:visited{color:#2d3e50}
+.entry-header .entry-meta .posted-on a[rel="category tag"]{color:#297fb8}
+.entry-header .entry-meta .posted-on a[rel="category tag"]:hover{color:#3598db}
+.entry-header .entry-meta .posted-on a[rel="category tag"]:active{color:#216491}
+.entry-header .entry-meta .posted-on a:hover{text-decoration:underline}
 .entry-header .entry-title{text-align:center;font-size:40px;padding:42px;display:block}
 .entry-header .entry-title.preffer-topbar{display:none}
-.entry-content{font-size:20px;display:grid;grid-template-columns:20vw 50px 1fr 50px 20vw;grid-template-columns:5vw 12vw 5vw 5vw 1fr 5vw 5vw 12vw 5vw;grid-auto-rows:auto;margin:0 auto;position:relative}
+.entry-content{-webkit-box-shadow:0 5px 20px rgba(0,0,0,0.2);box-shadow:0 5px 20px rgba(0,0,0,0.2);font-size:20px;display:grid;grid-template-columns:20vw 50px 1fr 50px 20vw;grid-template-columns:5vw 12vw 5vw 5vw 1fr 5vw 5vw 12vw 5vw;grid-auto-rows:auto;margin:0 auto;padding:50px 0;position:relative}
 .entry-content>*{grid-column:5}
 .entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6,.entry-content .wp-block-embed{grid-column:4 / -4}
 .entry-content p{line-height:40px}
 .entry-content .wp-block-embed__wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .entry-content .wp-block-cover{grid-column:1 / -1;height:100vh}
-.entry-content .subtitle{font-size:26px}
+.entry-content .subtitle{grid-column:4 / -4;font-size:26px;text-align:center;margin-bottom:50px}
 .entry-content:after{position:absolute}
 .entry-content:after{content:'';background:#dbdfe0;height:10px;width:98%;top:-10px;left:1%;z-index:-1;position:absolute}
 .entry-footer{padding:0 20vw 100px;padding:60px 20vw}
@@ -272,6 +279,7 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .widget-area [data-oddert]{display:none}
 .widget-area a{color:#ecf0f1}
 .widget-area .widget-title{text-align:center}
+.widget-area .widget_recent_entries ul{margin:0 0 20px}
 .widget-area .widget_calendar .calendar_wrap .wp-calendar-table{background:#fff;padding:20px;border-spacing:6px;color:#2d3e50}
 .widget-area .widget_calendar .calendar_wrap .wp-calendar-table caption{color:#ecf0f1}
 .widget-area .widget_calendar .calendar_wrap .wp-calendar-table tbody tr td{background:#ecf0f1;border-radius:50%;text-align:center;width:34px;height:34px;cursor:default}
@@ -281,19 +289,46 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .widget-area .widget_calendar .calendar_wrap .wp-calendar-table tbody tr td#today{border:1px solid #e84c3d}
 .widget-area .widget_calendar .calendar_wrap .wp-calendar-table tbody tr td#today a{width:auto;height:auto;background:0}
 .widget-area .widget_categories ul{margin:0;padding:0;list-style-type:none}
-.widget-area .widget_categories ul li.cat-item{display:inline-block}
+.widget-area .widget_categories ul li.cat-item{display:inline-block;margin-bottom:25px}
 .widget-area .widget_categories ul li.cat-item a{text-decoration:none;font-size:8pt;color:#2d3e50;background:#ecf0f1;padding:1em 1.2em;margin:.5em;letter-spacing:1px;font-weight:bolder;position:relative;z-index:1}
 .widget-area .widget_categories ul li.cat-item a:after{position:absolute}
 .widget-area .widget_categories ul li.cat-item a:after{content:'';background:#9ea2a5;height:100%;width:100%;top:2px;left:2px;z-index:-1;position:absolute}
 .widget-area .widget_categories ul li.cat-item a:hover{background:#fff}
+.widget-area .widget_tag_cloud .tagcloud{margin-bottom:25px}
 .widget-area .widget_tag_cloud .tagcloud .tag-cloud-link{text-decoration:none;font-size:8pt;color:#2d3e50;background:#ecf0f1;padding:1em 1.2em;margin:.5em;letter-spacing:1px;font-weight:bolder;position:relative;z-index:1}
 .widget-area .widget_tag_cloud .tagcloud .tag-cloud-link:after{position:absolute}
 .widget-area .widget_tag_cloud .tagcloud .tag-cloud-link:after{content:'';background:#9ea2a5;height:100%;width:100%;top:2px;left:2px;z-index:-1;position:absolute}
 .widget-area .widget_tag_cloud .tagcloud .tag-cloud-link:hover{background:#fff}
 .widget-area .widget_tag_cloud .tagcloud .tag-cloud-link:before{content:'#'}
-.site-footer{background:#2d3e50;display:-webkit-box;display:-ms-flexbox;display:flex;color:#ecf0f1;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100px}
-.site-footer .site-info{letter-spacing:3px;font-size:20px}
+.site-footer{background:#2d3e50;color:#ecf0f1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:100px}
+.site-footer .site-info{letter-spacing:3px;font-size:20px;padding:60px}
+.site-footer .site-copywrite{font-size:14px;padding:10px}
 .site-footer a{color:#ecf0f1}
+.page-blog{width:60vw;margin:0 auto}
+.post-list-content{margin:10px 0}
+.post-list-content article{display:grid;grid-template-columns:400px 1fr;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.post-list-content article [data-oddert]{display:none}
+.post-list-content article .image__wrapper{height:200px;position:relative}
+.post-list-content article .image__wrapper img{width:400px;max-height:100%;-o-object-fit:contain;object-fit:contain}
+.post-list-content article .details__wrapper{padding:40px}
+.post-list-content article .details__wrapper .entry-content{padding:20px 0}
+.post-list-content article .details__wrapper .entry-meta .entry-title :-webkit-any-link{font-size:26px;margin:10px 0;text-decoration:none;color:#2d3e50}
+.post-list-content article .details__wrapper .entry-meta .entry-title :-moz-any-link{font-size:26px;margin:10px 0;text-decoration:none;color:#2d3e50}
+.post-list-content article .details__wrapper .entry-meta .entry-title,.post-list-content article .details__wrapper .entry-meta .entry-title :any-link{font-size:26px;margin:10px 0;text-decoration:none;color:#2d3e50}
+.post-list-content article .details__wrapper .entry-meta .entry-title :-webkit-any-link:hover{text-decoration:underline}
+.post-list-content article .details__wrapper .entry-meta .entry-title :-moz-any-link:hover{text-decoration:underline}
+.post-list-content article .details__wrapper .entry-meta .entry-title:hover,.post-list-content article .details__wrapper .entry-meta .entry-title :any-link:hover{text-decoration:underline}
+.post-list-content article .details__wrapper .entry-meta .posted-on{font-size:16px;font-weight:600;letter-spacing:1px}
+.post-list-content article .details__wrapper .entry-meta .posted-on a{text-decoration:none;color:#95a5a5}
+.post-list-content article .details__wrapper .entry-meta .posted-on a time{color:#95a5a5}
+.post-list-content article .details__wrapper .entry-meta .posted-on a time:hover,.post-list-content article .details__wrapper .entry-meta .posted-on a time:focus,.post-list-content article .details__wrapper .entry-meta .posted-on a time:visited{color:#2d3e50}
+.post-list-content article .details__wrapper .entry-meta .posted-on a[rel="category tag"]{color:#297fb8}
+.post-list-content article .details__wrapper .entry-meta .posted-on a[rel="category tag"]:hover{color:#3598db}
+.post-list-content article .details__wrapper .entry-meta .posted-on a[rel="category tag"]:active{color:#216491}
+.post-list-content article .details__wrapper .entry-meta .posted-on a:hover{text-decoration:underline}
+.post-list-content article .details__wrapper .entry-content{display:-webkit-box;display:-ms-flexbox;display:flex;background:0;-webkit-box-shadow:none;box-shadow:none}
+.post-list-content article .details__wrapper .entry-content p{font-size:15px;line-height:normal;margin:0 0 30px;margin:0}
+.post-list-content article .details__wrapper .entry-content:before,.post-list-content article .details__wrapper .entry-content:after{display:none}
 body.home .site{background-color:#fff;background-image:url("https://robynveitch.com/img/banner_code.jpg");background-image:url("https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_960_720.jpg");background-size:cover;background-attachment:fixed;background-position:center;background-repeat:no-repeat;-ms-overflow-style:none;scrollbar-width:none}
 body.home .site::-webkit-scrollbar{display:none}
 .homepage-cover{top:0;left:0;background:rgba(43,64,22,0.66);background:rgba(64,22,43,0.66);background:rgba(22,43,64,0.66)}
@@ -372,6 +407,7 @@ body .site .site__main.homepage .landing .landing-subtitle span{color:#2d3e50;ma
 .about .content .profile-picture img{width:250px;height:250px;-o-object-fit:cover;object-fit:cover}
 .about .content .profile-picture:after{-webkit-transition:.2s linear;transition:.2s linear}
 .about .content .profile-picture:after{content:'';background:#ecf0f1;height:250px;width:250px;top:-14px;left:-14px;z-index:-1;position:absolute}
+.about .content .profile-picture:hover:after{content:'';background:#fff;height:250px;width:250px;top:-24px;left:-24px;z-index:-1;position:absolute}
 .about .bio{grid-column:2;padding:100px 0}
 .about .bio p{font-size:1.3rem}
 .about .social-links{grid-column:1 / -1;display:-webkit-box;display:-ms-flexbox;display:flex;list-style-type:none;padding:0;margin:0}
@@ -411,6 +447,11 @@ body .site .site__main.homepage .landing .landing-subtitle span{color:#2d3e50;ma
 }@media only screen and (max-width:1300px){.portfolio{grid-column:1 / 6}
 .about{grid-column:1 / -1}
 body .site .site__main.noscript .footer{grid-column:1 / -1}
+.page-blog{width:95vw}
+.post-list-content{margin:0;padding:10px 0}
+.post-list-content article{grid-template-columns:1fr;grid-auto-rows:auto}
+.post-list-content article .image__wrapper{height:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.post-list-content article .details__wrapper{padding:20px 40px}
 }@media screen and (max-width:1000px){main.robyn-veitch-cv{font-size:.7em}
 main.robyn-veitch-cv .cv-container .cv h3{font-size:1.2em}
 main.robyn-veitch-cv .cv-container .cv h4{font-size:1.05em;margin:.6em 0 0 0}

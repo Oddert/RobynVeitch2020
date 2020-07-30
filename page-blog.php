@@ -11,42 +11,24 @@ get_header();
 get_template_part('template-parts/navigation/navbar');
 ?>
 
-	<main id="primary" class="site-main">
-		<div data-oddert='page-blog.php'></div>
-	
-		<?php
-		if ( have_posts() ) :
+	<main id="primary" class="site-main page-blog">
+	<?php
+    $args = array(
+      'post_type' => 'post'
+    );
 
-			if ( is_home() && ! is_front_page() ) :
+    $post_query = new WP_Query($args);
+
+    if($post_query->have_posts() ) {
+      while($post_query->have_posts() ) {
+        $post_query->the_post();
+
+					get_template_part('template-parts/post/list-content')
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/post/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/post/content', 'none' );
-
-		endif;
+    <?php
+        }
+    	}
 		?>
-
 	</main><!-- #main -->
 
 <?php

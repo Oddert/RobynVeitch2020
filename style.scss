@@ -1586,6 +1586,29 @@ $header_height: 70px;
       font-size: 24px;
       font-weight: 600;
       letter-spacing: 1px;
+      a {
+        text-decoration: none;
+        color: #2d3e50;
+        time {
+          color: #2d3e50;
+          &:hover, &:focus, &:visited {
+            color: #2d3e50;
+
+          }
+        }
+        &[rel="category tag"] {
+          color: #297FB8;
+          &:hover {
+            color: #3598db;
+          }
+          &:active {
+            color: #216491;
+          }
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
   .entry-title {
@@ -1605,6 +1628,7 @@ $header_height: 70px;
 .entry-content {
   // TODO: maybe remove this, replace with block arround tag
   // box-shadow: 0 -15px 20px rgba(236,240,241,1);
+  box-shadow: 0 5px 20px rgba(0,0,0,.2);
   font-size: 20px;
 	display: grid;
 	// border: 1px dashed tomato;
@@ -1619,7 +1643,8 @@ $header_height: 70px;
     $ec_page_margin $ec_gutter_width $ec_content_margin $ec_header_padding 1fr $ec_header_padding $ec_content_margin $ec_gutter_width $ec_page_margin;
 	grid-auto-rows: auto;
 	// width: 60vw;
-	margin: 0 auto;
+  margin: 0 auto;
+  padding: 50px 0;
 	& > * {
     grid-column: 5;
 	}
@@ -1639,7 +1664,10 @@ $header_height: 70px;
 		height: 100vh;
   }
   .subtitle {
+    grid-column: 4 / -4;
     font-size: 26px;
+    text-align: center;
+    margin-bottom: 50px;
   }
   &:after {
     position: absolute;
@@ -1758,6 +1786,7 @@ $header_height: 70px;
 
     color: #ecf0f1;
   }
+  $tag_bottom_margin: 25px;
   @mixin tag {
     // color: red;
     text-decoration: none;
@@ -1788,6 +1817,11 @@ $header_height: 70px;
   justify-items: center;
   .widget-title {
     text-align: center;
+  }
+  .widget_recent_entries {
+    ul {
+      margin: 0 0 20px;
+    }
   }
   .widget_calendar {
     .calendar_wrap {
@@ -1849,6 +1883,7 @@ $header_height: 70px;
       list-style-type: none;
       li.cat-item {
         display: inline-block;
+        margin-bottom: $tag_bottom_margin;
         a {
           @include tag;
         }
@@ -1857,6 +1892,7 @@ $header_height: 70px;
   }
   .widget_tag_cloud {
     .tagcloud {
+      margin-bottom: $tag_bottom_margin;
       .tag-cloud-link {
         @include tag;
         &:before {
@@ -1869,20 +1905,116 @@ $header_height: 70px;
 
 .site-footer {
   background: #2d3e50;
-  display: flex;
   color: #ecf0f1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  min-height: 100px;
   .site-info {
     // margin: 10px 0;
     letter-spacing: 3px;
     font-size: 20px;
+    padding: 60px;
+  }
+  .site-copywrite {
+    font-size: 14px;
+    padding: 10px;
   }
   a {
     color: #ecf0f1;
   }
+}
+
+.page-blog {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.post-list-content {
+  margin: 10px 0;
+  article {
+    [data-oddert] {
+      display: none;
+    }
+    // display: flex;
+    // align-items: center;
+    // flex-direction: row;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    align-items: center;
+    .image__wrapper {
+      height: 200px;
+      position: relative;
+      img {
+        width: 400px;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+    .details__wrapper {
+      padding: 40px;
+      .entry-content {
+        padding: 20px 0;
+      }
+      .entry-meta {
+        .entry-title, .entry-title :any-link {
+          font-size: 26px;
+          margin: 10px 0;
+          text-decoration: none;
+          color: #2d3e50;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .posted-on {
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          a {
+            text-decoration: none;
+            color: #95a5a5;
+            time {
+              color: #95a5a5;
+              &:hover, &:focus, &:visited {
+                color: #2d3e50;
+    
+              }
+            }
+            &[rel="category tag"] {
+              color: #297FB8;
+              &:hover {
+                color: #3598db;
+              }
+              &:active {
+                color: #216491;
+              }
+            }
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .entry-content {
+        display: flex;
+  
+        background: none;
+        box-shadow: none;
+        
+        p {
+          font-size: 15px;
+          line-height: normal;
+          margin: 0 0 30px;
+          margin: 0;
+        }
+        &:before, &:after {
+          display: none;
+        }
+      }
+    }
+    }
 }
 
 
@@ -2515,7 +2647,7 @@ body .site .site__main.homepage {
       @include odd_shadow_after(-14px, -14px, #ecf0f1, -1, $radius, $radius);
       &:hover {
         // zdebug
-        // @include odd_shadow_after(-24px, -24px, #fff, -1, $radius, $radius);
+        @include odd_shadow_after(-24px, -24px, #fff, -1, $radius, $radius);
       }
     }
   }
@@ -2750,6 +2882,27 @@ body .site .site__main.homepage {
   }
   body .site .site__main.noscript .footer {
     grid-column: 1 / -1;
+  }
+  .page-blog {
+    width: 95vw;
+  }
+  .post-list-content {
+    // margin: 10px 0 30px;
+    // border: 1px solid black;
+    margin: 0;
+    padding: 10px 0;
+    article {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+      .image__wrapper {
+        height: auto;
+        display: flex;
+        justify-content: center;
+      }
+      .details__wrapper {
+        padding: 20px 40px;
+      }
+    }
   }
 }
 

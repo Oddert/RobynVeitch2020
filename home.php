@@ -194,7 +194,12 @@
           </div>
         </div>
         <div class='bio'>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+          <p>
+            I'm a designer and developer specialising in the application of social and systems design.
+          </p>
+          <p>
+            I come from a background in industrial design and have worked in development and code for over four years. I take a research-first approach to my work with the core ethos of adding genuine value to the world and improving people's lives. 
+          </p>
         </div>
         <ul class='social-links' id='contact'>
           <li class='social-link linkedin'>
