@@ -32,7 +32,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Typography
 	- Elements
 	- Links
-	- Forms
+  - Forms
+# Utility Classes
 ## Layouts
 # Components
 	- Navigation
@@ -734,6 +735,23 @@ select {
 
 textarea {
 	width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Utility Classes
+--------------------------------------------------------------*/
+
+.aic {
+  align-items: center;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.asc {
+  align-self: center;
 }
 
 /*--------------------------------------------------------------
@@ -1722,6 +1740,14 @@ $header_height: 70px;
 	.wp-block-cover {
     grid-column: 1 / -1;
 		height: 100vh;
+  }
+  .wp-block-image {
+    text-align: center;
+  }
+  .wp-block-gallery {
+    .blocks-gallery-grid {
+      align-items: center;
+    }
   }
   .subtitle {
     grid-column: 4 / -4;
