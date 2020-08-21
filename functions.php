@@ -139,6 +139,12 @@ function robynVeitch_widgets_init() {
 }
 add_action( 'widgets_init', 'robynVeitch_widgets_init' );
 
+add_filter( 'wp_generate_tag_cloud', 'robynVeitch_tag_cloud', 10, 3 );
+
+function robynVeitch_tag_cloud( $tag_str ) {
+	return preg_replace( '/style=("|\')(.*?)("|\')/', '', $tag_str );
+}
+
 /**
  * Enqueue scripts and styles.
  */
@@ -154,11 +160,10 @@ function robynVeitch_scripts() {
 	if ( is_home() ) {
 		wp_enqueue_script( 'robynVeitch-home', get_template_directory_uri() . '/js/home.js', array(), _ROBYNVEITCH_VERSION );
 	}
+
+
 }
 add_action( 'wp_enqueue_scripts', 'robynVeitch_scripts' );
-// function robynVeitch_styles() {
-// 	wp.e
-// }
 
 /**
  * Implement the Custom Header feature.

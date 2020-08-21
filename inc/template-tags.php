@@ -33,6 +33,12 @@ if ( ! function_exists( 'robynVeitch_posted_on' ) ) :
 
 		$catt_list = get_the_category_list(' #');
 		$catt_string = has_category() ? '<span> / </span>' . '#' . $catt_list : '';
+		// $tax_test = get_terms( 'topics', array (
+		// 	'hide_empty' => true,
+		// 	'taxonomy' => 'topic'
+		// ));
+		// var_dump($tax_test);
+		// var_dump(get_the_ID());
 
 		echo '<span class="posted-on">' . $posted_on . $catt_string . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 

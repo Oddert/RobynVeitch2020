@@ -89,7 +89,7 @@
             <button class='tag-clear__button'>clear</button>
           </div>
 
-          <ul class='tags'>
+          <!-- <ul class='tags'>
             <li>
               <button class='tag-button' data-folio-filter-tagname='industrial_design'>
                 industrial design
@@ -130,11 +130,62 @@
                 data vis
               </button>
             </li>
+          </ul> -->
+          <ul class='tags'>
+
+            <?php
+              $cat_args = array(
+                'order_by' => 'name',
+                'order' => 'ASC',
+                'parent' => get_cat_ID( 'portfolio' ),
+              );
+              
+              $categories = get_categories( $cat_args );
+
+              foreach( $categories as $category ) {
+                ?>
+                  <li>
+                    <button 
+                      class='tag-button' 
+                      data-folio-filter-tagname='<?php echo $category->slug; ?>'
+                    >
+                      <?php echo $category->name; ?>
+                    </button>
+                  </li>
+                <?php
+              }
+            ?>
+
           </ul>
 
           <div class='folio-items'>
 
-            <div class='folio-item' data-folio-tags='["industial_design", "service_design"]'>
+            <?php
+              $post_args = array(
+                'category_in' => get_cat_ID( 'portfolio' ),
+                'numberposts' => -1,
+              );
+
+              $posts = get_posts( $post_args );
+
+              foreach ( $posts as $post ) {
+                $id = apply_filters( 'ID', $post->ID );
+                $name = apply_filters( 'post_name', $post->post_name );
+                $title = apply_filters( 'post_title', $post->post_title );
+                $post_categories = get_the_category( $id );
+                $thumb = get_the_post_thumbnail_url( $id );
+                ?>
+                  <div class='folio-item' data-folio-tags='[<?php foreach( $post_categories as $cat ) { echo $cat->slug . ', '; } ?>]'>
+                    <a href='<?php echo $name ?>' class='folio-item__wrapper'>
+                      <img src='<?php echo $thumb; ?>' />
+                      <h3><?php echo $title ?></h3>
+                    </a>
+                  </div>
+                <?php
+              }
+            ?>
+
+      <!-- <div class='folio-item' data-folio-tags='["industrial-design", "service-design"]'>
               <a href='#' class='folio-item__wrapper'>
                 <img src='https://res.cloudinary.com/oddert/image/upload/v1571354267/Portfolio/tube_style_map_alt_colors_edited_2.jpg' />
                 <h3>Margate Art Tour</h3>
@@ -167,7 +218,7 @@
                 <img src='https://res.cloudinary.com/oddert/image/upload/v1571337549/Portfolio/dungeon_crawler_banner.png' />
                 <h3>Rouge Like React</h3>
               </a>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -223,7 +274,7 @@
       <div class='footer'>
         <!-- TODO: add services page -->
         <div class='contact'>
-          <a href='#'>
+          <a href='/services'>
             <i class='fa fa-chevron-left'></i> Services + Contact
           </a>
         </div>
@@ -235,7 +286,7 @@
         </div>
         <div class='cv-wedge'></div>
         <div class='blog'>
-          <a href='#'>
+          <a href='/blog'>
             Blog <i class='fa fa-chevron-down'></i>
           </a>
         </div>

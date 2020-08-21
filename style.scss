@@ -73,6 +73,7 @@ $color_default__dark: #2d3e50;
 $background_default: #F7F8F8;
 
 $theme_primary: #9a59b5;
+$theme_primary: #9D5FDD;
 $theme_primary-shadow: #8d44ad;
 $theme_primary-shadow--alt: #752C95;
 
@@ -833,10 +834,10 @@ $header_height: 70px;
 	position: sticky;
 	top: 0;
 	left: 0;
-	background: #9A59B5;
+	background: $theme_primary;
 	z-index: 2;
 	.site-header__wrapper {
-		background: #9A59B5;
+		background: $theme_primary;
 		width: 100%;
 		display: flex;
 		align-items: stretch;
@@ -1146,9 +1147,9 @@ $header_height: 70px;
     grid-column: 2;
     // position: relative;
     margin: 50px 0;
-    .reply-title {
+    // .reply-title {
       
-    }
+    // }
     p {
       margin: 0; 
     }
@@ -1185,9 +1186,9 @@ $header_height: 70px;
       }
       .logged-in-as {
         padding: 20px 0;
-        a {
+        // a {
           
-        }
+        // }
         a:first-child {
           color: #95a5a5;
           // font-size: 20px;
@@ -1571,7 +1572,7 @@ main.robyn-veitch-cv {
 				padding: 0;
 			}
 			h3 {
-				border-bottom: 3px solid #9A59B5;
+				border-bottom: 3px solid $theme_primary;
 				font-weight: 400;
 				font-size: 22px;
 				margin: 15px 0 10px;
@@ -1889,7 +1890,6 @@ $header_height: 70px;
       position: absolute;
     }
     z-index: 1;
-    @include odd_shadow_after(2px, 2px, #9ea2a5, -1, 100%, 100%);
     &:hover {
       background: #fff;
     }
@@ -1972,6 +1972,7 @@ $header_height: 70px;
         margin-bottom: $tag_bottom_margin;
         a {
           @include tag;
+          @include odd_shadow_after(2px, 2px, #9ea2a5, -1, 100%, 100%);
         }
       }
     }
@@ -1979,6 +1980,8 @@ $header_height: 70px;
   .widget_tag_cloud {
     .tagcloud {
       margin-bottom: $tag_bottom_margin;
+      display: flex;
+      flex-wrap: wrap;
       .tag-cloud-link {
         @include tag;
         &:before {
@@ -2235,7 +2238,7 @@ body .site .site__main.homepage {
     font-size: 3rem;
     font-weight: 500;
     letter-spacing: 10px;
-    background: #9a59b5;
+    background: $theme_primary;
     margin: 0 0 $emphasis 0;
     padding: 20px 60px;
     display: inline-block;
@@ -2910,12 +2913,12 @@ body .site .site__main.homepage {
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 10px;
-    background: #9a59b5;
+    background: $theme_primary;
     // background: #1bbc9b;
     // zdebug
     // position: relative;
     // zdebug
-    // @include odd_shadow_before(0, 0, #9a59b5, -1);
+    // @include odd_shadow_before(0, 0, $theme_primary, -1);
     // @include odd_shadow_after($emphasis, $emphasis, #8d44ad, -200);
     
     
