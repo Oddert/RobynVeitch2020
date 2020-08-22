@@ -33,9 +33,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Elements
 	- Links
   - Forms
-# Utility Classes
-## Layouts
-# Components
+  ## Layouts
+  # Components
 	- Navigation
 	- Posts and pages
 	- Comments
@@ -43,12 +42,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Media
 	- Captions
   - Galleries
-# Custom Blocks
-# plugins
+  # Custom Blocks
+  # plugins
 	- Jetpack infinite scroll
-# Utilities
+  # Utilities
 	- Accessibility
 	- Alignments
+# Utility Classes
+# Media Queries
 
 --------------------------------------------------------------*/
 
@@ -78,6 +79,22 @@ $theme_primary-shadow: #8d44ad;
 $theme_primary-shadow--alt: #752C95;
 
 $off_eecf: #dbdfe0;
+
+$red: #e84c3d;
+$red_dark: #c1392b;
+$orange: #e67f22;
+$orange_dark: #d25400;
+$yellow: #f1c40f;
+$yellow_dark: #f39c11;
+$green: #2dcc70;
+$green_dark: #27ae61;
+$blue: #3598db;
+$blue_dark: #297fb8;
+$purple: #9a59b5;
+$purple_dark: #8d44ad;
+$teal: #1bbc9b;
+$teal_dark: #16a086;
+
 
 @mixin odd_shadow_before($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
   &:before {
@@ -736,23 +753,6 @@ select {
 
 textarea {
 	width: 100%;
-}
-
-
-/*--------------------------------------------------------------
-# Utility Classes
---------------------------------------------------------------*/
-
-.aic {
-  align-items: center;
-}
-
-.jcc {
-  justify-content: center;
-}
-
-.asc {
-  align-self: center;
 }
 
 /*--------------------------------------------------------------
@@ -1761,6 +1761,21 @@ $header_height: 70px;
   }
   position: relative;
   @include odd_shadow_after(1%, -10px, $off_eecf, -1, 98%, 10px);
+}
+
+@mixin warn ($highlight) {
+  background: #444;
+  border-left: 25px solid $highlight;
+  margin: 0;
+  padding: 20px 40px;
+  color: $color_default__light;
+}
+
+.caution {
+  @include warn ($orange);
+}
+.warning {
+  @include warn ($red);
 }
 
 .entry-footer {
@@ -2926,9 +2941,33 @@ body .site .site__main.homepage {
 }
 
 
+/*--------------------------------------------------------------
+# Utility Classes
+--------------------------------------------------------------*/
+
+.aic {
+  align-items: center;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.asc {
+  align-self: center;
+}
+
+.mb50 {
+  margin-bottom: 50px;
+}
+
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
 
 // @media only screen and (max-width: 1000px) {
-//   $gutter_outer: 100px;
+  //   $gutter_outer: 100px;
 //   .main {
 //     grid-template-columns: $menu_collapse $gutter_outer $gutter_inner 1fr $gutter_inner $gutter_outer $menu_collapse;
 //   }
