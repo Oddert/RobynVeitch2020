@@ -57,6 +57,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Generic
 --------------------------------------------------------------*/
 
+h2 {
+  font-size: 34px;
+}
+
 /* Normalize
 --------------------------------------------- */
 
@@ -646,6 +650,13 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+}
+
+code {
+  background: $color_default__light;
+  border-radius: 5px;
+  padding: 0 5px;
+  color: $red_dark;
 }
 
 /* Links
@@ -1676,9 +1687,10 @@ $header_height: 70px;
           }
         }
         &[rel="category tag"] {
-          color: #297FB8;
+          color: #2573a7;
           &:hover {
             color: #3598db;
+            color: #297FB8;
           }
           &:active {
             color: #216491;
@@ -1745,9 +1757,21 @@ $header_height: 70px;
   .wp-block-image {
     text-align: center;
   }
+  .wp-block-video {
+    text-align: center;
+  }
   .wp-block-gallery {
     .blocks-gallery-grid {
       align-items: center;
+      align-items: flex-end;
+      .blocks-gallery-item figure {
+        flex-direction: column;
+        .blocks-gallery-item__caption {
+          background: none;
+          color: black;
+          position: relative;
+        }
+      }
     }
   }
   .subtitle {
@@ -1785,12 +1809,14 @@ $header_height: 70px;
     display: none;
   }
   .tags-links {
+    display: flex;
+    flex-wrap: wrap;
     a[rel=tag] {
       background: #3598db;
       color: #ecf0f1;
       padding: 10px 20px;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 10px;
       font-size: 20px;
       font-weight: 600;
       letter-spacing: 2px;
