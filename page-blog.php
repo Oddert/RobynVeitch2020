@@ -32,5 +32,6 @@ get_template_part('template-parts/navigation/navbar');
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
-get_footer();
+  get_sidebar();
+  get_footer();
+?>

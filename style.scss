@@ -34,7 +34,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Links
   - Forms
   ## Layouts
-  # Components
+# Components
 	- Navigation
 	- Posts and pages
 	- Comments
@@ -42,10 +42,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Media
 	- Captions
   - Galleries
-  # Custom Blocks
-  # plugins
+# Custom Blocks
+# plugins
 	- Jetpack infinite scroll
-  # Utilities
+# Utilities
 	- Accessibility
 	- Alignments
 # Utility Classes
@@ -74,6 +74,9 @@ $color_default__light--darker: #ccc;
 
 $color_default__dark: #2d3e50;
 
+$color_soft__gray: #4D4B4D;
+$color_medium__gray: #95a5a5;
+
 // $background_default: #ecf0f1;
 $background_default: #F7F8F8;
 
@@ -98,6 +101,10 @@ $purple: #9a59b5;
 $purple_dark: #8d44ad;
 $teal: #1bbc9b;
 $teal_dark: #16a086;
+
+
+$header_shadow_emphesis_y: 15px;
+$header_height: 70px;
 
 
 @mixin odd_shadow_before($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
@@ -831,10 +838,6 @@ textarea {
 .menu-toggle {
   display: block;
 }
-
-
-$header_shadow_emphesis_y: 15px;
-$header_height: 70px;
 
 .site-header {
   
@@ -1652,19 +1655,21 @@ $header_height: 70px;
 	overflow-x: hidden;
 	// border: 1px dashed limegreen;
   box-sizing: border-box;
-  padding-top: 40px;
+  // padding-top: 40px;
 	& * {
 		box-sizing: border-box;
 	}
 	.post-thumbnail {
 		width: 100%;
-		height: 100%;
+    height: 100%;
+    height: calc(100vh - #{$header_height});
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		img {
 			max-width: 100%;
 			max-height: 100vh;
+      max-height: calc(100vh - #{$header_height});
 			object-fit: contain;
 		}
   }
@@ -2060,6 +2065,219 @@ $header_height: 70px;
   width: 60vw;
   margin: 0 auto;
   padding: 150px 0;
+}
+
+.page-services {
+  @mixin text ($font_size) {
+    font-size: $font_size;
+    color: #fff;
+    text-shadow: 0px 4px 4px #2d3e50;
+    font-weight: lighter;
+  }
+  .intro {
+    width: 100%;
+    min-height: calc(100vh - #{$header_height});
+    position: relative;
+    .intro-cover_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      // z-index: -1;
+    }
+    .intro-cover_filter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #162B40;
+      opacity: .66;
+      // z-index: -1;
+    }
+    .intro-text {
+      width: 66vw;
+      padding: 20px 0 100px 0;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      .intro-title {
+        @include text(72px);
+        margin: 100px 0;
+      }
+      .intro-description {
+        @include text(22px);
+        margin: 50px 0;
+      }
+      .intro-button__container {
+        display: flex;
+        justify-content: center;
+        .intro-button__wrapper {
+          position: relative;
+          .intro-button {
+            transition: .1s linear;
+            background: linear-gradient(54.91deg, #9350D8 15.04%, #D3AEF5 85.91%, #D7B7F3 85.91%);
+            // background-image: url("/wp-content/uploads/2020/08/dot_background-01.png");
+            // background-repeat: repeat;
+            border: none;
+            border-radius: 0;
+            color: $color_default__light;
+            font-size: 24px;
+            padding: 20px 40px;
+            cursor: pointer;
+            &:before {
+              transition: .1s linear;
+            }
+            @include odd_shadow_before(6px, 6px, $purple, -1, 100%, 100%);
+            &:hover {
+              color: #fff;
+              background: linear-gradient(54.91deg, #8c43d6 15.04%, #D3AEF5 85.91%, #D7B7F3 85.91%);
+              @include odd_shadow_before(10px, 10px, $purple_dark, -1, 100%, 100%);
+            }
+          }
+        }
+      }
+    }
+  }
+  .client_work {
+    background: $color_soft__gray;
+    color: $color_default__light;
+    .client_work-title {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 4px;
+      font-weight: normal;
+      padding: 50px 0 0px 150px;
+    }
+    .client_work-case_studies {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      overflow-x: scroll;
+      padding: 50px 75px;
+
+      .client_work-case_study {
+        color: $color_default__dark;
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: column;
+        // height: 500px;
+        width: 350px;
+        position: relative;
+        background: #fff;
+        margin: 0 50px;
+
+        .case_study-image {
+          width: 100%;
+          // height: 50%;
+          height: 300px;
+          // flex: 1;
+          position: relative;
+          .case_study-image_img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        
+        .case_study-text {
+          // flex: 1;
+          padding: 40px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .case_study-text--top {
+            display: flex;
+            flex-direction: column;
+            .case_study-title {
+              padding: 0;
+              margin: 0;
+              font-size: 24px;
+              letter-spacing: 4px;
+              font-weight: 600;
+            }
+            .case_study-client {
+              padding: 0;
+              margin: 0;
+              font-size: 20px;
+              letter-spacing: 2px;
+              font-weight: 500;
+              margin: 20px 0;
+              color: $color_medium__gray;
+            }
+            .case_study-short_description {
+              padding: 0;
+              margin: 0;
+              font-size: 14px;
+            }
+          }
+          .case_study-text--bottom {
+
+            .case_study-time {
+              padding: 0;
+              margin: 0;
+              display: flex;
+              justify-content: flex-end;
+              .case_study-time_text {
+                font-size: 16px;
+                font-weight: 600;
+                justify-self: flex-end;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+  .cta {
+    .cta__container {
+      padding: 50px 150px;
+      .cta--wrapper {
+        display: flex;
+        .cta-text {
+          flex: 1;
+          padding: 50px;
+          .cta-text__title {
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            margin: 40px 0;
+          }
+        }
+        .cta-image {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          padding: 50px;
+        }
+      }
+    }
+  }
+  .process {
+    background: #4D4B4D;
+    color: $color_default__light;
+    .process_section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      .section_label {
+        grid-row: 1 / -1;
+        grid-column: 1;
+      }
+      .section_content {
+        grid-column: 2;
+      }
+      &.light {
+        background: #848284;
+      }
+      &.highlight {
+        background: rgba(26, 190, 211, .35);
+      }
+    }
+  }
 }
 
 .post-list-content {
