@@ -139,69 +139,133 @@
 
   <div class='process'>
 
-    <div class='process_section'>
-      <p class='section_label'>Specification</p>
+    <div class='process_section p3c'>
+      <div class='section_label'>
+        <h4 class='section_label-text'>Specification</h4>
+      </div>
+
       <div class='section_content'>
-        <p>Problem Definition</p>
-        <p>Lorem ipsum</p>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Scope Definition</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+
+      <div class='section_content'>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Research</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
       <div class='section_content'>
-        <p>Research</p>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class='section_content'>
-        <p>Specification & Sign Off</p>
-        <p>Lorem ipsum</p>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Specification & Sign Off</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
     </div>
 
-    <div class='process_section light'>
-      <p class='section_label'>Design</p>
-      <div class='section_content'>
-        <p>Design | Initial Ideation</p>
-        <p>Lorem ipsum</p>
+    <div class='process_section p4c light'>
+      <div class='section_label'>
+        <h4 class='section_label-text'>Design</h4>
       </div>
       <div class='section_content'>
-        <p>Concept Selection</p>
-        <p>Lorem ipsum</p>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Design | Initial Ideation</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
       <div class='section_content'>
-        <p>Iterative Development</p>
-        <p>Lorem ipsum</p>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Concept Selection</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
       <div class='section_content'>
-        <p>Review</p>
-        <p>Lorem ipsum</p>
-      </div>
-    </div>
-
-    <div class='process_section'>
-      <p class='section_label'>Implementation</p>
-      <div class='section_content'>
-        <p>Content Writing</p>
-        <p>Lorem ipsum</p>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Iterative Development</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
       <div class='section_content'>
-        <p>Building / Coding / Prototyping</p>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class='section_content'>
-        <p>Testing & Review</p>
-        <p>Lorem ipsum</p>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Review</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
     </div>
 
-    <div class='process_section highlight'>
-      <p class='section_label'>Future</p>
+    <div class='process_section p3c'>
+      <div class='section_label'>
+        <h4 class='section_label-text'>Implementation</h4>
+      </div>
       <div class='section_content'>
-        <p>Additional Services</p>
-        <p>Lorem ipsum</p>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Content Writing</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+      <div class='section_content'>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Building / Coding / Prototyping</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+      <div class='section_content'>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Testing & Review</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+    </div>
+
+    <div class='process_section p1c highlight'>
+      <div class='section_label'>
+        <h4 class='section_label-text'>Future</h4>
+      </div>
+      <div class='section_content'>
+        <div class='section_content-bullet'></div>
+        <button class='section_content-button'>
+          <p>Additional Services</p>
+        </button>
+        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
     </div>
 
   </div>
 
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const collapse = document.querySelectorAll('.section_content')
+
+    function toggle (e) {
+      e.target
+      .closest('.section_content')
+      .querySelector('.section_content-expandable')
+      .classList.toggle('open')
+    }
+
+    collapse.forEach(each => {
+      let expandable = each.querySelector('.section_content-expandable')
+      each.querySelector('.section_content-button').onclick = toggle
+      expandable.style.height = `${expandable.scrollHeight}px`
+    })
+
+  })
+</script>
 
 
 <?php
