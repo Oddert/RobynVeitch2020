@@ -139,13 +139,53 @@
 
   <div class='process'>
 
+    <div class='process_intro'>
+      <div class="intro_icon">
+        <svg width="62" height="238" viewBox="0 0 207 793" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="87" y="172" width="32" height="486" fill="#ECF0F1"/>
+          <circle cx="103.5" cy="103.5" r="103.5" fill="#1BBC9B"/>
+          <path d="M52 105.073L89.2963 143L166 65" stroke="#4D4B4D" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="103.5" cy="689.5" r="103.5" fill="#1BBC9B"/>
+          <path d="M52 691.073L89.2963 729L166 651" stroke="#4D4B4D" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="intro_text ">
+        <h3 class="intro_text-title">
+          A Transparent Process
+        </h3>
+        <h4 class="intro_text-subtitle">
+          Hands on or hands off, have confidence in receiving the perfect result.
+        </h4>
+        <p class="intro_text-paragraph">
+          Every piece of work, small or large, is put through the same refined and tested design process.
+        </p>
+        <p class="intro_text-paragraph">
+          This sets key deliverable points to let you have the final say in each section.
+        </p>
+        <p class="intro_text-paragraph">
+          If you’d like a more involved approach, I utilise a range of collaborative tools and methodologies to let you get to the heart of the process.
+        </p>
+        <p class="intro_text-paragraph">
+          If you already have a design, skip the early steps and jump strait to implementation.
+        </p>
+      </div>
+    </div>
+
     <div class='process_section p3c'>
       <div class='section_label'>
         <h4 class='section_label-text'>Specification</h4>
       </div>
 
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head'></div>
+        <div class='section_content-arrow--tail'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Scope Definition</p>
         </button>
@@ -153,14 +193,31 @@
       </div>
 
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head'></div>
+        <div class='section_content-arrow--tail'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Research</p>
         </button>
         <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head'></div>
+        <div class='section_content-arrow--tail'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Specification & Sign Off</p>
         </button>
@@ -172,29 +229,65 @@
       <div class='section_label'>
         <h4 class='section_label-text'>Design</h4>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head show arrow_end'><i class='fas fa-caret-right'></i></div>
+        <div class='section_content-arrow--tail show'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Design | Initial Ideation</p>
         </button>
         <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head show'></div>
+        <div class='section_content-arrow--tail show'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Concept Selection</p>
         </button>
         <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head show'></div>
+        <div class='section_content-arrow--tail show'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Iterative Development</p>
         </button>
         <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head show arrow_start'></div>
+        <div class='section_content-arrow--tail'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Review</p>
         </button>
@@ -206,22 +299,49 @@
       <div class='section_label'>
         <h4 class='section_label-text'>Implementation</h4>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head'></div>
+        <div class='section_content-arrow--tail'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Content Writing</p>
         </button>
         <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head show arrow_end'><i class='fas fa-caret-right'></i></div>
+        <div class='section_content-arrow--tail show'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Building / Coding / Prototyping</p>
         </button>
         <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head show arrow_start'></div>
+        <div class='section_content-arrow--tail'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Testing & Review</p>
         </button>
@@ -233,8 +353,17 @@
       <div class='section_label'>
         <h4 class='section_label-text'>Future</h4>
       </div>
+
       <div class='section_content'>
-        <div class='section_content-bullet'></div>
+        <div class='section_content-arrow--head'></div>
+        <div class='section_content-arrow--tail'></div>
+        <div class='section_content-bullet'>
+          <div class='bullet_point'></div>
+          <div class='bullet_border'></div>
+        </div>
+        <div class="section_content-bullet_line">
+          <div class="bullet_line-border"></div>
+        </div>
         <button class='section_content-button'>
           <p>Additional Services</p>
         </button>
@@ -262,6 +391,7 @@
       let expandable = each.querySelector('.section_content-expandable')
       each.querySelector('.section_content-button').onclick = toggle
       expandable.style.height = `${expandable.scrollHeight}px`
+      expandable.classList.toggle('open')
     })
 
   })
