@@ -2276,7 +2276,7 @@ $header_height: 70px;
     $bullet_r: 30px;
     $l_pad: 50px;
     $r_pad: 100px;
-    $arrow_w: 30px;
+    $arrow_w: 50px;
     $arrow_margin_r: 20px;
     $arrow_line: 2px dashed #ecf0f1;
     
@@ -2294,6 +2294,7 @@ $header_height: 70px;
         padding: $intro_padd_top 0;
         svg {
           max-width: 70px;
+          height: 260px;
         }
       }
       .intro_text {
@@ -2460,6 +2461,7 @@ $header_height: 70px;
           color: #ecf0f1;
           letter-spacing: 2px;
           font-size: 20px;
+          cursor: pointer;
         }
         .section_content-expandable {
           grid-row: 2;
@@ -2744,7 +2746,7 @@ body .site .site__main.homepage {
       // position: sticky;
 			top: 0px;
 			
-      width: $menu_collapse;
+      min-width: $menu_collapse;
       height: 100%;
       display: flex;
       flex-direction: column;

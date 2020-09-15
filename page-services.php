@@ -141,7 +141,7 @@
 
     <div class='process_intro'>
       <div class="intro_icon">
-        <svg width="62" height="238" viewBox="0 0 207 793" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="124" viewBox="0 0 207 793" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="87" y="172" width="32" height="486" fill="#ECF0F1"/>
           <circle cx="103.5" cy="103.5" r="103.5" fill="#1BBC9B"/>
           <path d="M52 105.073L89.2963 143L166 65" stroke="#4D4B4D" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
@@ -189,7 +189,10 @@
         <button class='section_content-button'>
           <p>Scope Definition</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          I will work closely with you to understand your needs and values, I will ensure that I understand what matters most to you, and where value can be added.
+          This allows the creation of a brief; a project or work set outline and list of deliverable requirements.
+        </p>
       </div>
 
       <div class='section_content'>
@@ -205,7 +208,10 @@
         <button class='section_content-button'>
           <p>Research</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          Possibilities are explored, options generated and technological feasibility testing is performed.
+          Data and research is collated as appropriate to inform the design phase.
+        </p>
       </div>
 
       <div class='section_content'>
@@ -219,9 +225,13 @@
           <div class="bullet_line-border"></div>
         </div>
         <button class='section_content-button'>
-          <p>Specification & Sign Off</p>
+          <p>Proposal & Sign Off</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          A plan is drafted along with timescales and costings.
+          Several options can be presented to you as appropriate, with differing  features.
+          You then review the proposal and we sign off on the contract for work to begin. This process ensures that the determined proposal has everything you need and the contract protects all parties.
+        </p>
       </div>
     </div>
 
@@ -387,12 +397,37 @@
       .classList.toggle('open')
     }
 
+    function setCollapseHeight (expandable) {
+      expandable.style.height = `${expandable.scrollHeight}px`
+    }
+
     collapse.forEach(each => {
       let expandable = each.querySelector('.section_content-expandable')
       each.querySelector('.section_content-button').onclick = toggle
-      expandable.style.height = `${expandable.scrollHeight}px`
+      setCollapseHeight (expandable)
       expandable.classList.toggle('open')
     })
+
+    window.addEventListener('resize', debounce(() => {
+      collapse.forEach(each => 
+        setCollapseHeight(each.querySelector('.section_content-expandable'))
+      )
+    }), 250)
+
+    function debounce(func, wait=20, immediate) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
 
   })
 </script>
