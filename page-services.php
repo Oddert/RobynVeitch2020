@@ -190,7 +190,8 @@
           <p>Scope Definition</p>
         </button>
         <p class='section_content-expandable'>
-          I will work closely with you to understand your needs and values, I will ensure that I understand what matters most to you, and where value can be added.
+          I will work closely with you to understand your needs and values; a shared understanding of your vision ensures the work that follows is exactly in tune with your needs.
+
           This allows the creation of a brief; a project or work set outline and list of deliverable requirements.
         </p>
       </div>
@@ -209,8 +210,9 @@
           <p>Research</p>
         </button>
         <p class='section_content-expandable'>
-          Possibilities are explored, options generated and technological feasibility testing is performed.
-          Data and research is collated as appropriate to inform the design phase.
+          Possibilities are explored, options generated, and technological feasibility testing is performed.
+
+          Data and research can be collated as appropriate to inform the design phase.
         </p>
       </div>
 
@@ -228,9 +230,11 @@
           <p>Proposal & Sign Off</p>
         </button>
         <p class='section_content-expandable'>
-          A plan is drafted along with timescales and costings.
-          Several options can be presented to you as appropriate, with differing  features.
-          You then review the proposal and we sign off on the contract for work to begin. This process ensures that the determined proposal has everything you need and the contract protects all parties.
+        A plan is drafted along with timescales and costings.
+
+        Several options can be presented to you as appropriate, with differing features.
+
+        The proposal can then be reviewed, amended, and signed off on for work to then begin. This process ensures that the determined proposal has everything you need, and the contract protects all parties.
         </p>
       </div>
     </div>
@@ -253,7 +257,9 @@
         <button class='section_content-button'>
           <p>Design | Initial Ideation</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          A range of ideas is generated through the creative process, approaching the brief from multiple angles, and whittled down to the most appropriate.
+        </p>
       </div>
 
       <div class='section_content'>
@@ -269,7 +275,11 @@
         <button class='section_content-button'>
           <p>Concept Selection</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          From these, the best idea is selected either by me, or by offering you the final say.
+
+          The nature of some projects may mean that the optimal solution is obvious, or decided based on professional judgment, so this stage may not apply to all projects.
+        </p>
       </div>
 
       <div class='section_content'>
@@ -285,7 +295,13 @@
         <button class='section_content-button'>
           <p>Iterative Development</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          Iteration is the heart of design.
+
+          Every aspect of the selected idea is assessed and evolved across multiple directions to find its optimal form.
+          
+          The idea is refined and built upon to test every scenario and account for every use-case.
+        </p>
       </div>
 
       <div class='section_content'>
@@ -301,7 +317,11 @@
         <button class='section_content-button'>
           <p>Review</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          The final piece is evaluated against the specification.
+          
+          If any changes or revision is required or desired, this insight can be fed back and put through the design process again.
+        </p>
       </div>
     </div>
 
@@ -323,7 +343,9 @@
         <button class='section_content-button'>
           <p>Content Writing</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          For web projects, this is where there is an option for content creation such as writing post backlogs or doing graphics work not covered by the design.
+        </p>
       </div>
 
       <div class='section_content'>
@@ -339,7 +361,13 @@
         <button class='section_content-button'>
           <p>Building / Coding / Prototyping</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          The final concept is engineered and deployed. 
+
+          For code based projects this involved writing the code, testing and (if required) deployment & setup.
+
+          For more physical projects, this encapsulates creating renderings, prototypes, and specification documentation.
+        </p>
       </div>
 
       <div class='section_content'>
@@ -355,7 +383,9 @@
         <button class='section_content-button'>
           <p>Testing & Review</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          Before final delivery, anything that has not yet been tested can be put through its paces, to ensure swift deployment.
+        </p>
       </div>
     </div>
 
@@ -377,7 +407,11 @@
         <button class='section_content-button'>
           <p>Additional Services</p>
         </button>
-        <p class='section_content-expandable'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class='section_content-expandable'>
+          I believe that it is though commitments to sustainable practice, in all aspects of work, that real value is achieved.
+
+          I believe firmly in building strong professional relationships and networks that last. I am committed to offering ongoing support and collaboration to ensure [] long after the delivery has taken place.
+        </p>
       </div>
     </div>
 
