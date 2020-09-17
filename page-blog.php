@@ -7,11 +7,12 @@
  * @package RobynVeitch
  */
 
-get_header();
-get_template_part('template-parts/navigation/navbar');
+  get_header();
+  get_template_part('template-parts/navigation/navbar');
 ?>
 
 	<main id="primary" class="site-main page-blog">
+  <div data-oddert='page-blog.php'></div>
 	<?php
     $args = array(
       'post_type' => 'post'
@@ -19,16 +20,30 @@ get_template_part('template-parts/navigation/navbar');
 
     $post_query = new WP_Query($args);
 
-    if($post_query->have_posts() ) {
-      while($post_query->have_posts() ) {
+    if( $post_query->have_posts() ) {
+      while( $post_query->have_posts() ) {
         $post_query->the_post();
+				get_template_part('template-parts/post/list-content');
+      }
+    };
 
-					get_template_part('template-parts/post/list-content')
-				?>
-    <?php
-        }
-    	}
-		?>
+    $total_pages = $post_query->max_num_pages;
+
+    if ($total_pages > 1) {
+      $curr_page = max( 1, get_query_var('paged') );
+
+      echo paginate_links(array(
+        'base' => get_pagenum_link(1) . '%_%',
+        'format' => '/page/%#%',
+        'current' => $curr_page,
+        'total' => $total_pages,
+        'prev_text' => __('previous'),
+        'next_text' => __('next')
+      ));
+    } else {      
+      echo "<h3>" . _e('404 Error&#58; Not Found', '') . "</h3>";
+    }
+	?>
 	</main><!-- #main -->
 
 <?php
