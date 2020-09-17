@@ -175,7 +175,16 @@
                 $post_categories = get_the_category( $id );
                 $thumb = get_the_post_thumbnail_url( $id );
                 ?>
-                  <div class='folio-item' data-folio-tags='[<?php foreach( $post_categories as $cat ) { echo $cat->slug . ', '; } ?>]'>
+                  <div class='folio-item' data-folio-tags='[<?php 
+                    $idx = sizeof($post_categories);
+                    while ($idx > 0) {
+                      echo $post_categories[$idx]->slug;
+                      if ($idx > 1 && $idx != sizeof($post_categories)) {
+                        echo ', ';
+                      }
+                      $idx--;
+                    }
+                  ?>]'>
                     <a href='<?php echo $name ?>' class='folio-item__wrapper'>
                       <img src='<?php echo $thumb; ?>' />
                       <h3><?php echo $title ?></h3>
