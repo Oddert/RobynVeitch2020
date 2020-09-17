@@ -78,7 +78,7 @@
 
       <div class='section-title'>
         <div class='section-title__inner'>
-          <h2 class='section-title'>portfolio</h2>
+          <h2 class='section-title__inner-txt'>portfolio</h2>
         </div>
       </div>
 
@@ -226,7 +226,7 @@
 
       <div class='section-title'>
         <div class='section-title__inner'>
-          <h2 class='section-title'>about</h2>
+          <h2 class='section-title__inner-txt'>about</h2>
         </div>
       </div>
 

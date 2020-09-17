@@ -435,7 +435,7 @@ body .site .site__main.homepage .nav-container nav .nav-toggle:hover{color:#ecf0
 body .site .site__main.homepage .nav-container nav ul{-webkit-box-flex:6;-ms-flex:6;flex:6;list-style-type:none;margin:0;padding:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:distribute;justify-content:space-around;height:100%}
 body .site .site__main.homepage .nav-container nav ul li{height:100%}
 body .site .site__main.homepage .nav-container nav ul li a{height:100%;cursor:pointer;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding:0 3rem;text-decoration:none}
-body .site .site__main.homepage .nav-container nav ul li span{opacity:0;color:#a4a8a9;-webkit-transition:.15s linear;transition:.15s linear;margin-right:2rem;text-align:right}
+body .site .site__main.homepage .nav-container nav ul li span{opacity:0;width:0;color:#a4a8a9;-webkit-transition:.15s linear;transition:.15s linear;margin-right:2rem;text-align:right}
 body .site .site__main.homepage .nav-container nav ul li i{font-size:32px;margin:0;color:#a4a8a9}
 body .site .site__main.homepage .nav-container nav ul li:hover span,body .site .site__main.homepage .nav-container nav ul li:hover i{color:#ecf0f1}
 body .site .site__main.homepage .nav-container.open{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;background:rgba(0,0,0,0.5)}
@@ -443,7 +443,7 @@ body .site .site__main.homepage .nav-container.open nav{width:100%}
 body .site .site__main.homepage .nav-container.open nav .nav-toggle i.nav-toggle__icon--open{display:none}
 body .site .site__main.homepage .nav-container.open nav .nav-toggle i.nav-toggle__icon--close{display:block}
 body .site .site__main.homepage .nav-container.open nav ul li{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
-body .site .site__main.homepage .nav-container.open nav ul li span{opacity:1}
+body .site .site__main.homepage .nav-container.open nav ul li span{opacity:1;width:auto}
 body .site .site__main.homepage .nav-container.open nav ul li:hover{background:rgba(0,0,0,0.78)}
 body .site .site__main.homepage.top{grid-template-columns:7vw 15vw 10vw 1fr 10vw 30vw 7vw}
 body .site .site__main.homepage.top .header{opacity:0}
@@ -521,7 +521,7 @@ body .site .site__main.homepage .landing .landing-subtitle span{color:#2d3e50;ma
 .footer .blog{grid-area:b}
 .footer .blog a{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .footer .blog:hover{background:rgba(0,0,0,0.1)}
-.section-title{position:-webkit-sticky;position:sticky;top:0;display:inline-block;border:0}
+.section-title{position:-webkit-sticky;position:sticky;z-index:3;top:0;display:inline-block;border:0}
 .section-title .section-title__inner{position:relative;z-index:1;width:500px}
 .section-title .section-title__inner:after{position:absolute}
 .section-title .section-title__inner:after{content:'';background:#8d44ad;height:100%;width:100%;top:14px;left:14px;z-index:-1;position:absolute}
@@ -535,6 +535,7 @@ body .site .site__main.homepage .landing .landing-subtitle span{color:#2d3e50;ma
 .main-navigation ul li{display:-webkit-box;display:-ms-flexbox;display:flex;background:#9d5fdd}
 }@media only screen and (max-width:1300px){.portfolio{grid-column:1 / 6}
 .about{grid-column:1 / -1}
+.footer{grid-column:1 / -1}
 body .site .site__main.noscript .footer{grid-column:1 / -1}
 .page-blog{width:95vw}
 .post-list-content{margin:0;padding:10px 0}
@@ -554,6 +555,7 @@ body .site .site__main .nav-container,body .site .site__main.top .nav-container{
 body .site .site__main .nav-container nav,body .site .site__main.top .nav-container nav{width:100px;-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 body .site .site__main .nav-container nav ul li,body .site .site__main.top .nav-container nav ul li{display:none}
 body .site .site__main .nav-container nav ul li.nav-development,body .site .site__main .nav-container nav ul li.nav-design,body .site .site__main.top .nav-container nav ul li.nav-development,body .site .site__main.top .nav-container nav ul li.nav-design{display:none}
+body .site .site__main .nav-container nav ul li a,body .site .site__main.top .nav-container nav ul li a{padding:0 3rem 0 0}
 body .site .site__main .nav-container nav .nav-toggle i,body .site .site__main.top .nav-container nav .nav-toggle i{-webkit-text-stroke-width:1px;-webkit-text-stroke-color:black}
 body .site .site__main .nav-container.open,body .site .site__main.top .nav-container.open{background:rgba(0,0,0,0.7)}
 body .site .site__main .nav-container.open nav,body .site .site__main.top .nav-container.open nav{width:100vw}
@@ -581,7 +583,9 @@ body .site .site__main .nav-container.open nav ul li.nav-development,body .site 
 .comments-area{grid-template-columns:1fr 90vw 1fr}
 }@media screen and (max-width:768px){.landing .landing-title{font-size:36px}
 .landing .landing-subtitle{font-size:20px}
-.section-title h2{width:50vw;font-size:22px;padding:20px 40px}
+.section-title .section-title__inner{width:100%}
+.section-title .section-title__inner:after{content:'';background:#8d44ad;height:100%;width:90%;top:10px;left:5%;z-index:-1;position:absolute}
+.section-title .section-title__inner .section-title__inner-txt{font-size:22px;padding:12px 40px;width:100%}
 main.robyn-veitch-cv{font-size:.55em}
 main.robyn-veitch-cv .cv-container .cv .cv-grid{width:500px;height:707.142857143px}
 }@media screen and (max-width:550px){main.robyn-veitch-cv{font-size:1.7vw}
