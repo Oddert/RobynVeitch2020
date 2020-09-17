@@ -18,9 +18,11 @@
   <div class='intro'>
     <img class='intro-cover_img' src="/wp-content/uploads/2020/08/floating_cards-crop.png" alt="" />
     <div class='intro-cover_filter'></div>
-    <div class='intro-text'>
-      <h2 class='intro-title'>Lets build something together.</h2>
-      <p class='intro-description'>Whether you have a grand vison to implement, a spark of an idea, or just have a curious question</p>
+    <div class="intro-content">
+      <div class='intro-text'>
+        <h2 class='intro-title'>Lets build something together.</h2>
+        <p class='intro-description'>Whether you have a grand vison to implement, the spark of an idea, or just a question</p>
+      </div>
       <div class='intro-button__container'>
         <div class='intro-button__wrapper'>
           <button class='intro-button'>Get in touch</button>
@@ -172,9 +174,9 @@
     </div>
 
     <div class='process_section p3c'>
-      <div class='section_label'>
+      <button class='section_label'>
         <h4 class='section_label-text'>Specification</h4>
-      </div>
+      </button>
 
       <div class='section_content'>
         <div class='section_content-arrow--head'></div>
@@ -251,9 +253,9 @@
     </div>
 
     <div class='process_section p4c light'>
-      <div class='section_label'>
+      <button class='section_label'>
         <h4 class='section_label-text'>Design</h4>
-      </div>
+      </button>
 
       <div class='section_content'>
         <div class='section_content-arrow--head show arrow_end'><i class='fas fa-caret-right'></i></div>
@@ -349,9 +351,9 @@
     </div>
 
     <div class='process_section p3c'>
-      <div class='section_label'>
+      <button class='section_label'>
         <h4 class='section_label-text'>Implementation</h4>
-      </div>
+      </button>
 
       <div class='section_content'>
         <div class='section_content-arrow--head'></div>
@@ -421,9 +423,9 @@
     </div>
 
     <div class='process_section p1c highlight'>
-      <div class='section_label'>
+      <button class='section_label'>
         <h4 class='section_label-text'>Future</h4>
-      </div>
+      </button>
 
       <div class='section_content'>
         <div class='section_content-arrow--head'></div>
@@ -440,10 +442,10 @@
         </button>
         <div class='section_content-expandable'>
           <p>
-            I believe that it is though commitments to sustainable practice, in all aspects of work, that real value is achieved.
+            I believe that it is though commitments to sustainable practice, in all aspects of work, that real value is created.
           </p>
           <p>
-            I believe firmly in building strong professional relationships and networks that last. I am committed to offering ongoing support and collaboration to ensure [] long after the delivery has taken place.
+            It is through strong professional relationships that we create networks that last. I am committed to offering ongoing support and collaboration to ensure satisfaction long after the delivery has taken place.
           </p>
         </div>
       </div>
@@ -456,29 +458,46 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
 
+    const sectionLables = document.querySelectorAll('.section_label')
     const collapse = document.querySelectorAll('.section_content')
 
-    function toggle (e) {
+    function collapseToggle (e) {
       e.target
       .closest('.section_content')
       .querySelector('.section_content-expandable')
       .classList.toggle('open')
     }
 
-    function setCollapseHeight (expandable) {
+    function collapseSetHeight (expandable) {
       expandable.style.height = `${expandable.scrollHeight}px`
+    }
+
+    function sectionLableToggle (e) {
+      const section = e.target.closest('.process_section')
+      const expandables = section.querySelectorAll('.section_content-expandable')
+      let open = false
+      expandables.forEach(each => {
+        if (each.classList.contains('open')) open = true
+      })
+      if (open) {
+        expandables.forEach(each => each.classList.remove('open'))
+      } else {
+        expandables.forEach(each => each.classList.add('open'))
+      }
     }
 
     collapse.forEach(each => {
       let expandable = each.querySelector('.section_content-expandable')
-      each.querySelector('.section_content-button').onclick = toggle
-      setCollapseHeight (expandable)
+      each.querySelector('.section_content-button').onclick = collapseToggle
+      collapseSetHeight (expandable)
       expandable.classList.toggle('open')
     })
 
+    sectionLables.forEach(each => each.onclick = sectionLableToggle)
+
     window.addEventListener('resize', debounce(() => {
       collapse.forEach(each => 
-        setCollapseHeight(each.querySelector('.section_content-expandable'))
+      collapseSetHeight(each.querySelector('.section_content-expandable'))
       )
     }), 250)
 

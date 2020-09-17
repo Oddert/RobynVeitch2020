@@ -2110,25 +2110,33 @@ $header_height: 70px;
       opacity: .66;
       // z-index: -1;
     }
-    .intro-text {
-      width: 66vw;
+    .intro-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
       padding: 20px 0 100px 0;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      .intro-title {
-        @include text(72px);
-        margin: 100px 0;
-      }
-      .intro-description {
-        @include text(22px);
-        margin: 50px 0;
+      .intro-text {
+        width: 66vw;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        .intro-title {
+          @include text(72px);
+          margin: 100px 0;
+        }
+        .intro-description {
+          @include text(22px);
+          margin: 50px 0;
+          text-align: center;
+        }
       }
       .intro-button__container {
         display: flex;
         justify-content: center;
         .intro-button__wrapper {
           position: relative;
+          z-index: 1;
+          // width: 30vw;
           .intro-button {
             transition: .1s linear;
             background: linear-gradient(54.91deg, #9350D8 15.04%, #D3AEF5 85.91%, #D7B7F3 85.91%);
@@ -2329,6 +2337,11 @@ $header_height: 70px;
         display: flex;
         align-items: center;
         justify-content: center;
+        background: none;
+        color: $color_default__light;
+        cursor: pointer;
+        border: none;
+        border-radius: 0;
         .section_label-text {
           @include font_priority_poiret_extend;
           font-size: 32px;
@@ -2476,6 +2489,9 @@ $header_height: 70px;
           transition: height .5s, max-height .5s;
           // height: 80px;
           height: auto;
+          p {
+            padding-bottom: 10px;
+          }
           &.open {
             // <crime>
             // "Tell ma I'm sorry..."

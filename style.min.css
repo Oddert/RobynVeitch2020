@@ -328,16 +328,17 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .page-services .intro{width:100%;min-height:calc(100vh - 70px);position:relative}
 .page-services .intro .intro-cover_img{position:absolute;top:0;left:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
 .page-services .intro .intro-cover_filter{position:absolute;top:0;left:0;width:100%;height:100%;background:#162b40;opacity:.66}
-.page-services .intro .intro-text{width:66vw;padding:20px 0 100px 0;margin:0 auto;position:relative;z-index:1}
-.page-services .intro .intro-text .intro-title{font-size:72px;color:#fff;text-shadow:0 4px 4px #2d3e50;font-weight:lighter;margin:100px 0}
-.page-services .intro .intro-text .intro-description{font-size:22px;color:#fff;text-shadow:0 4px 4px #2d3e50;font-weight:lighter;margin:50px 0}
-.page-services .intro .intro-text .intro-button__container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-.page-services .intro .intro-text .intro-button__container .intro-button__wrapper{position:relative}
-.page-services .intro .intro-text .intro-button__container .intro-button__wrapper .intro-button{-webkit-transition:.1s linear;transition:.1s linear;background:linear-gradient(54.91deg,#9350d8 15.04%,#d3aef5 85.91%,#d7b7f3 85.91%);border:0;border-radius:0;color:#ecf0f1;font-size:24px;padding:20px 40px;cursor:pointer}
-.page-services .intro .intro-text .intro-button__container .intro-button__wrapper .intro-button:before{-webkit-transition:.1s linear;transition:.1s linear}
-.page-services .intro .intro-text .intro-button__container .intro-button__wrapper .intro-button:before{content:'';background:#9a59b5;height:100%;width:100%;position:absolute;top:6px;left:6px;z-index:-1}
-.page-services .intro .intro-text .intro-button__container .intro-button__wrapper .intro-button:hover{color:#fff;background:linear-gradient(54.91deg,#8c43d6 15.04%,#d3aef5 85.91%,#d7b7f3 85.91%)}
-.page-services .intro .intro-text .intro-button__container .intro-button__wrapper .intro-button:hover:before{content:'';background:#8d44ad;height:100%;width:100%;position:absolute;top:10px;left:10px;z-index:-1}
+.page-services .intro .intro-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:distribute;justify-content:space-around;padding:20px 0 100px 0}
+.page-services .intro .intro-content .intro-text{width:66vw;margin:0 auto;position:relative;z-index:1}
+.page-services .intro .intro-content .intro-text .intro-title{font-size:72px;color:#fff;text-shadow:0 4px 4px #2d3e50;font-weight:lighter;margin:100px 0}
+.page-services .intro .intro-content .intro-text .intro-description{font-size:22px;color:#fff;text-shadow:0 4px 4px #2d3e50;font-weight:lighter;margin:50px 0;text-align:center}
+.page-services .intro .intro-content .intro-button__container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.page-services .intro .intro-content .intro-button__container .intro-button__wrapper{position:relative;z-index:1}
+.page-services .intro .intro-content .intro-button__container .intro-button__wrapper .intro-button{-webkit-transition:.1s linear;transition:.1s linear;background:linear-gradient(54.91deg,#9350d8 15.04%,#d3aef5 85.91%,#d7b7f3 85.91%);border:0;border-radius:0;color:#ecf0f1;font-size:24px;padding:20px 40px;cursor:pointer}
+.page-services .intro .intro-content .intro-button__container .intro-button__wrapper .intro-button:before{-webkit-transition:.1s linear;transition:.1s linear}
+.page-services .intro .intro-content .intro-button__container .intro-button__wrapper .intro-button:before{content:'';background:#9a59b5;height:100%;width:100%;position:absolute;top:6px;left:6px;z-index:-1}
+.page-services .intro .intro-content .intro-button__container .intro-button__wrapper .intro-button:hover{color:#fff;background:linear-gradient(54.91deg,#8c43d6 15.04%,#d3aef5 85.91%,#d7b7f3 85.91%)}
+.page-services .intro .intro-content .intro-button__container .intro-button__wrapper .intro-button:hover:before{content:'';background:#8d44ad;height:100%;width:100%;position:absolute;top:10px;left:10px;z-index:-1}
 .page-services .client_work{background:#4d4b4d;color:#ecf0f1}
 .page-services .client_work .client_work-title{margin:0;font-size:26px;letter-spacing:4px;font-weight:normal;padding:50px 0 0 150px}
 .page-services .client_work .client_work-case_studies{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;overflow-x:scroll;padding:50px 75px}
@@ -364,7 +365,7 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .page-services .process .process_intro .intro_text .intro_text-title{font-family:'poiret one','open sans','Avenir Next LT Pro','roboto','droid sans','helvetica','sans-serif','arial';font-size:42px;font-weight:500;letter-spacing:2px;margin-top:0}
 .page-services .process .process_intro .intro_text .intro_text-subtitle{font-weight:lighter;font-size:26px;letter-spacing:2px;margin:50px 0}
 .page-services .process .process_section{display:grid;grid-template-columns:1fr 2fr;grid-auto-rows:auto}
-.page-services .process .process_section .section_label{grid-row:1 / -1;grid-column:1;margin:0;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.page-services .process .process_section .section_label{grid-row:1 / -1;grid-column:1;margin:0;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background:0;color:#ecf0f1;cursor:pointer;border:0;border-radius:0}
 .page-services .process .process_section .section_label .section_label-text{font-family:'poiret one','open sans','Avenir Next LT Pro','roboto','droid sans','helvetica','sans-serif','arial';font-size:32px;font-weight:500;letter-spacing:4px;margin:0}
 .page-services .process .process_section .section_content{grid-column:2;display:grid;grid-template-columns:auto auto 1fr;grid-template-rows:1fr auto;position:relative;-webkit-transition:1s linear;transition:1s linear}
 .page-services .process .process_section .section_content p{margin:0;padding:0;text-align:left}
@@ -382,6 +383,7 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .page-services .process .process_section .section_content .section_content-bullet_line .bullet_line-border{height:100%;position:relative;left:50%;border-left:1px solid #ecf0f1}
 .page-services .process .process_section .section_content .section_content-button{grid-row:1;grid-column:3;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:0;border:0;border-radius:0;margin:20px 0;padding:15px 50px;color:#ecf0f1;letter-spacing:2px;font-size:20px;cursor:pointer}
 .page-services .process .process_section .section_content .section_content-expandable{grid-row:2;grid-column:3;padding:0 100px 0 50px;margin:0 0 20px 0;overflow:hidden;-webkit-transition:height .5s,max-height .5s;transition:height .5s,max-height .5s;height:auto}
+.page-services .process .process_section .section_content .section_content-expandable p{padding-bottom:10px}
 .page-services .process .process_section .section_content .section_content-expandable.open{height:0 !important;margin:0}
 .page-services .process .process_section.light{background:#848284}
 .page-services .process .process_section.highlight{background:rgba(26,190,211,0.35)}
@@ -425,7 +427,7 @@ body .site .site__main.homepage section.section_reader{grid-column:3 / 5;grid-ro
 body .site .site__main.homepage section.section_max{grid-column:1 / -1;grid-row:2 / -1;background:rgba(196,166,215,0.1)}
 body .site .site__main.homepage h1{font-family:'poiret one','arial','helvetica';color:#fff;font-size:3rem;font-weight:500;letter-spacing:10px;background:#9d5fdd;margin:0 0 14px 0;padding:20px 60px;display:inline-block}
 body .site .site__main.homepage .nav-container{grid-column:6 / -1;grid-row:1 / -1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}
-body .site .site__main.homepage .nav-container nav{-webkit-transition:.3s cubic-bezier(0,1.64,0.76,0.89);transition:.3s cubic-bezier(0,1.64,0.76,0.89);-webkit-transition:.15s linear;transition:.15s linear;top:0;width:7vw;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+body .site .site__main.homepage .nav-container nav{-webkit-transition:.3s cubic-bezier(0,1.64,0.76,0.89);transition:.3s cubic-bezier(0,1.64,0.76,0.89);-webkit-transition:.15s linear;transition:.15s linear;top:0;min-width:7vw;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 body .site .site__main.homepage .nav-container nav .nav-toggle{cursor:pointer;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding:0 3rem;-webkit-box-flex:1;-ms-flex:1;flex:1;background:0;border:0;border-radius:0;font-size:32px;color:#a4a8a9}
 body .site .site__main.homepage .nav-container nav .nav-toggle i.nav-toggle__icon--open{display:block}
 body .site .site__main.homepage .nav-container nav .nav-toggle i.nav-toggle__icon--close{display:none}
