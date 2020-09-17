@@ -13,9 +13,17 @@
 
 	<main id="primary" class="site-main page-blog">
   <div data-oddert='page-blog.php'></div>
-	<?php
+  <?php
+    $pagenum = get_query_var('paged') < 1 ? 1 : get_query_var('paged') - 1;
+    $perpage = 10;
+
+    // echo $pagenum;
+
     $args = array(
-      'post_type' => 'post'
+      'post_type' => 'post',
+      'posts_per_page' => $perpage,
+      'paged' => get_query_var( 'paged' ),
+      // 'offset' => $pagenum * $perpage,
     );
 
     $post_query = new WP_Query($args);
