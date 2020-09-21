@@ -12,9 +12,11 @@
 
   <div class='site__main homepage noscript'>
 
-    <header class='header'>
-      <!--   <h1>portfolio</h1> -->
-    </header>
+    <div hidden data-oddert='home.php' data-featuredimg='<?php echo get_header_image(); ?>'></div>
+
+    <!-- <header class='header'>
+        <h1>portfolio</h1>
+    </header> -->
 
     <!-- WARNING: body should have .noscript by default but I'm a riddy and made this on a platform (codepen) where you can't add class to body. There is a line in the js which does this for me. :C -->
 

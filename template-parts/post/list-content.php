@@ -16,7 +16,7 @@
     <div data-oddert='template_parts__post__list-content.php'></div>
 
     <div class='image__wrapper'>
-      <a href="' . esc_url( get_permalink() ) . '">
+      <a href="<?php echo esc_url( get_permalink() ); ?>">
         <?php 
           the_post_thumbnail(); 
           // get_the_post_thumbnail(get_the_ID(), 'full');

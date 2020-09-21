@@ -56,7 +56,7 @@ textarea{overflow:auto}
 details{display:block}
 summary{display:list-item}
 template{display:none}
-[hidden]{display:none}
+[hidden],[data-oddert]{display:none}
 html{-webkit-box-sizing:border-box;box-sizing:border-box}
 body,button,input,select,optgroup,textarea{font-family:'open sans','Nirmala UI',Roboto,'helvetica',"Helvetica Neue",sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Oxygen-Sans,Ubuntu,Cantarell;color:#404040;font-size:1rem;line-height:1.5}
 h1,h2,h3,h4,h5,h6{clear:both}
@@ -414,7 +414,7 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .post-list-content article .details__wrapper .entry-content{display:-webkit-box;display:-ms-flexbox;display:flex;background:0;-webkit-box-shadow:none;box-shadow:none}
 .post-list-content article .details__wrapper .entry-content p{font-size:15px;line-height:normal;margin:0 0 30px;margin:0}
 .post-list-content article .details__wrapper .entry-content:before,.post-list-content article .details__wrapper .entry-content:after{display:none}
-body.home .site{background-color:#fff;background-image:url("https://robynveitch.com/img/banner_code.jpg");background-image:url("https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_960_720.jpg");background-size:cover;background-attachment:fixed;background-position:center;background-repeat:no-repeat;-ms-overflow-style:none;scrollbar-width:none}
+body.home .site{background-color:#fff;background-image:url("https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_960_720.jpg");background-image:url("https://raw.githubusercontent.com/Oddert/oddert.github.io/master/img/banner_code.jpg");background-image:url("http://robynveitch.com/wp-content/uploads/2020/09/banner_code-scaled.jpg");background-size:cover;background-attachment:fixed;background-position:center;background-repeat:no-repeat;-ms-overflow-style:none;scrollbar-width:none}
 body.home .site::-webkit-scrollbar{display:none}
 .homepage-cover{top:0;left:0;background:rgba(43,64,22,0.66);background:rgba(64,22,43,0.66);background:rgba(22,43,64,0.66)}
 body .site .site__main.homepage{background:rgba(22,43,64,0.66);display:grid;grid-template-columns:7vw 15vw 10vw 1fr 10vw 15vw 7vw;grid-template-rows:auto 1fr 40px 40px;height:100vh}

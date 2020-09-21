@@ -515,7 +515,7 @@ template {
 /**
  * Add the correct display in IE 10.
  */
-[hidden] {
+[hidden], [data-oddert] {
 	display: none;
 }
 
@@ -2676,8 +2676,9 @@ body.home .site {
   // width: 100vw;
   // height: 100vh;
   background-color: #fff;
-  background-image: url("https://robynveitch.com/img/banner_code.jpg");
   background-image: url("https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_960_720.jpg");
+  background-image: url("https://raw.githubusercontent.com/Oddert/oddert.github.io/master/img/banner_code.jpg");
+  background-image: url("http://robynveitch.com/wp-content/uploads/2020/09/banner_code-scaled.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -3473,7 +3474,7 @@ body .site .site__main.homepage {
 
 
 
-
+// TODO: between 1300 and 1550 (ish) reduce gutter space between folio items on home
 
 @media screen and (min-width: 800px) {
   .menu-toggle {
