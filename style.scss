@@ -3242,6 +3242,7 @@ body .site .site__main.homepage {
       // zdebug
       @include odd_shadow_after(-14px, -14px, #ecf0f1, -1, $radius, $radius);
       &:hover {
+        // box-shadow: -5px -5px 10px rgba(0,0,0,.23);
         // zdebug
         @include odd_shadow_after(-24px, -24px, #fff, -1, $radius, $radius);
       }
@@ -3509,6 +3510,15 @@ body .site .site__main.homepage {
   }
   .page-blog {
     width: 95vw;
+  }
+  .portfolio .content .folio-items {
+    // grid-template-columns: repeat(2, 1fr);
+    // margin: 30px 0;
+    padding: 10px;
+    grid-gap: 10px;
+    .folio-item .folio-item__wrapper img {
+      // height: 40vw;
+    }
   }
   .post-list-content {
     // margin: 10px 0 30px;

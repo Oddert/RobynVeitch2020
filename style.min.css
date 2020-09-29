@@ -538,6 +538,7 @@ body .site .site__main.homepage .landing .landing-subtitle span{color:#2d3e50;ma
 .footer{grid-column:1 / -1}
 body .site .site__main.noscript .footer{grid-column:1 / -1}
 .page-blog{width:95vw}
+.portfolio .content .folio-items{padding:10px;grid-gap:10px}
 .post-list-content{margin:0;padding:10px 0}
 .post-list-content article{grid-template-columns:1fr;grid-auto-rows:auto}
 .post-list-content article .image__wrapper{height:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
