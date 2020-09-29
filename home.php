@@ -252,7 +252,8 @@
             </h2>
           </div>
           <div class='profile-picture'>
-            <img src='https://res.cloudinary.com/oddert/image/upload/v1581962527/Portfolio/folio_profile.jpg' />
+            <!-- <img src='https://res.cloudinary.com/oddert/image/upload/v1581962527/Portfolio/folio_profile.jpg' /> -->
+            <img src='/wp-content/uploads/2020/09/main_profile.jpg' />
           </div>
         </div>
         <div class='bio'>

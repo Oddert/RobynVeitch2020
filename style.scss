@@ -1056,6 +1056,57 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .page-content {
+    margin: 2em 0 100px;
+  }
+  .page-title {
+    margin-top: 100px;
+  }
+  .nf-error-message {
+    font-weight: bolder;
+  }
+  .search-form {
+    margin: 4em 0 0;
+    display: flex;
+    align-self: stretch;
+    min-width: 50vw;
+    label {
+      flex: 1;
+      input {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 0 15px;
+      }
+    }
+    .search-submit {
+      border-radius: 0;
+      border: none;
+      background: #3598DB;
+      color: #ecf0f1;
+      cursor: pointer;
+      padding: 20px 40px;
+      font-weight: 600;
+      transition: .1s linear;
+      letter-spacing: 2px;
+      &:hover {
+        color: #fff;
+        background: #40A3E6;
+      }
+      &:active {
+        background: #297FB8;
+      }
+    }
+  }
+  .nf-contact {
+    text-align: center;
+  }
+}
+
 /* Comments
 --------------------------------------------- */
 
@@ -1967,6 +2018,12 @@ $header_height: 70px;
   .widget_recent_entries {
     ul {
       margin: 0 0 20px;
+      li a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
   .widget_calendar {
@@ -3514,8 +3571,8 @@ body .site .site__main.homepage {
   .portfolio .content .folio-items {
     // grid-template-columns: repeat(2, 1fr);
     // margin: 30px 0;
-    padding: 10px;
-    grid-gap: 10px;
+    padding: 30px;
+    grid-gap: 15px;
     .folio-item .folio-item__wrapper img {
       // height: 40vw;
     }
