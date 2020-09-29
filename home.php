@@ -4,10 +4,34 @@
  * 
  * @package RobynVeitch
  */
-	get_header();
+	// get_header();
 	// get_template_part('template-parts/navigation/navbar');
 	show_admin_bar(False);
 ?>
+
+<?php
+  // Replacement for get_header() to allow manipulation of a style attributed to #page.site
+  // may be possible to change functionality to accomodate get_header() in the future, OR reuse code pieces
+  // e.g remove the begining of the body tag to anotehr template and make sure to include it in all other files.
+?>
+
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Poiret+One&display=swap" rel="stylesheet">
+
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<div id="page" class="site">
+	<div data-oddert='header.php'></div>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'RobynVeitch' ); ?></a>
 
 
   <div class='site__main homepage noscript'>
@@ -53,10 +77,9 @@
               <i class='fa fa-user'></i>
             </a>
           </li>
-          <!-- TODO: add services page -->
           <li title='contact' class='nav-contact'>
             <a href='/services'>
-              <span>services / contact</span>
+              <span>services</span>
               <i class='fa fa-comment-dots'></i>
             </a>
           </li>
@@ -264,6 +287,17 @@
             I come from a background in industrial design and have worked in development and code for over four years. I take a research-first approach to my work with the core ethos of adding genuine value to the world and improving people's lives. 
           </p>
         </div>
+        <ul class="about-contact">
+          <li>
+            <i class="fa fa-envelope"></i> robyn@robynveitch.com
+          </li>
+          <li>
+            <i class="fa fa-phone"></i> (+44) 07767 297041
+          </li>
+          <li>
+            <i class="fa fa-map-marker"></i> Isle of Dogs, London, England, UK
+          </li>
+        </ul>
         <ul class='social-links' id='contact'>
           <li class='social-link linkedin'>
             <a href='https://www.linkedin.com/in/robyn-veitch-582aa3b6/' title='Linkedin profile link'>
@@ -284,10 +318,9 @@
       </section>
 
       <div class='footer'>
-        <!-- TODO: add services page -->
         <div class='contact'>
           <a href='/services'>
-            <i class='fa fa-chevron-left'></i> Services + Contact
+            <i class='fa fa-chevron-left'></i> Services
           </a>
         </div>
         <div class='contact-wedge'></div>

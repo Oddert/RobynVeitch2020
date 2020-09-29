@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(typeAnimationTimer)
     typeAnimationTimer = 0
     const interval = () => {
-      if (Math.floor(Math.random() * 100) > 68) {
+      if (Math.floor(Math.random() * 100) > 93) {
         updateText (typeAnimationTracker)
         typeAnimationTracker ++
       }
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval (typeAnimationTimer)
       }
     }
-    typeAnimationTimer = setInterval (interval, 60)
+    typeAnimationTimer = setInterval (interval, 20)
   }
 
   function resetTags () {

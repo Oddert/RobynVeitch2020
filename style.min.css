@@ -497,9 +497,10 @@ body .site .site__main.homepage .landing .landing-subtitle span{color:#2d3e50;ma
 .portfolio .content .folio-items .folio-item .folio-item__wrapper:after{-webkit-transition:.15s linear;transition:.15s linear}
 .portfolio .content .folio-items .folio-item .folio-item__wrapper:hover{background:#f6fafb}
 .portfolio .content .folio-items .folio-item.hidden{display:none;opacity:0}
+body .site .site__main.homepage div.content{min-height:400px}
 .about{grid-column:3 / -1;background:0;border:0;margin:400px 0 800px;margin:400px 0 120px;display:grid;grid-auto-rows:auto;grid-template-columns:10vw 1fr 10vw}
 .about .content{display:grid;grid-template-columns:1fr 250px;grid-column:1 / -1}
-.about .content .intro{-webkit-box-flex:3;-ms-flex:3;flex:3;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:40px}
+.about .content .intro{-webkit-box-flex:3;-ms-flex:3;flex:3;display:-webkit-box;display:-ms-flexbox;display:flex;padding:40px}
 .about .content .intro .intro-text{margin:0;font-size:2.5rem;font-weight:400;letter-spacing:4px}
 .about .content .intro .intro-text .cursor{-webkit-animation:blink 1.2s infinite;animation:blink 1.2s infinite}
 .about .content .profile-picture{-webkit-box-flex:2;-ms-flex:2;flex:2;height:250px;width:250px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;z-index:1}
@@ -507,8 +508,11 @@ body .site .site__main.homepage .landing .landing-subtitle span{color:#2d3e50;ma
 .about .content .profile-picture:after{-webkit-transition:.2s linear;transition:.2s linear}
 .about .content .profile-picture:after{content:'';background:#ecf0f1;height:250px;width:250px;top:-14px;left:-14px;z-index:-1;position:absolute}
 .about .content .profile-picture:hover:after{content:'';background:#fff;height:250px;width:250px;top:-24px;left:-24px;z-index:-1;position:absolute}
-.about .bio{grid-column:2;padding:100px 0}
+.about .bio{grid-column:2;padding:0}
 .about .bio p{font-size:1.3rem}
+.about .about-contact{grid-column:2;list-style:none;padding:0;margin:0 0 75px;justify-self:center}
+.about .about-contact li{padding:10px;font-weight:bold;font-size:18px;letter-spacing:1px}
+.about .about-contact li i{margin-right:50px}
 .about .social-links{grid-column:1 / -1;display:-webkit-box;display:-ms-flexbox;display:flex;list-style-type:none;padding:0;margin:0}
 .about .social-links .social-link{-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-transition:.2s linear;transition:.2s linear;background:#fff}
 .about .social-links .social-link a{height:100%;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;font-size:2rem;padding:20px 0;text-decoration:none;color:#000}

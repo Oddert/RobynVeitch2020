@@ -3250,6 +3250,10 @@ body .site .site__main.homepage {
   }
 }
 
+body .site .site__main.homepage div.content {
+  min-height: 400px;
+}
+
 .about {
   grid-column: 3 / -1;
   background: none;
@@ -3269,7 +3273,7 @@ body .site .site__main.homepage {
     .intro {
       flex: 3;
       display: flex;
-      align-items: center;
+      // align-items: center;
       padding: 40px;
       .intro-text {
         margin: 0;
@@ -3313,9 +3317,25 @@ body .site .site__main.homepage {
   }
   .bio {
     grid-column: 2;
-    padding: 100px 0;
+    padding: 0px 0;
     p {
       font-size: 1.3rem;
+    }
+  }
+  .about-contact {
+    grid-column: 2;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 75px;
+    justify-self: center;
+    li {
+      padding: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1px;
+      i {
+        margin-right: 50px;
+      }
     }
   }
   .social-links {
@@ -3537,8 +3557,6 @@ body .site .site__main.homepage {
 // }
 
 
-
-// TODO: between 1300 and 1550 (ish) reduce gutter space between folio items on home
 
 @media screen and (min-width: 800px) {
   .menu-toggle {
