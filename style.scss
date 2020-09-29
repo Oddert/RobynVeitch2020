@@ -962,7 +962,13 @@ textarea {
                 &:hover {
                   background: $theme_primary-shadow;
                 }
-							}
+              }
+              &.current-menu-item {
+                a {
+                  border-top: 5px solid rgba(0,0,0,0);
+                  border-bottom: 5px solid $theme_primary-shadow--alt;
+                }
+              }
 						}
 					}
         }

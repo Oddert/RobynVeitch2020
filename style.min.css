@@ -123,6 +123,7 @@ textarea{width:100%}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-navbar-container ul{height:100%}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-navbar-container ul li a{-webkit-transition:.1s linear;transition:.1s linear;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#ecf0f1;font-size:18px;letter-spacing:2px;padding:0 20px;background:#9d5fdd}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-navbar-container ul li a:hover{background:#8d44ad}
+.site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-navbar-container ul li.current-menu-item a{border-top:5px solid rgba(0,0,0,0);border-bottom:5px solid #752c95}
 .site-header:before{content:'';background:#752c95;height:100%;width:90%;position:absolute;top:15px;left:5%;z-index:-999}
 .site-header.small .site-header__wrapper .site-header__wrapper--inner{height:42px}
 .site-header.small:before{content:'';background:#752c95;height:100%;width:90%;position:absolute;top:7.5px;left:5%;z-index:-999}
