@@ -3162,14 +3162,14 @@ body .site .site__main.homepage {
       }
     }
     .folio-items {
-      $spacing: 4em;
+      $spacing: 2.4em;
       padding: 100px 0;
       margin: 100px 0;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-auto-rows: auto;
       grid-gap: $spacing;
-      padding: 0 $spacing * 1.5;
+      padding: 0 $spacing * 2.5;
       // position: relative;
       .folio-item {
         display: flex;
