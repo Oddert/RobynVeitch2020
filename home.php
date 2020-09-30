@@ -6,7 +6,7 @@
  */
 	// get_header();
 	// get_template_part('template-parts/navigation/navbar');
-	show_admin_bar(False);
+	// show_admin_bar(False);
 ?>
 
 <?php
