@@ -2830,7 +2830,7 @@ body .site .site__main.homepage {
       min-width: $menu_collapse;
       height: 100%;
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
       $nav_icon_size: 32px;
       $nav_icon_color: #A4A8A9;
       $nav_icon_color--hover: #ecf0f1;
@@ -3817,9 +3817,9 @@ body .site .site__main.homepage div.content {
 
 @media screen and (max-width: 768px) {
 
-  .landing {
+  body .site .site__main.homepage .landing {
     .landing-title {
-      font-size: 36px;
+      font-size: 40px;
     }
     .landing-subtitle {
       font-size: 20px;
@@ -3839,6 +3839,13 @@ body .site .site__main.homepage div.content {
         width: 100%;
       }
     }
+  }
+
+  body .site .site__main.homepage .nav-container nav .nav-toggle {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 	main.robyn-veitch-cv {
@@ -3865,7 +3872,29 @@ body .site .site__main.homepage div.content {
 				height: $cv_height;
 			}
 		}
-	}
+  }
+  body .site .site__main.homepage .landing {
+    padding: 15px;
+    padding: 0;
+    .landing-title {
+      font-size: 30px;
+    }
+    .landing-subtitle {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body .site .site__main.homepage .landing {
+    padding: 0px;
+    .landing-title {
+      font-size: 30px;
+    }
+    .landing-subtitle {
+      font-size: 16px;
+    }
+  }
 }
 
 

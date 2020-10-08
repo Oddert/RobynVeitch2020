@@ -441,7 +441,7 @@ body .site .site__main.homepage section.section_reader{grid-column:3 / 5;grid-ro
 body .site .site__main.homepage section.section_max{grid-column:1 / -1;grid-row:2 / -1;background:rgba(196,166,215,0.1)}
 body .site .site__main.homepage h1{font-family:'poiret one','arial','helvetica';color:#fff;font-size:3rem;font-weight:500;letter-spacing:10px;background:#9d5fdd;margin:0 0 14px 0;padding:20px 60px;display:inline-block}
 body .site .site__main.homepage .nav-container{grid-column:6 / -1;grid-row:1 / -1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}
-body .site .site__main.homepage .nav-container nav{-webkit-transition:.3s cubic-bezier(0,1.64,0.76,0.89);transition:.3s cubic-bezier(0,1.64,0.76,0.89);-webkit-transition:.15s linear;transition:.15s linear;top:0;min-width:7vw;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+body .site .site__main.homepage .nav-container nav{-webkit-transition:.3s cubic-bezier(0,1.64,0.76,0.89);transition:.3s cubic-bezier(0,1.64,0.76,0.89);-webkit-transition:.15s linear;transition:.15s linear;top:0;min-width:7vw;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 body .site .site__main.homepage .nav-container nav .nav-toggle{cursor:pointer;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding:0 3rem;-webkit-box-flex:1;-ms-flex:1;flex:1;background:0;border:0;border-radius:0;font-size:32px;color:#a4a8a9}
 body .site .site__main.homepage .nav-container nav .nav-toggle i.nav-toggle__icon--open{display:block}
 body .site .site__main.homepage .nav-container nav .nav-toggle i.nav-toggle__icon--close{display:none}
@@ -600,15 +600,22 @@ body .site .site__main .nav-container.open nav ul li.nav-development,body .site 
 .entry-content>*{grid-column:3}
 .entry-footer{padding:0 4vw 100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .comments-area{grid-template-columns:1fr 90vw 1fr}
-}@media screen and (max-width:768px){.landing .landing-title{font-size:36px}
-.landing .landing-subtitle{font-size:20px}
+}@media screen and (max-width:768px){body .site .site__main.homepage .landing .landing-title{font-size:40px}
+body .site .site__main.homepage .landing .landing-subtitle{font-size:20px}
 .section-title .section-title__inner{width:100%}
 .section-title .section-title__inner:after{content:'';background:#8d44ad;height:100%;width:90%;top:10px;left:5%;z-index:-1;position:absolute}
 .section-title .section-title__inner .section-title__inner-txt{font-size:22px;padding:12px 40px;width:100%}
+body .site .site__main.homepage .nav-container nav .nav-toggle{padding:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 main.robyn-veitch-cv{font-size:.55em}
 main.robyn-veitch-cv .cv-container .cv .cv-grid{width:500px;height:707.142857143px}
 }@media screen and (max-width:550px){main.robyn-veitch-cv{font-size:1.7vw}
 main.robyn-veitch-cv .cv-container .cv .cv-grid{width:100vw;height:141.428571429vw}
+body .site .site__main.homepage .landing{padding:15px;padding:0}
+body .site .site__main.homepage .landing .landing-title{font-size:30px}
+body .site .site__main.homepage .landing .landing-subtitle{font-size:16px}
+}@media screen and (max-width:400px){body .site .site__main.homepage .landing{padding:0}
+body .site .site__main.homepage .landing .landing-title{font-size:30px}
+body .site .site__main.homepage .landing .landing-subtitle{font-size:16px}
 }@-webkit-keyframes blink{0%{opacity:1}
 49%{opacity:1}
 50%{opacity:0}
