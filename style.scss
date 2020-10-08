@@ -3330,11 +3330,22 @@ body .site .site__main.homepage div.content {
     justify-self: center;
     li {
       padding: 10px;
+      margin: 30px 0;
       font-weight: bold;
       font-size: 18px;
       letter-spacing: 1px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
       i {
-        margin-right: 50px;
+        width: 50px;
+        
+      }
+      p {
+        flex: 1;
+        margin: 0;
+        overflow-wrap: break-word;
       }
     }
   }
@@ -3893,6 +3904,12 @@ body .site .site__main.homepage div.content {
     }
     .landing-subtitle {
       font-size: 16px;
+    }
+  }
+  .about .about-contact li {
+    flex-direction: column;
+    p {
+      overflow-wrap: all;
     }
   }
 }

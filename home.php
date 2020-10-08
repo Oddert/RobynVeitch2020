@@ -289,13 +289,13 @@
         </div>
         <ul class="about-contact">
           <li>
-            <i class="fa fa-envelope"></i> robyn@robynveitch.com
+            <i class="fa fa-envelope"></i> <p>robyn@robynveitch.com</p>
           </li>
           <li>
-            <i class="fa fa-phone"></i> (+44) 07767 297041
+            <i class="fa fa-phone"></i> <p>(+44) 07767 297041</p>
           </li>
           <li>
-            <i class="fa fa-map-marker"></i> Isle of Dogs, London, England, UK
+            <i class="fa fa-map-marker"></i> <p>Isle of Dogs, London, England, UK</p>
           </li>
         </ul>
         <ul class='social-links' id='contact'>

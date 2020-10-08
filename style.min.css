@@ -511,8 +511,9 @@ body .site .site__main.homepage div.content{min-height:400px}
 .about .bio{grid-column:2;padding:0}
 .about .bio p{font-size:1.3rem}
 .about .about-contact{grid-column:2;list-style:none;padding:0;margin:0 0 75px;justify-self:center}
-.about .about-contact li{padding:10px;font-weight:bold;font-size:18px;letter-spacing:1px}
-.about .about-contact li i{margin-right:50px}
+.about .about-contact li{padding:10px;margin:30px 0;font-weight:bold;font-size:18px;letter-spacing:1px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.about .about-contact li i{width:50px}
+.about .about-contact li p{-webkit-box-flex:1;-ms-flex:1;flex:1;margin:0;overflow-wrap:break-word}
 .about .social-links{grid-column:1 / -1;display:-webkit-box;display:-ms-flexbox;display:flex;list-style-type:none;padding:0;margin:0}
 .about .social-links .social-link{-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-transition:.2s linear;transition:.2s linear;background:#fff}
 .about .social-links .social-link a{height:100%;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;font-size:2rem;padding:20px 0;text-decoration:none;color:#000}
@@ -616,6 +617,8 @@ body .site .site__main.homepage .landing .landing-subtitle{font-size:16px}
 }@media screen and (max-width:400px){body .site .site__main.homepage .landing{padding:0}
 body .site .site__main.homepage .landing .landing-title{font-size:30px}
 body .site .site__main.homepage .landing .landing-subtitle{font-size:16px}
+.about .about-contact li{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.about .about-contact li p{overflow-wrap:all}
 }@-webkit-keyframes blink{0%{opacity:1}
 49%{opacity:1}
 50%{opacity:0}
