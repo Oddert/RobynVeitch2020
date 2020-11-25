@@ -68,7 +68,9 @@
           <li title='blog' class='nav-blog'>
             <a href='/blog'>
               <span>blog</span>
-              <i class='fa fa-rss'></i>
+              <!-- <i class='fa fa-rss'></i> -->
+              <!-- <i class='far fa-newspaper'></i> -->
+              <i class='fa fa-newspaper'></i>
             </a>
           </li>
           <li title='about' class='nav-about'>
@@ -80,7 +82,8 @@
           <li title='contact' class='nav-contact'>
             <a href='/services'>
               <span>services</span>
-              <i class='fa fa-comment-dots'></i>
+              <!-- <i class='fa fa-comment-dots'></i> -->
+              <i class='fa fa-shapes'></i>
             </a>
           </li>
         </ul>
