@@ -36,7 +36,7 @@
 
   <div class='site__main homepage noscript'>
 
-    <div hidden data-oddert='home.php' data-featuredimg='<?php echo get_header_image(); ?>'></div>
+    <div hidden data-oddert='home.php test' data-featuredimg='<?php echo get_header_image(); ?>'></div>
 
     <!-- <header class='header'>
         <h1>portfolio</h1>
@@ -47,12 +47,12 @@
     <div class='nav-container open'>
       <nav>
         <ul>
-          <li title='home' class='nav-home'>
+          <!-- <li title='home' class='nav-home'>
             <a href='#landing'>
               <span>home</span>
               <i class='fa fa-home'></i>
             </a>
-          </li>
+          </li> -->
           <li title='design' class='nav-design'>
             <a href='?focus=design#portfolio'>
               <span>industrial design</span>

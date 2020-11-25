@@ -1,0 +1,851 @@
+
+
+$menu_collapse: 7vw;
+$gutter_outer: 15vw;
+$gutter_inner: 10vw;
+$header: 80px;
+$foot_portion: $header / 2;
+
+
+
+@mixin section_full {
+  // grid-column: 1 / 6;
+  // grid-row: 2 / -1;
+  background: rgba(196, 166, 215, .1);
+}
+
+@mixin section_standard {
+  grid-column: 3 / 6;
+  grid-row: 2 / -1;
+  background: rgba(196, 166, 215, .1);
+}
+
+@mixin section_header_focus {
+  grid-column: 2 / 5;
+  grid-row: 2 / -1;
+  background: rgba(196, 166, 215, .1);
+}
+
+@mixin section_reader {
+  grid-column: 3 / 5;
+  grid-row: 2 / -1;
+  background: rgba(196, 166, 215, .1);
+}
+
+@mixin section_max {
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
+  background: rgba(196, 166, 215, .1);
+}
+
+
+
+
+// * {
+//   color: $color_default__light;
+//   box-sizing: border-box;
+//   font-family: 'open sans', 'roboto', 'sans serif', 'helvetica', 'arial';
+// }
+
+// body, html {
+//   margin: 0;
+//   padding: 0;
+//   overflow: hidden;
+//   -ms-overflow-style: none;  /* IE and Edge */
+//   scrollbar-width: none;  /* Firefox */
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }
+
+body.home .site {
+  // width: 100vw;
+  // height: 100vh;
+  background-color: #fff;
+  background-image: url("https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_960_720.jpg");
+  background-image: url("https://raw.githubusercontent.com/Oddert/oddert.github.io/master/img/banner_code.jpg");
+  background-image: url("/wp-content/uploads/2020/09/banner_code-scaled.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include no_scrollbar();
+}
+
+.homepage-cover {
+  // zdebug
+  // position: fixed;
+  top: 0;
+  left: 0;
+  // width: 100vw;
+  // height: 100vh;
+  background: rgba(43, 64, 22, .66);
+  background: rgba(64, 22, 43, .66);
+  background: rgba(22, 43, 64, .66);
+  // z-index: -1;
+}
+
+body .site .site__main.homepage {
+  background: rgba(22, 43, 64, .66);
+  // zdebug
+  // position: fixed;
+  display: grid;
+  grid-template-columns: $menu_collapse $gutter_outer $gutter_inner 1fr $gutter_inner $gutter_outer $menu_collapse;
+  grid-template-rows: auto 1fr $foot_portion $foot_portion;
+  height: 100vh;
+  // background-image: url("https://raw.githubusercontent.com/Oddert/oddert.github.io/master/img/banner_code.jpg");
+
+  & * {
+    color: $color_default__light;
+  }
+
+  section {
+    // overflow-y: auto;
+    // @include no_scrollbar;
+    @include section_full;
+    background: none;
+    &.section_full {
+      @include section_full;
+    }
+    &.section_standard {
+      @include section_standard;
+    }
+    &.section_header_focus {
+      @include section_header_focus;
+    }
+    &.section_reader {
+      @include section_reader;
+    }
+    &.section_max {
+      @include section_max;
+    }
+  }
+
+  h1 {
+    @include font_priority_poiret;
+    $emphasis: 14px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 10px;
+    background: $theme_primary;
+    margin: 0 0 $emphasis 0;
+    padding: 20px 60px;
+    display: inline-block;
+    // zdebug
+    // position: relative;
+    // @include odd_shadow_before($emphasis, $emphasis, #8d44ad, -1);
+  }
+
+  .nav-container {
+    grid-column: 6 / -1;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    nav {
+      transition: .3s cubic-bezier(0, 1.64, 0.76, 0.89);
+      transition: .15s linear;
+      // zdebug
+      // position: sticky;
+			top: 0px;
+			
+      min-width: $menu_collapse;
+      height: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      $nav_icon_size: 32px;
+      $nav_icon_color: #A4A8A9;
+      $nav_icon_color--hover: #ecf0f1;
+      
+      $nav_txt_color: #A4A8A9;
+      $nav_txt_color--hover: #ecf0f1;
+      @mixin nav_li {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 $nav_li__padd;
+      }
+      .nav-toggle {
+        @include nav_li;
+        flex: 1;
+        background: none;
+        border: none;
+        border-radius: 0;
+        font-size: $nav_icon_size;
+        color: $nav_icon_color;
+        i {
+          &.nav-toggle__icon--open {
+            display: block;
+          }
+          &.nav-toggle__icon--close {
+            display: none;
+          }
+        }
+        &:hover {
+          color: $nav_icon_color--hover;
+        }
+      }
+      ul {
+        flex: 6;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        // border: 1px dashed mediumspringgreen;
+        li {
+          height: 100%;
+          a {
+            height: 100%;
+            @include nav_li;
+            text-decoration: none;
+          }
+          span {
+            // display: none;
+            opacity: 0;
+            width: 0;
+            color: $nav_txt_color;
+            transition: .15s linear;
+            margin-right: 2rem;
+            text-align: right;
+          }
+          i {
+            font-size: $nav_icon_size;
+            margin: 0;
+            color: $nav_icon_color;
+            // transition: .2s linear;
+          }
+          // &.nav-toggle {
+          //   // justify-content: center;
+          //   transition: none;
+          //   &.start {
+          //     display: none;
+          //   }
+          // }
+          &:hover {
+            // background: rgba(45, 62, 80, .66);
+            span, i {
+              color: $nav_icon_color--hover;
+            }
+          }
+        }
+      }
+    }
+    &.open {
+      align-items: flex-end;
+      // grid-column: 7 / -1;
+        background: rgba(0,0,0,.50);
+      nav {
+        width: 100%;
+        .nav-toggle {
+          i {
+            &.nav-toggle__icon--open {
+              display: none;
+            }
+            &.nav-toggle__icon--close {
+              display: block;
+            }
+          }
+        }
+        ul li {
+          justify-content: flex-end;
+          // &.nav-toggle {
+          //   // background: red;
+          //   justify-content: center;
+          // }
+          span {
+            // display: initial;
+            opacity: 1;
+            width: auto;
+          }
+          &:hover {
+            background: rgba(0,0,0,.78);
+          }
+        } 
+      }
+    }
+  } // .nav-container
+  
+  
+  &.top {
+    grid-template-columns: $menu_collapse $gutter_outer $gutter_inner 1fr $gutter_inner ($gutter_outer * 2) $menu_collapse;
+    .header {
+      opacity: 0;
+    }
+    .landing {
+      opacity: 1;
+    }
+    
+    .nav-container {
+      nav ul {
+        // .nav-home, .nav-blog, .nav-about, .nav-contact {
+        //   display: none;
+        // }
+        li {
+          // padding: 0 4.5rem;
+          justify-content: flex-end;
+          flex: 4;
+          // &.nav-toggle {
+          //   flex: 1;
+          // }
+          display: none;
+          &.nav-design, &.nav-development {
+            display: flex;
+          }
+        }
+      }
+      // &.open {
+      //   nav ul li {
+      //     // justify-content: center;
+      //   }
+      // }
+    }
+    
+  } // .top
+  
+  &.noscript {
+    // border: 1px dashed tomato;
+    .landing {
+      opacity: 1;
+    }
+    .nav-container .nav-toggle {
+      display: none;
+    }
+    .about {
+      margin: 400px 0 200px;
+    }
+    .footer {
+      display: grid;
+      grid-column: 3 / -1;
+      height: 40vh;
+    }
+  }
+  
+  &.bottom {
+    .footer {
+      display: grid;
+      height: 40vh;
+      // zdebug
+      // position: absolute;
+      bottom: 0;
+    }
+    // grid-template-rows: auto 1fr 10vh;
+  }
+  
+  div {
+    // border: 1px dashed tomato;
+    min-width: 10px;
+    min-height: 10px;
+  }
+  
+  .landing {
+    opacity: 0;
+    transition: .2s linear;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px;
+    background: none;
+    border: none;
+    .landing-title {
+      $emphasisx: 5%;
+      $emphasisy: 30px;
+      $width: 100% - ($emphasisx * 2);
+      // zdebug
+      // @include odd_shadow_before($emphasisy, $emphasisx, #8d44ad, -1, $width);
+      font-size: 4.5rem;
+    }
+    .landing-subtitle {
+      background: #ecf0f1;
+      font-size: 1.5rem;
+      padding: 20px 60px;
+      margin: 50px 0 0 0;
+      // white-space: pre-wrap;
+      color: $color_default__dark;
+      span {
+        color: $color_default__dark;
+        margin: 0 10px;
+      }
+    }
+  }
+
+} // body .site .site__main.homepage
+
+
+
+// header {
+//   grid-column: 1 / 6;
+//   opacity: 1;
+//   transition: .2s linear;
+//   // background: rgba(235, 196, 212, 1);
+//   display: none;
+// }
+
+.homepage-main {
+  @include no_scrollbar;
+  // zdebug
+  // z-index: 1;
+  grid-row: 1 / -1;
+  grid-column: 1 / -3;
+  // background: tomato;
+  display: grid;
+  grid-template-columns: $menu_collapse $gutter_outer $gutter_inner 1fr $gutter_inner;
+  grid-auto-rows: 1fr;
+  overflow-y: auto;
+  > * {
+    border: 1px solid black;
+    grid-column: 1 / -1;
+  }
+} // .homepage-main
+
+
+
+.portfolio {
+  @include section_standard;
+  $tag_button__inactive: #7A8A8A;
+  $tag_button__hover: #5A6A6A;
+  grid-row: auto;
+  background: none;
+  // border: 1px dashed aquamarine;
+  border: none;
+  .content {
+    min-height: 100px;
+    // border: 1px dashed tomato;
+    background: #ecf0f1;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,.2);
+    margin: 200px 0 100px;
+    padding: 50px 0;
+    .tag-clear {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 50px;
+      .tag-clear__button {
+        color: $tag_button__inactive;
+        // font-size: 1.2rem;
+        // letter-spacing: 2px;
+        font-weight: bold;
+        // text-decoration: underline;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        letter-spacing: 3px;
+        &:hover {
+          color: $tag_button__hover;
+          background: $off_eecf;
+        }
+        &:active {
+          background: #bec3c7;
+        }
+      }
+    }
+    .tags {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      li {
+        .tag-button {
+          cursor: pointer;
+          color: $tag_button__inactive;
+          font-weight: 700;
+          font-size: 1rem;
+          margin: 4px 20px;
+          border: none;
+          // border: 1px solid black;
+          background: none;
+          padding: 10px;
+          border: 2px solid rgba(255,255,255,0); 
+          transition: padding 0s;
+          &:hover {
+            color: $tag_button__hover;
+          }
+          &.active {
+            border: 2px solid #aeb7b7; 
+            border-radius: 5px;
+            &:after {
+              content: '✖';
+              font-size: .9rem;
+              margin: 0 0 0 10px;
+            }
+            &:hover {
+              border: 2px solid #7A8A8A;
+            }
+          }
+        }
+      }
+    }
+    .folio-items {
+      $spacing: 2.4em;
+      padding: 100px 0;
+      margin: 100px 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: auto;
+      grid-gap: $spacing;
+      padding: 0 $spacing * 2.5;
+      // position: relative;
+      .folio-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        // zdebug
+        // position: relative;
+        // height: 100%;
+        // zdebug
+        // z-index: 1;
+        .folio-item__wrapper {
+          // z-index: 1;
+          background: #ecf0f1;
+          // background: tomato;
+          border: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          height: 100%;
+          text-decoration: none;
+          padding: 0;
+          margin: 0;
+          cursor: pointer;
+          transition: .1s linear;
+          img {
+            width:100%;
+            height: 200px;
+            object-fit: cover;
+            // z-index: 1;
+          }
+          h3 {
+            color: $color_default__dark;
+            // z-index: 1;
+            font-size: 20px;
+            font-weight: 700;
+          }
+          $em: 10px;
+          &:after {
+            transition: .15s linear;
+          }
+          // @include odd_shadow_after(5px, 5px, rgba(0,0,0,0.1), -1);
+          // zdebug
+          // @include odd_shadow_after($em/2, $em/2, #ecf0f1, -1);
+          &:hover {
+            background: #F6FAFB;
+            // box-shadow: 0 0 10px rgba(0,0,0,.1);        
+            // zdebug
+            // @include odd_shadow_after($em, $em, #bec3c7, -1);
+            // @include odd_shadow_after(-5%, 14px, #bec3c7, -1, 110%, 100%);
+          }
+        }
+        &.hidden {
+          display: none;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body .site .site__main.homepage div.content {
+  min-height: 400px;
+}
+
+.about {
+  grid-column: 3 / -1;
+  background: none;
+  border: none;
+  $radius: 250px;
+  margin: 400px 0 800px;
+  margin: 400px 0 120px;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: $gutter_inner 1fr $gutter_inner;
+  .content {
+    display: grid;
+    grid-template-columns: 1fr $radius;
+    // align-items: center;
+    // justify-content: space-around;
+    grid-column: 1 / -1;
+    .intro {
+      flex: 3;
+      display: flex;
+      // align-items: center;
+      padding: 40px;
+      .intro-text {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 400;
+        letter-spacing: 4px;
+        .cursor {
+          animation: blink 1.2s infinite;
+        }
+      }
+    }
+    .profile-picture {
+      flex: 2;
+      height: $radius;
+      width: $radius;
+      // zdebug
+      // position: relative;
+      display: flex;
+      justify-content: center;
+      img {
+        width: $radius;
+        height: $radius;
+        object-fit: cover;
+      }
+      &:after {
+        transition: .2s linear;
+      }
+      // NOTE: again with the specific usecases for odd_shadow...
+      // this one does not require a wrapper but does need explicit
+      // z-index to be set in same elem as syle applied to 
+      position: relative;
+      z-index: 1;
+      // zdebug
+      @include odd_shadow_after(-14px, -14px, #ecf0f1, -1, $radius, $radius);
+      &:hover {
+        // box-shadow: -5px -5px 10px rgba(0,0,0,.23);
+        // zdebug
+        @include odd_shadow_after(-24px, -24px, #fff, -1, $radius, $radius);
+      }
+    }
+  }
+  .bio {
+    grid-column: 2;
+    padding: 0px 0;
+    p {
+      font-size: 1.3rem;
+    }
+  }
+  .about-contact {
+    grid-column: 2;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 75px;
+    justify-self: center;
+    li {
+      padding: 10px;
+      margin: 30px 0;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      i {
+        width: 50px;
+        
+      }
+      p {
+        flex: 1;
+        margin: 0;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+  .social-links {
+    $linkedin_brand: #0077B5;
+    $github_brand: #fff;
+    $fcc_brand: #006400;
+    grid-column: 1 / -1;
+    // border: 1px dashed tomato;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    .social-link {
+      flex: 1;
+      transition: .2s linear;
+      background: #fff;
+      a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        padding: 20px 0;
+        text-decoration: none;
+        color: #000;
+        i {
+          color: #000;
+        }
+      }
+      &.linkedin {
+        background: $linkedin_brand;
+        color: #fff;
+        i { color: #fff; }
+      }
+      &.github {
+        background: $github_brand;
+        color: #000;
+        i { color: #000; }
+      }
+      &.fcc {
+        background: $fcc_brand;
+        color: #fff;
+        i { color: #fff; }
+      }
+      &:hover {
+        flex: 2;
+      }
+    }
+  }
+}
+
+.footer {
+  grid-column: 1 / -1;
+  grid-column: 3 / -1;
+  // grid-row: -1;
+  border: none;
+  background: rgba(0,0,0,.3);
+  display: grid;
+  grid-template:
+    'c c r r'
+    'cw b b rw';
+  height: 100%;
+  width: 100%;
+  display: none;
+  
+  .contact, .cv, .blog {
+    a {
+      height: 100%;
+      width: 100%;
+      font-size: 20px;
+      color: #ecf0f1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+      }
+      
+    }
+    i {
+      margin: 0 10px;
+    }
+  }
+  
+  .contact {
+    grid-area: c;
+    &:hover, &:hover + .contact-wedge {
+      background: rgba(0,0,0,.1);
+    }
+  }
+  .contact-wedge {
+    grid-area: cw;
+    &:hover {
+      background: none;
+    }
+  }
+  .cv {
+    grid-area: r;
+    &:hover, &:hover + .cv-wedge {
+      background: rgba(0,0,0,.1);
+    }
+  }
+  .cv-wedge {
+    grid-area: rw;
+    &:hover {
+      background: none;
+    }
+  }
+  .blog {
+    grid-area: b;
+    a {
+      flex-direction: column;  
+    }
+    
+    &:hover {
+      background: rgba(0,0,0,.1);
+    }
+  }
+}
+
+
+
+.section-title {
+  $emphasis: 14px;
+  // zdebug
+  position: sticky; 
+  z-index: 3;
+  top: 0px; 
+  // zdebug
+  // z-index: 100;
+  display: inline-block;
+  // position: relative;
+  border: none;
+  // background: none;
+  
+  // NOTE: unable to get shadow working before section inner
+  // this could have somehting ot do with pos sticky given that
+  // other elems have worked withour a wrapper
+  // investgate this as a point before article write
+  .section-title__inner {
+    // zdebug
+    // position: relative;
+    // z-debug
+    // z-index: 5;
+    position: relative;
+    z-index: 1;
+    &:after {
+      position: absolute;
+    }
+    @include odd_shadow_after($emphasis, $emphasis, #8d44ad, -1, 100%, 100%);
+    width: 500px;
+  }
+  h2 {
+    @include font_priority_poiret;
+    padding: 10px 30px;
+    margin: 0;
+    width: 500px;
+    text-align: center;
+    // padding: 0;
+    // zdebug
+    // z-index: 110;
+    
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 10px;
+    background: $theme_primary;
+    // background: #1bbc9b;
+    // zdebug
+    // position: relative;
+    // zdebug
+    // @include odd_shadow_before(0, 0, $theme_primary, -1);
+    // @include odd_shadow_after($emphasis, $emphasis, #8d44ad, -200);
+    
+    
+  }
+}

@@ -11,8 +11,15 @@ module.exports = {
   },
   rules: {
     indent: ["error", "tab"],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": ["off", "unix"],
     quotes: ["error", "single"],
-    semi: ["error", "always"]
+    semi: ["error", "never"],
+    "space-in-parens": ["error", "always"],
+    "spaced-comment": ["warn", "always"],
+    "lines-around-comment": "off",
+    "comma-dangle": "off",
+    "no-trailing-spaces": {
+      "skipBlankLines": true
+    }
   }
 };
