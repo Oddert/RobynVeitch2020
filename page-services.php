@@ -20,8 +20,8 @@
     <div class='intro-cover_filter'></div>
     <div class="intro-content">
       <div class='intro-text'>
-        <h2 class='intro-title'>Lets build something together.</h2>
-        <p class='intro-description'>Whether you have a grand vison to implement, the spark of an idea, or just a question</p>
+        <h2 class='intro-title'>Lets build something, together.</h2>
+        <p class='intro-description'>Whether you have a grand vison to implement, or just a quick question, drop a line</p>
       </div>
       <div class='intro-button__container'>
         <div class='intro-button__wrapper'>
@@ -105,6 +105,8 @@
         'June 2020'
       ); ?>
 
+      <div class="case_study-bookend"></div>
+
     </div>
   </div>
     
@@ -151,23 +153,25 @@
           <path d="M52 691.073L89.2963 729L166 651" stroke="#4D4B4D" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <div class="intro_text ">
-        <h3 class="intro_text-title">
+      <div class="process-intro_text--title_group">
+        <h3 class="process-intro_text-title">
           A Transparent Process
         </h3>
-        <h4 class="intro_text-subtitle">
+        <h4 class="process-intro_text-subtitle">
           Hands on or hands off, have confidence in receiving the perfect result.
         </h4>
-        <p class="intro_text-paragraph">
+      </div>
+      <div class="process-intro_text--paragraph_group">
+        <p class="process-intro_text-paragraph">
           Every piece of work, small or large, is put through the same refined and tested design process.
         </p>
-        <p class="intro_text-paragraph">
+        <p class="process-intro_text-paragraph">
           This sets key deliverable points to let you have the final say in each section.
         </p>
-        <p class="intro_text-paragraph">
+        <p class="process-intro_text-paragraph">
           If you’d like a more involved approach, I utilise a range of collaborative tools and methodologies to let you get to the heart of the process.
         </p>
-        <p class="intro_text-paragraph">
+        <p class="process-intro_text-paragraph">
           If you already have a design, skip the early steps and jump strait to implementation.
         </p>
       </div>
@@ -463,13 +467,15 @@
 
     function collapseToggle (e) {
       e.target
-      .closest('.section_content')
-      .querySelector('.section_content-expandable')
-      .classList.toggle('open')
+        .closest('.section_content')
+        .querySelector('.section_content-expandable')
+        .classList.toggle('open')
     }
 
     function collapseSetHeight (expandable) {
-      expandable.style.height = `${expandable.scrollHeight}px`
+      expandable.style.height = null
+      const nativeHeight = expandable.scrollHeight
+      expandable.style.height = `${nativeHeight}px`
     }
 
     function sectionLableToggle (e) {
@@ -486,19 +492,22 @@
       }
     }
 
-    collapse.forEach(each => {
-      let expandable = each.querySelector('.section_content-expandable')
-      each.querySelector('.section_content-button').onclick = collapseToggle
-      collapseSetHeight (expandable)
-      expandable.classList.toggle('open')
-    })
+    function itirateCollapse (colapse, firstTime = false) {
+      let expandable = colapse.querySelector('.section_content-expandable')
+      collapseSetHeight(expandable)
+      if (firstTime) {
+        colapse.querySelector('.section_content-button').onclick = collapseToggle
+        expandable.classList.toggle('open')
+      }
+    }
+
+    collapse.forEach(each => itirateCollapse(each, true))
 
     sectionLables.forEach(each => each.onclick = sectionLableToggle)
 
     window.addEventListener('resize', debounce(() => {
-      collapse.forEach(each => 
-      collapseSetHeight(each.querySelector('.section_content-expandable'))
-      )
+      console.log('resizing, adjusting inline styles...')
+      collapse.forEach(each => itirateCollapse(each, false))
     }), 250)
 
     function debounce(func, wait=20, immediate) {

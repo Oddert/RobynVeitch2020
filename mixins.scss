@@ -1,0 +1,124 @@
+
+$color_default__light: #ecf0f1;
+$color_default__light--lighter: #fff;
+$color_default__light--darker: #ccc;
+
+$color_default__dark: #2d3e50;
+
+$color_soft__gray: #4D4B4D;
+$color_medium__gray: #95a5a5;
+
+// $background_default: #ecf0f1;
+$background_default: #F7F8F8;
+
+$theme_primary: #9a59b5;
+$theme_primary: #9D5FDD;
+$theme_primary-shadow: #8d44ad;
+$theme_primary-shadow--alt: #752C95;
+
+$off_eecf: #dbdfe0;
+
+$red: #e84c3d;
+$red_dark: #c1392b;
+$orange: #e67f22;
+$orange_dark: #d25400;
+$yellow: #f1c40f;
+$yellow_dark: #f39c11;
+$green: #2dcc70;
+$green_dark: #27ae61;
+$blue: #3598db;
+$blue_dark: #297fb8;
+$purple: #9a59b5;
+$purple_dark: #8d44ad;
+$teal: #1bbc9b;
+$teal_dark: #16a086;
+
+
+$header_shadow_emphesis_y: 15px;
+$header_height: 70px;
+$nav_li__padd: 3rem;
+
+
+@mixin odd_shadow_before($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
+  &:before {
+    content: '';
+    background: $colour;
+    height: $height;
+    width: $width;
+    position: absolute;
+    top: $emphasisx;
+    left: $emphasisy;
+    z-index: $zindex;
+  }
+}
+
+@mixin odd_shadow_after($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
+  &:after {
+    content: '';
+    background: $colour;
+    height: $height;
+    width: $width;
+    top: $emphasisy;
+    left: $emphasisx;
+    z-index: $zindex;
+    position: absolute;
+  }
+}
+
+
+@mixin font_priority_poiret {
+  font-family: 'poiret one', 'arial', 'helvetica';
+}
+
+@mixin font_priority_open_sans {
+	font-family: 'open sans', 'Nirmala UI', Roboto, 'helvetica', "Helvetica Neue", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell;
+}
+
+@mixin font_priority_poiret_extend {
+  font-family: 'poiret one', 'open sans', 'Avenir Next LT Pro', 'roboto', 'droid sans', 'helvetica', 'sans-serif', 'arial';
+}
+
+@mixin font_cv_open_sans {
+  font-family: 'open sans', 'Avenir Next LT Pro', 'roboto', 'droid sans', 'helvetica', 'sans-serif', 'arial';
+}
+
+@mixin no_scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin screen_reader_text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+@mixin screen_reader_text__focus {
+  background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}

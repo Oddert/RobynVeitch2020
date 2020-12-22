@@ -53,6 +53,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 
+@import 'mixins';
 @import './home.scss';
 
 /*--------------------------------------------------------------
@@ -70,134 +71,34 @@ h2 {
 
 //===
 
-$color_default__light: #ecf0f1;
-$color_default__light--lighter: #fff;
-$color_default__light--darker: #ccc;
-
-$color_default__dark: #2d3e50;
-
-$color_soft__gray: #4D4B4D;
-$color_medium__gray: #95a5a5;
-
-// $background_default: #ecf0f1;
-$background_default: #F7F8F8;
-
-$theme_primary: #9a59b5;
-$theme_primary: #9D5FDD;
-$theme_primary-shadow: #8d44ad;
-$theme_primary-shadow--alt: #752C95;
-
-$off_eecf: #dbdfe0;
-
-$red: #e84c3d;
-$red_dark: #c1392b;
-$orange: #e67f22;
-$orange_dark: #d25400;
-$yellow: #f1c40f;
-$yellow_dark: #f39c11;
-$green: #2dcc70;
-$green_dark: #27ae61;
-$blue: #3598db;
-$blue_dark: #297fb8;
-$purple: #9a59b5;
-$purple_dark: #8d44ad;
-$teal: #1bbc9b;
-$teal_dark: #16a086;
-
-
-$header_shadow_emphesis_y: 15px;
-$header_height: 70px;
-$nav_li__padd: 3rem;
-
-
-@mixin odd_shadow_before($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
-  &:before {
-    content: '';
-    background: $colour;
-    height: $height;
-    width: $width;
-    position: absolute;
-    top: $emphasisx;
-    left: $emphasisy;
-    z-index: $zindex;
-  }
-}
-
-@mixin odd_shadow_after($emphasisx, $emphasisy, $colour, $zindex, $width: 100%, $height: 100%) {
-  &:after {
-    content: '';
-    background: $colour;
-    height: $height;
-    width: $width;
-    top: $emphasisy;
-    left: $emphasisx;
-    z-index: $zindex;
-    position: absolute;
-  }
-}
-
-
-@mixin font_priority_poiret {
-  font-family: 'poiret one', 'arial', 'helvetica';
-}
-
-@mixin font_priority_open_sans {
-	font-family: 'open sans', 'Nirmala UI', Roboto, 'helvetica', "Helvetica Neue", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell;
-}
-
-@mixin font_priority_poiret_extend {
-  font-family: 'poiret one', 'open sans', 'Avenir Next LT Pro', 'roboto', 'droid sans', 'helvetica', 'sans-serif', 'arial';
-}
-
-@mixin font_cv_open_sans {
-  font-family: 'open sans', 'Avenir Next LT Pro', 'roboto', 'droid sans', 'helvetica', 'sans-serif', 'arial';
-}
-
-@mixin no_scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-@mixin screen_reader_text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
-}
-
-@mixin screen_reader_text__focus {
-  background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
-}
+// mixins and variable removed.
+// TODO: find a replacement for @import as it is deprecated
+// TODO: decide on a better orginaisation of mixin files and split mixins.scss
 
 //===
 
 /* Document
-	 ========================================================================== */
+   ========================================================================== */
+   
+/**
+ *
+ */
+:root {
+  --red: $red;
+  --red_dark: $red_dark;
+  --orange: $orange;
+  --orange_dark: $orange_dark;
+  --yellow: $yellow;
+  --yellow_dark: $yellow_dark;
+  --green: $green;
+  --green_dark: $green_dark;
+  --blue: $blue;
+  --blue_dark: $blue_dark;
+  --purple: $purple;
+  --purple_dark: $purple_dark;
+  --teal: $teal;
+  --teal_dark: $teal_dark;
+}
 
 /**
  * 1. Correct the line height in all browsers.
@@ -214,7 +115,8 @@ html {
 
 body, html {
 	padding: 0;
-	margin: 0;
+  margin: 0;
+  // height: 100%;
 }
 
 /* Sections
@@ -916,6 +818,7 @@ textarea {
 				// 	display: none;
         // }
         transition: .1s linear;
+        $text_color: #ecf0f1;
         .menu-toggle {
           height: 100%;
           padding: 0 40px;
@@ -956,7 +859,7 @@ textarea {
 								height: 100%;
 								display: flex;
 								align-items: center;
-								color: #ecf0f1;
+								color: $text_color;
                 font-size: 18px;
                 letter-spacing: 2px;
 								padding: 0 20px;
@@ -966,9 +869,24 @@ textarea {
                 }
               }
               &.current-menu-item {
+                // a {
+                //   border-top: 5px solid rgba(0,0,0,0);
+                //   border-bottom: 5px solid $theme_primary-shadow--alt;
+                // }
                 a {
-                  border-top: 5px solid rgba(0,0,0,0);
-                  border-bottom: 5px solid $theme_primary-shadow--alt;
+                  position: relative;
+                  &:after {
+                    content: '';
+                    position: absolute;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    bottom: 15%;
+                    left: 50%;
+                    transform: translate(-50%, 0); 
+                    background: $theme_primary-shadow--alt;
+                    background: $text_color;
+                  }
                 }
               }
 						}
@@ -2155,7 +2073,8 @@ $header_height: 70px;
   }
   .intro {
     width: 100%;
-    min-height: calc(100vh - #{$header_height});
+    // min-height: calc(100vh - #{$header_height});
+    height: calc(100vh - #{$header_height});
     position: relative;
     .intro-cover_img {
       position: absolute;
@@ -2181,17 +2100,19 @@ $header_height: 70px;
       flex-direction: column;
       justify-content: space-around;
       padding: 20px 0 100px 0;
+      box-shadow: inset 10px 10px 0 0 red;
+      height: 100%;
       .intro-text {
-        width: 66vw;
         margin: 0 auto;
         position: relative;
         z-index: 1;
+        width: 66vw;
         .intro-title {
-          @include text(72px);
+          @include text(3.2em);
           margin: 100px 0;
         }
         .intro-description {
-          @include text(22px);
+          @include text(1.3em);
           margin: 50px 0;
           text-align: center;
         }
@@ -2213,16 +2134,20 @@ $header_height: 70px;
             color: $color_default__light;
             font-size: 24px;
             padding: 20px 40px;
+            position: sticky;
+            top: 0px;
             cursor: pointer;
-            &:before {
-              transition: .1s linear;
-            }
-            @include odd_shadow_before(6px, 6px, $purple, -1, 100%, 100%);
             &:hover {
               color: #fff;
               background: linear-gradient(54.91deg, #8c43d6 15.04%, #D3AEF5 85.91%, #D7B7F3 85.91%);
-              @include odd_shadow_before(10px, 10px, $purple_dark, -1, 100%, 100%);
             }
+          }
+          &:before {
+            transition: .1s linear;
+          }
+          @include odd_shadow_before(6px, 6px, $purple, -1, 100%, 100%);
+          &:hover {
+            @include odd_shadow_before(10px, 10px, $purple_dark, -1, 100%, 100%);
           }
         }
       }
@@ -2231,6 +2156,7 @@ $header_height: 70px;
   .client_work {
     background: $color_soft__gray;
     color: $color_default__light;
+    $case_study-marg: 0 50px;
     .client_work-title {
       margin: 0;
       font-size: 26px;
@@ -2239,11 +2165,12 @@ $header_height: 70px;
       padding: 50px 0 0px 150px;
     }
     .client_work-case_studies {
+      $padd_side: 75px;
       display: flex;
       width: 100%;
       flex-direction: row;
       overflow-x: scroll;
-      padding: 50px 75px;
+      padding: 50px $padd_side;
 
       .client_work-case_study {
         color: $color_default__dark;
@@ -2254,13 +2181,14 @@ $header_height: 70px;
         width: 350px;
         position: relative;
         background: #fff;
-        margin: 0 50px;
+        margin: $case_study-marg;
+        max-height: 100vh;
 
         .case_study-image {
           width: 100%;
+          // height: 300px;
           // height: 50%;
-          height: 300px;
-          // flex: 1;
+          flex: 1;
           position: relative;
           .case_study-image_img {
             width: 100%;
@@ -2318,6 +2246,16 @@ $header_height: 70px;
 
         }
       }
+      .case_study-bookend {
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: column;
+        // height: 500px;
+        width: $padd_side;
+        position: relative;
+        // margin: $case_study-marg;
+        max-height: 100vh;
+      }
     }
   }
   .cta {
@@ -2371,23 +2309,30 @@ $header_height: 70px;
           height: 260px;
         }
       }
-      .intro_text {
+      .process-intro_text--title_group,
+      .process-intro_text--paragraph_group {
         grid-column: 2;
-        grid-row: 1 / -1;
-        padding: $intro_padd_top $l_pad + $bullet_r + $arrow_w + $arrow_margin_r;
-        .intro_text-title {
+        .process-intro_text-title {
           @include font_priority_poiret_extend;
           font-size: 42px;
           font-weight: 500;
           letter-spacing: 2px;
           margin-top: 0;
         }
-        .intro_text-subtitle {
+        .process-intro_text-subtitle {
           font-weight: lighter;
           font-size: 26px;
           letter-spacing: 2px;
           margin: 50px 0;
         }
+      }
+      .process-intro_text--title_group {
+        grid-row: 1;        
+        padding: $intro_padd_top $l_pad + $bullet_r + $arrow_w + $arrow_margin_r 0;
+      }
+      .process-intro_text--paragraph_group {
+        grid-row: 2;        
+        padding: 0 $l_pad + $bullet_r + $arrow_w + $arrow_margin_r $intro_padd_top;
       }
     }
 
@@ -2414,6 +2359,7 @@ $header_height: 70px;
           font-weight: 500;
           letter-spacing: 4px;
           margin: 0;
+          word-break: break-all;
         }
       }
       .section_content {
@@ -2781,6 +2727,9 @@ $header_height: 70px;
       }
     }
   }
+  .page-services .cta .cta__container {
+    padding: 50px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -2817,7 +2766,10 @@ $header_height: 70px;
 				} 
 			}
 		}
-	}
+  }
+  .page-services .cta .cta__container .cta--wrapper .cta-image {
+    padding: 20px;
+  }
 }
 
 @media only screen and (max-width: 960px) {
@@ -2979,6 +2931,17 @@ $header_height: 70px;
 
 @media screen and (max-width: 768px) {
 
+  .page-services .process {
+    .process_intro .process-intro_text--paragraph_group {
+      grid-row: 2;
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+    .process_section .section_content .section_content-expandable {
+      padding: 0 30px;
+    }
+  }
+
   body .site .site__main.homepage .landing {
     .landing-title {
       font-size: 40px;
@@ -3020,7 +2983,53 @@ $header_height: 70px;
 				height: $cv_height;
 			}
 		}
-	}
+  }
+  
+  .page-services .process  {
+    .process_intro .process-intro_text--title_group {
+      padding: 100px 50px 0;
+    }
+    .process_intro .process-intro_text--paragraph_group {
+      padding: 0 50px 100px;
+    }
+    .process_section {
+      grid-template-columns: 40px 1fr;
+      .section_label {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        border-bottom: 1px solid #ecf0f1;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  .page-services .cta .cta__container .cta--wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    .cta-image {
+      grid-row: 1;
+    }
+    .cta-text {
+      grid-row: 2;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .widget-area {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .page-services .intro .intro-content .intro-text {
+    width: 95vw;
+    .intro-title {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -3045,6 +3054,65 @@ $header_height: 70px;
       font-size: 16px;
     }
   }
+
+  .page-services .process {
+    .process_intro {
+      .process-intro_text--title_group, .process-intro_text--paragraph_group {
+        .process-intro_text-title {
+          font-size: 2rem;
+        }
+        .process-intro_text-subtitle {
+          font-size: 1.3rem;
+        }
+      }
+    } 
+    // .process_intro .intro_icon {
+    //   display: none;
+    // }
+    .process_section {
+      grid-template-columns: 1fr;
+      .section_content .section_content-button {
+        padding: 15px 0;
+        text-align: center;
+        p {
+          word-break: break-all;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  } 
+
+  .page-services {
+    .cta .cta__container {
+      padding: 10px;
+    }
+    .client_work .client_work-case_studies {
+      padding: 20px;
+    }
+  }
+
+  .page-services .client_work .client_work-title {
+    padding: 50px 20px 20px 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .page-services {
+    .intro {
+      min-height: 100vh;
+    }
+    .process .process_section .section_content {
+      .section_content-bullet,
+      .section_content-bullet_line,
+      .section_content-arrow--head,
+      .section_content-arrow--tail {
+        display: none;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -3063,6 +3131,30 @@ $header_height: 70px;
       overflow-wrap: all;
     }
   }
+
+  .page-services {
+    .process .process_intro {
+      grid-template-columns: 1fr;
+      .intro_icon {
+        display: none;
+      }
+      .process-intro_text--title_group,
+      .process-intro_text--paragraph_group {
+        grid-column: 1;
+        padding: 50px 10px;
+        text-align: center;
+      }
+    }
+    
+    .cta .cta__container .cta--wrapper .cta-text {
+      padding: 10px;
+      font-size: 14px;
+      .cta-text__title {
+        font-size: 22px;
+      }
+    }
+  }
+ 
 }
 
 
@@ -3079,3 +3171,37 @@ $header_height: 70px;
 // 		}
 // 	}
 // }
+
+@media only screen and (max-height: 600px) {
+  .page-services .client_work .client_work-case_studies .client_work-case_study {
+    flex-direction: row;
+    width: 500px;
+    // margin: 0 20px;
+    .case_study-image {
+      width: 50%;
+    }
+
+    .case_study-text {
+      width: 50%;
+    }
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  .page-services .intro .intro-content {
+    transition: .1s linear;
+    padding-bottom: 20px;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 30px;
+    padding-right: 30px;
+    .intro-text {
+      width: auto;
+      margin: 0;
+      .intro-title {
+        transition: .1s linear;
+        margin: 30px 0;
+      }
+    } 
+  }
+}
