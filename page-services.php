@@ -54,11 +54,13 @@
         <div class='client_work-case_study case_study--" . $class_name . "'>"
           . client_work_img($id) .
           "<div class='case_study-text'>
-            <div class='case_study-text--top'>
-              <a src='" . $src . "'>
-                <h4 class='case_study-title'>" . $title . "</h4>
-              </a>
-              <p class='case_study-client'>" . $client . "</p>
+            <div class='case_study-text--top'>"
+            . "<h4 class='case_study-title'>" 
+              . "<a src='" . $src . "'>"
+                  . $title 
+              . "</a>"
+            . "</h4>"
+            . "<p class='case_study-client'>" . $client . "</p>
               <p class='case_study-short_description'>" . $short_desc . "</p>
             </div>
             <div class='case_study-text--bottom'>
