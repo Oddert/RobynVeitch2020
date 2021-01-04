@@ -476,6 +476,8 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .page-services .client_work .client_work-title{margin:0;font-size:26px;letter-spacing:4px;font-weight:normal;padding:50px 0 0 150px}
 .page-services .client_work .client_work-case_studies{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;overflow-x:scroll;padding:50px 75px}
 .page-services .client_work .client_work-case_studies .client_work-case_study{color:#2d3e50;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-negative:0;flex-shrink:0;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:350px;position:relative;background:#fff;margin:0 50px;max-height:100vh}
+.page-services .client_work .client_work-case_studies .client_work-case_study a{color:#2d3e50;background:#fff;cursor:pointer}
+.page-services .client_work .client_work-case_studies .client_work-case_study a:hover{text-decoration:underline}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-image{width:100%;-webkit-box-flex:1;-ms-flex:1;flex:1;position:relative}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-image .case_study-image_img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-text{padding:40px;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}

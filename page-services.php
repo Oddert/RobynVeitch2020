@@ -49,13 +49,15 @@
         return '<div class="case_study-image"><img class="case_study-image_img" src="' . $att_src[0] . '" alt="' . $att_alt . '" /></div>';
       }
 
-      function client_project ($class_name, $id, $title, $client, $short_desc, $time) {
+      function client_project ($class_name, $id, $title, $client, $short_desc, $time, $src) {
         return "
         <div class='client_work-case_study case_study--" . $class_name . "'>"
           . client_work_img($id) .
           "<div class='case_study-text'>
             <div class='case_study-text--top'>
-              <h4 class='case_study-title'>" . $title . "</h4>
+              <a src='" . $src . "'>
+                <h4 class='case_study-title'>" . $title . "</h4>
+              </a>
               <p class='case_study-client'>" . $client . "</p>
               <p class='case_study-short_description'>" . $short_desc . "</p>
             </div>
@@ -75,7 +77,8 @@
         'Page Block System',
         'Matter of Stuff',
         'Implementation of a site redesign with a modular client-editor.',
-        'March 2020'
+        'March 2020',
+        '/page-block-system-matter-of-stuff'
       ); ?>
 
       <?php echo client_project (
@@ -84,7 +87,8 @@
         'The MoodBoard',
         'Matter of Stuff',
         'An on-site collaborative design and curation tool for use by the company and clients.',
-        'November 2019'
+        'November 2019',
+        '/the-moodboard-system-matter-of-stuff'
       ); ?>
 
       <?php echo client_project (
@@ -93,7 +97,8 @@
         'Bloqs Game & Site', 
         'Design Against Crime', 
         'A collaborative project designing a social game to help incarcerated fathers reconnect with their families.', 
-        'April 2019'
+        'April 2019',
+        '/bloqs-design-against-crime'
       ); ?>
 
       <?php echo client_project (
@@ -102,7 +107,8 @@
         'Tailored Nutrition', 
         'Bow & Arrow', 
         'A speculative system and service to give customers insight into their base nutritional levels.', 
-        'June 2020'
+        'June 2020',
+        '/tailored-nutrition'
       ); ?>
 
       <div class="case_study-bookend"></div>
@@ -121,7 +127,7 @@
           <p>Native mobile and desktop apps and other software solutions can integrate with your existing platform or be used to build a new one.</p>
         </div>
         <div class='cta-image'>
-          <img src="/wp-content/uploads/2020/08/mos_procurement_onw.png" alt="" />
+          <img src="/wp-content/uploads/2021/01/firinn-figma-6_dropshaddow-1.png" alt="" />
         </div>
       </div>
     </div>
@@ -129,7 +135,7 @@
     <div class='cta__container'>
       <div class='cta--wrapper'>
         <div class='cta-image'>
-          <img src="/wp-content/uploads/2020/08/mos_procurement_onw.png" alt="" />
+          <img src="/wp-content/uploads/2020/08/exp-3-scaled.jpg" alt="" />
         </div>
         <div class='cta-text'>
           <h3 class='cta-text__title'>The Industrial Design Approach</h3>
