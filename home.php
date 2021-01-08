@@ -194,32 +194,60 @@
                 'numberposts' => -1,
               );
 
+              $miniumn_priority = 50;
+
               $posts = get_posts( $post_args );
 
-              foreach ( $posts as $post ) {
-                $id = apply_filters( 'ID', $post->ID );
-                $name = apply_filters( 'post_name', $post->post_name );
-                $title = apply_filters( 'post_title', $post->post_title );
-                $post_categories = get_the_category( $id );
-                $thumb = get_the_post_thumbnail_url( $id );
-                ?>
-                  <div class='folio-item' data-folio-tags='[<?php 
-                    $idx = sizeof($post_categories) > 0 ? sizeof($post_categories) - 1 : 0;
-                    while ($idx > 0) {
-                      echo '"' . $post_categories[$idx]->slug . '"';
-                      if ($idx > 1 && $idx != sizeof($post_categories)) {
-                        echo ', ';
-                      }
-                      $idx--;
+              $sorted_posts = array();
+
+              foreach( $posts as $post ) {
+                $priority = get_the_terms($post->ID, "priority")[0]->name;
+
+                if ( (int)$priority <= $miniumn_priority ) continue;
+
+                if ( !array_key_exists($priority, $sorted_posts) ) {
+                  $sorted_posts[$priority] = array();
+                } else {
+                  $sorted_posts[$priority][] = $post;
+                }
+              }                
+                
+              foreach ( $sorted_posts as $priority => $posts ) {
+
+                foreach ( $posts as $idx => $post ) {
+                  $id = apply_filters( 'ID', $post->ID );
+                  $name = apply_filters( 'post_name', $post->post_name );
+                  $title = apply_filters( 'post_title', $post->post_title );
+                  $post_categories = get_the_category( $id );
+                  $thumb = get_the_post_thumbnail_url( $id );
+  
+                  $folio_tags = "";
+  
+                  $idx = sizeof($post_categories) > 0 ? sizeof($post_categories) - 1 : 0;
+  
+                  while ($idx > 0) {
+                    $folio_tags .= '"' . $post_categories[$idx]->slug . '"';
+                    if ($idx > 1 && $idx != sizeof($post_categories)) {
+                      $folio_tags .=  ', ';
                     }
-                  ?>]'>
-                    <a href='<?php echo $name ?>' class='folio-item__wrapper'>
-                      <img src='<?php echo $thumb; ?>' />
-                      <h3><?php echo $title ?></h3>
-                    </a>
-                  </div>
-                <?php
+                    $idx--;
+                  }
+  
+                  ?>
+                    <div class='folio-item' data-folio-tags='[<?php echo $folio_tags; ?>]'>
+                      <a href='<?php echo $name ?>' class='folio-item__wrapper'>
+                        <img src='<?php echo $thumb; ?>' />
+                        <h3>
+                          <?php echo get_the_terms(get_the_ID(), "priority")[0]->name; ?>
+                          <?php echo $title ?>
+                        </h3>
+                      </a>
+                    </div>
+                  <?php
+                }
+              
               }
+
             ?>
 
       <!-- <div class='folio-item' data-folio-tags='["industrial-design", "service-design"]'>

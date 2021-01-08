@@ -520,6 +520,7 @@ body .site .site__main.homepage {
       grid-gap: $spacing;
       padding: 0 $spacing * 2.5;
       // position: relative;
+      color: $color_default__dark;
       .folio-item {
         display: flex;
         flex-direction: column;
@@ -580,6 +581,10 @@ body .site .site__main.homepage {
       }
     }
   }
+}
+
+.site__main.homepage .portfolio .content .folio-items {
+  color: $color_default__dark;
 }
 
 @keyframes blink {
