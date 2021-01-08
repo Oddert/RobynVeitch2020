@@ -204,9 +204,9 @@
                 $thumb = get_the_post_thumbnail_url( $id );
                 ?>
                   <div class='folio-item' data-folio-tags='[<?php 
-                    $idx = sizeof($post_categories);
+                    $idx = sizeof($post_categories) > 0 ? sizeof($post_categories) - 1 : 0;
                     while ($idx > 0) {
-                      echo $post_categories[$idx]->slug;
+                      echo '"' . $post_categories[$idx]->slug . '"';
                       if ($idx > 1 && $idx != sizeof($post_categories)) {
                         echo ', ';
                       }

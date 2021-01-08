@@ -2612,6 +2612,7 @@ $header_height: 70px;
 
       .entry-content {
         display: flex;
+        flex-direction: column;
   
         background: none;
         box-shadow: none;
@@ -2621,6 +2622,7 @@ $header_height: 70px;
           line-height: normal;
           margin: 0 0 30px;
           margin: 0;
+          padding: 5px 0;
         }
         &:before, &:after {
           display: none;
@@ -2714,9 +2716,9 @@ $header_height: 70px;
     // margin: 30px 0;
     padding: 30px;
     grid-gap: 15px;
-    .folio-item .folio-item__wrapper img {
-      // height: 40vw;
-    }
+    // .folio-item .folio-item__wrapper img {
+    //   // height: 40vw;
+    // }
   }
   .post-list-content {
     // margin: 10px 0 30px;

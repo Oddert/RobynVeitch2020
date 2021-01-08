@@ -103,7 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     folioItems.forEach(folioItem => {
-      const tags = JSON.parse(folioItem.dataset.folioTags)
+      console.log(folioItem, folioItem.dataset.folioTags)
+      let tags
+      try {
+        tags = JSON.parse(folioItem.dataset.folioTags)
+      } catch (err) {
+        console.log(err, folioItem.dataset.folioTags)
+      }
       
       const hide = tags.reduce((acc, tag) => {
         if (folioFilters[tag]) return false
