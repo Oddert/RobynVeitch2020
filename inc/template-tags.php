@@ -31,13 +31,18 @@ if ( ! function_exists( 'robynVeitch_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		$catt_list = get_the_category_list(' #');
-		$catt_string = has_category() ? '<span> / </span>' . '#' . $catt_list : '';
+		// $catt_list = get_the_category_list(' #');
+		$topic = get_the_terms(get_the_ID(), "topics");
+		$catt_string = has_category() ? '<span> / </span>' . '#' . $topic[0]->name : '';
 		// $tax_test = get_terms( 'topics', array (
 		// 	'hide_empty' => true,
 		// 	'taxonomy' => 'topic'
 		// ));
+
+		// Works:
+		// $tax_test = get_the_terms(get_the_ID(), "topics");
 		// var_dump($tax_test);
+		
 		// var_dump(get_the_ID());
 
 		echo '<span class="posted-on">' . $posted_on . $catt_string . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
