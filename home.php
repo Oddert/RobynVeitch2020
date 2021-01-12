@@ -238,7 +238,6 @@
                       <a href='<?php echo $name ?>' class='folio-item__wrapper'>
                         <img src='<?php echo $thumb; ?>' />
                         <h3>
-                          <?php echo get_the_terms(get_the_ID(), "priority")[0]->name; ?>
                           <?php echo $title ?>
                         </h3>
                       </a>
