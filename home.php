@@ -320,10 +320,10 @@
         </div>
         <ul class="about-contact">
           <li>
-            <i class="fa fa-envelope"></i> <p>robyn@robynveitch.com</p>
+            <i class="fa fa-envelope"></i> <p><a href='mailto:robynv@robynveitch.com'>robyn@robynveitch.com</a></p>
           </li>
           <li>
-            <i class="fa fa-phone"></i> <p>(+44) 07767 297041</p>
+            <i class="fa fa-phone"></i> <p><a href='tel:+44-07767-297041'>(+44) 07767 297041</a></p>
           </li>
           <li>
             <i class="fa fa-map-marker"></i> <p>Isle of Dogs, London, England, UK</p>
@@ -331,7 +331,7 @@
         </ul>
         <ul class='social-links' id='contact'>
           <li class='social-link linkedin'>
-            <a href='https://www.linkedin.com/in/robyn-veitch-582aa3b6/' title='Linkedin profile link'>
+            <a href='https://www.linkedin.com/in/robyn-veitch/' title='Linkedin profile link'>
               <i class='fab fa-linkedin'></i>
             </a>
           </li>
