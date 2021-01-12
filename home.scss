@@ -351,16 +351,16 @@ body .site .site__main.homepage {
     }
   }
   
-  &.bottom {
-    .footer {
-      display: grid;
-      height: 40vh;
-      // zdebug
-      // position: absolute;
-      bottom: 0;
-    }
-    // grid-template-rows: auto 1fr 10vh;
+  .footer {
+    display: grid;
+    height: 40vh;
+    // zdebug
+    // position: absolute;
+    bottom: 0;
   }
+  // &.bottom {
+  //   // grid-template-rows: auto 1fr 10vh;
+  // }
   
   div {
     // border: 1px dashed tomato;

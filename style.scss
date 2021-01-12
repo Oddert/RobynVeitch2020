@@ -110,7 +110,10 @@ html {
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
+  &::selection {
+    background-color: $color_highlight__primary;
+  }
 }
 
 body, html {
@@ -2800,7 +2803,7 @@ $header_height: 70px;
           // pointer-events: none;
           li {
             display: none;
-            &.nav-development, &.nav-design {
+            &.nav-top-of-page {
               display: none;
             }
             a {
@@ -2822,7 +2825,7 @@ $header_height: 70px;
           width: 100vw;
           ul li {
             display: flex;
-            &.nav-development, &.nav-design {
+            &.nav-top-of-page {
               display: flex;
             }
           }

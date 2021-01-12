@@ -53,13 +53,13 @@
               <i class='fa fa-home'></i>
             </a>
           </li> -->
-          <li title='design' class='nav-design'>
+          <li title='design' class='nav-design nav-top-of-page'>
             <a href='?focus=design#portfolio'>
               <span>industrial design</span>
               <i class='fa fa-drafting-compass'></i>
             </a>
           </li>
-          <li title='development' class='nav-development'>
+          <li title='development' class='nav-development nav-top-of-page'>
             <a href='?focus=development#portfolio'>
               <span>development</span>
               <i class='fa fa-terminal'></i>

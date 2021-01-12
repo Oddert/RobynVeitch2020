@@ -60,7 +60,7 @@ body .site .site__main.homepage.noscript .landing{opacity:1}
 body .site .site__main.homepage.noscript .nav-container .nav-toggle{display:none}
 body .site .site__main.homepage.noscript .about{margin:400px 0 200px}
 body .site .site__main.homepage.noscript .footer{display:grid;grid-column:3 / -1;height:40vh}
-body .site .site__main.homepage.bottom .footer{display:grid;height:40vh;bottom:0}
+body .site .site__main.homepage .footer{display:grid;height:40vh;bottom:0}
 body .site .site__main.homepage div{min-width:10px;min-height:10px}
 body .site .site__main.homepage .landing{opacity:0;-webkit-transition:.2s linear;transition:.2s linear;height:100vh;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:50px;background:0;border:0}
 body .site .site__main.homepage .landing .landing-title{font-size:4.5rem}
@@ -142,6 +142,8 @@ h2{font-size:34px}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */:root{--red:$red;--red_dark:$red_dark;--orange:$orange;--orange_dark:$orange_dark;--yellow:$yellow;--yellow_dark:$yellow_dark;--green:$green;--green_dark:$green_dark;--blue:$blue;--blue_dark:$blue_dark;--purple:$purple;--purple_dark:$purple_dark;--teal:$teal;--teal_dark:$teal_dark}
 html{line-height:1.15;-webkit-text-size-adjust:100%}
 *{-webkit-box-sizing:border-box;box-sizing:border-box}
+*::-moz-selection{background-color:#b24ddd}
+*::selection{background-color:#b24ddd}
 body,html{padding:0;margin:0}
 body{margin:0}
 main{display:block}
@@ -584,13 +586,13 @@ main.robyn-veitch-cv .cv-container .cv .cv-grid .cv-title .cv-title__tagline{fon
 body .site .site__main .nav-container,body .site .site__main.top .nav-container{position:fixed;top:0;right:0;height:100vh;z-index:10}
 body .site .site__main .nav-container nav,body .site .site__main.top .nav-container nav{width:100px;-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 body .site .site__main .nav-container nav ul li,body .site .site__main.top .nav-container nav ul li{display:none}
-body .site .site__main .nav-container nav ul li.nav-development,body .site .site__main .nav-container nav ul li.nav-design,body .site .site__main.top .nav-container nav ul li.nav-development,body .site .site__main.top .nav-container nav ul li.nav-design{display:none}
+body .site .site__main .nav-container nav ul li.nav-top-of-page,body .site .site__main.top .nav-container nav ul li.nav-top-of-page{display:none}
 body .site .site__main .nav-container nav ul li a,body .site .site__main.top .nav-container nav ul li a{padding:0 3rem 0 0}
 body .site .site__main .nav-container nav .nav-toggle i,body .site .site__main.top .nav-container nav .nav-toggle i{-webkit-text-stroke-width:1px;-webkit-text-stroke-color:black}
 body .site .site__main .nav-container.open,body .site .site__main.top .nav-container.open{background:rgba(0,0,0,0.7)}
 body .site .site__main .nav-container.open nav,body .site .site__main.top .nav-container.open nav{width:100vw}
 body .site .site__main .nav-container.open nav ul li,body .site .site__main.top .nav-container.open nav ul li{display:-webkit-box;display:-ms-flexbox;display:flex}
-body .site .site__main .nav-container.open nav ul li.nav-development,body .site .site__main .nav-container.open nav ul li.nav-design,body .site .site__main.top .nav-container.open nav ul li.nav-development,body .site .site__main.top .nav-container.open nav ul li.nav-design{display:-webkit-box;display:-ms-flexbox;display:flex}
+body .site .site__main .nav-container.open nav ul li.nav-top-of-page,body .site .site__main.top .nav-container.open nav ul li.nav-top-of-page{display:-webkit-box;display:-ms-flexbox;display:flex}
 .homepage-main{grid-column:1 / -1}
 .portfolio .content .folio-items{grid-template-columns:repeat(2,1fr);margin:30px 0;padding:20px;grid-gap:20px}
 .portfolio .content .folio-items .folio-item .folio-item__wrapper img{height:40vw}
