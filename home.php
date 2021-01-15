@@ -212,20 +212,21 @@
                 }
               }                
                 
-              foreach ( $sorted_posts as $priority => $posts ) {
+              // foreach ( $sorted_posts as $priority => $posts ) {
 
                 foreach ( $posts as $idx => $post ) {
                   $id = apply_filters( 'ID', $post->ID );
                   $name = apply_filters( 'post_name', $post->post_name );
                   $title = apply_filters( 'post_title', $post->post_title );
-                  $post_categories = get_the_category( $id );
                   $thumb = get_the_post_thumbnail_url( $id );
-  
+                  
+                  $post_categories = get_the_category( $id );
                   $folio_tags = "";
   
                   $idx = sizeof($post_categories) > 0 ? sizeof($post_categories) - 1 : 0;
+                  $idxCopy = sizeof($post_categories) > 0 ? sizeof($post_categories) - 1 : 0;
   
-                  while ($idx > 0) {
+                  while ($idx >= 0) {
                     $folio_tags .= '"' . $post_categories[$idx]->slug . '"';
                     if ($idx > 1 && $idx != sizeof($post_categories)) {
                       $folio_tags .=  ', ';
@@ -245,7 +246,7 @@
                   <?php
                 }
               
-              }
+              // }
 
             ?>
 
