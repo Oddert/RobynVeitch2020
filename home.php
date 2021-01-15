@@ -207,12 +207,12 @@
 
                 if ( !array_key_exists($priority, $sorted_posts) ) {
                   $sorted_posts[$priority] = array();
-                } else {
-                  $sorted_posts[$priority][] = $post;
                 }
+                
+                $sorted_posts[$priority][] = $post;
               }                
                 
-              // foreach ( $sorted_posts as $priority => $posts ) {
+              foreach ( $sorted_posts as $priority => $posts ) {
 
                 foreach ( $posts as $idx => $post ) {
                   $id = apply_filters( 'ID', $post->ID );
@@ -246,7 +246,7 @@
                   <?php
                 }
               
-              // }
+              }
 
             ?>
 
