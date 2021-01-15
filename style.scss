@@ -2547,6 +2547,27 @@ $header_height: 70px;
   }
 }
 
+.pagination  {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  .page-numbers {
+    background: $theme_primary;
+    color: $color_default__light;
+    font-size: 22px;
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: .05s linear;
+    &:hover {
+      background: $theme_primary-brighten
+    }
+    &.current {
+      background: $theme_primary-shadow--alt;
+    }
+  }
+}
+
 .post-list-content {
   margin: 10px 0;
   article {

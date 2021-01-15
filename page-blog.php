@@ -33,25 +33,29 @@
         $post_query->the_post();
 				get_template_part('template-parts/post/list-content');
       }
-    };
+    }
 
     $total_pages = $post_query->max_num_pages;
 
-    if ($total_pages > 1) {
-      $curr_page = max( 1, get_query_var('paged') );
+    ?>
+      <div class='pagination'>
+    <?php
+      if ($total_pages > 1) {
+        $curr_page = max( 1, get_query_var('paged') );
 
-      echo paginate_links(array(
-        'base' => get_pagenum_link(1) . '%_%',
-        'format' => '/page/%#%',
-        'current' => $curr_page,
-        'total' => $total_pages,
-        'prev_text' => __('previous'),
-        'next_text' => __('next')
-      ));
-    } else {      
-      echo "<h3>" . _e('404 Error&#58; Not Found', '') . "</h3>";
-    }
-	?>
+        echo paginate_links(array(
+          'base' => get_pagenum_link(1) . '%_%',
+          'format' => '/page/%#%',
+          'current' => $curr_page,
+          'total' => $total_pages,
+          'prev_text' => __('previous'),
+          'next_text' => __('next')
+        ));
+      } else {      
+        echo "<h3>" . _e('404 Error&#58; Not Found', '') . "</h3>";
+      }
+	  ?>
+    </div>
 	</main><!-- #main -->
 
 <?php
