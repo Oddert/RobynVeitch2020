@@ -194,7 +194,7 @@
                 'numberposts' => -1,
               );
 
-              $miniumn_priority = 50;
+              $miniumn_priority = 0;
 
               $posts = get_posts( $post_args );
 
