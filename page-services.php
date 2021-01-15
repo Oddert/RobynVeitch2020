@@ -43,23 +43,30 @@
       $bloqs_id = 515;
       $tn_id = 551;
       
-      function client_work_img ($id) {
+      function client_work_img ($id, $href) {
         $att_src = wp_get_attachment_image_src($id, 'full');
         $att_alt = get_post_meta($id, '_wp_attachment_image_alt', True);
-        return '<div class="case_study-image"><img class="case_study-image_img" src="' . $att_src[0] . '" alt="' . $att_alt . '" /></div>';
+        $img = "<a class='case_study-image' href='" . $href . "'>"
+            ."<img 
+                class='case_study-image_img' 
+                src='" . $att_src[0] . "' 
+                alt='" . $att_alt . "' 
+              />"
+          ."</a>";
+        return $img;
       }
 
-      function client_project ($class_name, $id, $title, $client, $short_desc, $time, $src) {
+      function client_project ($class_name, $id, $title, $client, $short_desc, $time, $href) {
         return "
         <div class='client_work-case_study case_study--" . $class_name . "'>"
-          . client_work_img($id) .
-          "<div class='case_study-text'>
+          . client_work_img($id, $href)
+        .  "<div class='case_study-text'>
             <div class='case_study-text--top'>"
-            . "<h4 class='case_study-title'>" 
-              . "<a src='" . $src . "'>"
-                  . $title 
-              . "</a>"
-            . "</h4>"
+            . "<a href='" . $href . "'>"
+              . "<h4 class='case_study-title'>" 
+                . $title 
+              . "</h4>"
+            . "</a>"
             . "<p class='case_study-client'>" . $client . "</p>
               <p class='case_study-short_description'>" . $short_desc . "</p>
             </div>

@@ -482,8 +482,8 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .page-services .client_work .client_work-case_studies .client_work-case_study a{color:#2d3e50;background:#fff;cursor:pointer}
 .page-services .client_work .client_work-case_studies .client_work-case_study a:hover{text-decoration:underline}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-image{width:100%;-webkit-box-flex:1;-ms-flex:1;flex:1;position:relative}
-.page-services .client_work .client_work-case_studies .client_work-case_study .case_study-image .case_study-image_img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
-.page-services .client_work .client_work-case_studies .client_work-case_study .case_study-text{padding:40px;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.page-services .client_work .client_work-case_studies .client_work-case_study .case_study-image .case_study-image_img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-fit:contain;object-fit:contain}
+.page-services .client_work .client_work-case_studies .client_work-case_study .case_study-text{padding:40px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-text .case_study-text--top{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-text .case_study-text--top .case_study-title{padding:0;margin:0;font-size:24px;letter-spacing:4px;font-weight:600}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-text .case_study-text--top .case_study-client{padding:0;margin:0;font-size:20px;letter-spacing:2px;font-weight:500;margin:20px 0;color:#95a5a5}
@@ -662,7 +662,7 @@ body .site .site__main.homepage .landing .landing-subtitle{font-size:16px}
 .page-services .process .process_intro .process-intro_text--title_group,.page-services .process .process_intro .process-intro_text--paragraph_group{grid-column:1;padding:50px 10px;text-align:center}
 .page-services .cta .cta__container .cta--wrapper .cta-text{padding:10px;font-size:14px}
 .page-services .cta .cta__container .cta--wrapper .cta-text .cta-text__title{font-size:22px}
-}@media only screen and (max-height:600px){.page-services .client_work .client_work-case_studies .client_work-case_study{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;width:500px}
+}@media only screen and (max-height:600px){.page-services .client_work .client_work-case_studies .client_work-case_study{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;width:800px}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-image{width:50%}
 .page-services .client_work .client_work-case_studies .client_work-case_study .case_study-text{width:50%}
 }@media only screen and (max-height:480px){.page-services .intro .intro-content{-webkit-transition:.1s linear;transition:.1s linear;padding-bottom:20px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;padding-left:30px;padding-right:30px}
