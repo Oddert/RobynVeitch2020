@@ -194,7 +194,7 @@
                 'numberposts' => -1,
               );
 
-              $miniumn_priority = 0;
+              $miniumn_priority = 60;
 
               $posts = get_posts( $post_args );
 
@@ -228,7 +228,7 @@
   
                   while ($idx >= 0) {
                     $folio_tags .= '"' . $post_categories[$idx]->slug . '"';
-                    if ($idx > 1 && $idx != sizeof($post_categories)) {
+                    if ($idx >= 1 && $idx != sizeof($post_categories)) {
                       $folio_tags .=  ', ';
                     }
                     $idx--;
