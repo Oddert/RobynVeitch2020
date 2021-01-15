@@ -1183,6 +1183,7 @@ textarea {
         font-size: 16px;
         padding: 6px 30px;
         transition: .1s linear;
+        width: 100%;
         &:focus, &:hover {
           border-color: $c;
         }
@@ -1238,15 +1239,17 @@ textarea {
         padding: $form_header_padding__t;
         input {
           font-size: 22px;
-          
         }
       }
       .comment-form-email {
+        grid-row: 1;
+        grid-column: 3 / -1;
         display: flex;
         flex-direction: column;
-        padding: $form_header_padding__b;
-        grid-row: 2;
-        grid-column: 3;
+        padding: $form_header_padding__t;
+        input {
+          font-size: 22px;
+        }
       }
       .comment-form-url {
         grid-row: 2;
@@ -2768,6 +2771,31 @@ $header_height: 70px;
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .comments-area .comment-respond .comment-form {
+    .comment-form-author {
+      grid-column: 1 / -1;
+    }
+    .comment-form-email {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+    .comment-form-url {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+    .comment-form-comment {
+      grid-row: 4;
+    }
+    .comment-form-cookies-consent {
+      grid-row: 5;
+    }
+    .form-submit {
+      grid-row: 5;
+    }
+  } 
+}
+
 @media screen and (max-width: 1000px) {
 	main.robyn-veitch-cv {
 		$cv_width: 600px;
@@ -2963,6 +2991,34 @@ $header_height: 70px;
     grid-template-columns: 1fr 90vw 1fr;
   }
 
+}
+
+@media only screen and (max-width: 782px) {
+  .comments-area .comment-respond .comment-form {
+    grid-template-columns: 1fr;
+    .logged-in-as {
+      display: flex;
+      justify-content: center;
+      a:nth-child(2) {
+        margin-left: 10px;
+      }
+    }
+    .comment-form-comment {
+      grid-column: 1;
+    }
+    .comment-form-cookies-consent {
+      grid-row: auto;
+      grid-column: 1 / -1;
+      padding: 20px 50px;
+    }
+    .form-submit {
+      grid-column: 1;
+      grid-row: auto;
+      .submit {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
