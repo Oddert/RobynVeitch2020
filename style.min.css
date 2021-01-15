@@ -235,7 +235,7 @@ textarea{width:100%}
 .site-header .site-header__wrapper .site-header__wrapper--inner .site-branding .custom-logo-link .custom-logo{height:50%;max-width:70px;-o-object-fit:contain;object-fit:contain}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation{-webkit-transition:.1s linear;transition:.1s linear}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-toggle{height:100%;padding:0 40px;background:0;border:0;cursor:pointer;-webkit-transition:.1s linear;transition:.1s linear}
-.site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-toggle i{-webkit-transition:.1s linear;transition:.1s linear;color:#ccc;font-size:30px}
+.site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-toggle i{-webkit-transition:.1s linear;transition:.1s linear;color:#ccc;color:#ecf0f1;font-size:30px}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-toggle i.fa-chevron-left{display:inline-block}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-toggle i.fa-chevron-right{display:none}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation .menu-toggle:hover{background:#8d44ad}
@@ -274,7 +274,7 @@ textarea{width:100%}
 .comments-area .comment-list .comment{width:100%;margin:20px 0;-webkit-box-shadow:0 7px 10px rgba(212,220,222,0.9);box-shadow:0 7px 10px rgba(212,220,222,0.9)}
 .comments-area .comment-list .comment .comment-body{background:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .comments-area .comment-list .comment .comment-body>*{padding:30px 100px}
-.comments-area .comment-list .comment .comment-body .comment-meta{color:#ecf0f1;padding:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;height:100px;z-index:1}
+.comments-area .comment-list .comment .comment-body .comment-meta{color:#ecf0f1;padding:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;z-index:1}
 .comments-area .comment-list .comment .comment-body .comment-meta .says{display:none}
 .comments-area .comment-list .comment .comment-body .comment-meta .avatar{height:100px;width:100px;grid-column:1;grid-row:1 / 2}
 .comments-area .comment-list .comment .comment-body .comment-meta .comment-author{position:relative;background:#9d5fdd;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-width:50%;font-size:20px;letter-spacing:1px}
@@ -615,7 +615,7 @@ body .site .site__main .nav-container.open nav ul li.nav-top-of-page,body .site 
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation.toggled .menu-toggle i.fa-chevron-right{display:inline-block}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation.toggled .menu-navbar-container{height:auto;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation.toggled .menu-navbar-container ul{min-width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
-.site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation.toggled .menu-navbar-container ul li a{opacity:1;padding:20px 40px;border-right:5px solid #752c95}
+.site-header .site-header__wrapper .site-header__wrapper--inner .main-navigation.toggled .menu-navbar-container ul li a{opacity:1;padding:0 40px;border-right:5px solid #752c95}
 .site-header .site-header__wrapper .site-header__wrapper--inner .site-branding .site-title,.site-header .site-header__wrapper .site-header__wrapper--inner .site-branding .site-title.preffer-topbar{display:none}
 .entry-header .entry-meta{padding:40px 20px}
 .entry-header .entry-meta .posted-on{margin-left:30px}
@@ -623,7 +623,22 @@ body .site .site__main .nav-container.open nav ul li.nav-top-of-page,body .site 
 .entry-content{grid-template-columns:20px 30px 1fr 30px 20px}
 .entry-content>*{grid-column:3}
 .entry-footer{padding:0 4vw 100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.site-main .post-navigation .nav-links{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}
+.site-main .post-navigation .nav-links>div{max-width:100vw}
+.site-main .post-navigation .nav-links>div a{padding:50px 25px}
+.site-main .post-navigation .nav-links>div a:hover{background:#fbfbfb}
+.site-main .post-navigation .nav-links>div a:active{background:#ecf0f1}
+.site-main .post-navigation .nav-links>div.nav-previous,.site-main .post-navigation .nav-links>div.nav-next{margin-left:0;margin-right:0;margin-bottom:30px;width:100%}
 .comments-area{grid-template-columns:1fr 90vw 1fr}
+.comments-area .comment-list .comment .comment-body .reply{padding:0 50px 20px}
+.comments-area .comment-list .comment .comment-body .comment-meta{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.comments-area .comment-list .comment .comment-body .comment-meta .comment-metadata{padding:20px}
+.comments-area .comment-list .comment .comment-body .comment-meta .avatar{width:60px;height:60px}
+.comments-area .comment-list .comment .comment-body .comment-meta .comment-author{width:100%;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.comments-area .comment-list .comment .comment-body .comment-meta .comment-author b{padding:10px 30px}
+.comments-area .comment-list .comment .comment-body .comment-meta .comment-author:after{content:'';background:#8d44ad;height:100%;width:95%;top:5px;left:2.5%;z-index:-1;position:absolute}
+.comments-area .comment-list .comment .comment-body .comment-content{padding:0 50px}
+.entry-content .block-code-links .wrapper .code-link.repo,.entry-content .block-code-links .wrapper .code-link.demo{margin:0}
 }@media only screen and (max-width:782px){.comments-area .comment-respond .comment-form{grid-template-columns:1fr}
 .comments-area .comment-respond .comment-form .logged-in-as{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .comments-area .comment-respond .comment-form .logged-in-as a:nth-child(2){margin-left:10px}
@@ -664,6 +679,13 @@ body .site .site__main.homepage .landing .landing-subtitle{font-size:16px}
 .page-services .cta .cta__container{padding:10px}
 .page-services .client_work .client_work-case_studies{padding:20px}
 .page-services .client_work .client_work-title{padding:50px 20px 20px 20px;width:100%;text-align:center}
+.entry-content{grid-template-columns:10px 1fr 10px}
+.entry-content>*{grid-column:2}
+.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6,.entry-content .wp-block-embed{grid-column:2}
+.entry-content .wp-block-cover{grid-column:2}
+.entry-content .subtitle{grid-column:2}
+.entry-content .block-code-links .wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.entry-content .block-code-links .wrapper .code-link.repo,.entry-content .block-code-links .wrapper .code-link.demo{margin-bottom:20px}
 }@media screen and (max-width:450px){.page-services .intro{min-height:100vh}
 .page-services .process .process_section .section_content .section_content-bullet,.page-services .process .process_section .section_content .section_content-bullet_line,.page-services .process .process_section .section_content .section_content-arrow--head,.page-services .process .process_section .section_content .section_content-arrow--tail{display:none}
 }@media screen and (max-width:400px){body .site .site__main.homepage .landing{padding:0}
