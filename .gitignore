@@ -68,5 +68,5 @@ library/vendors/composer
 assets/img/.DS_Store
 
 # Misc #
-temp.md
+*temp.md
 report.*

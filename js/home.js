@@ -1,8 +1,8 @@
 var folioFilters = {}
 var odd_debug = false
 
-var designTags = ['industrial_design', 'service_design', 'social_design']
-var developmentTags = ['web_development', 'app_development', 'system_design', 'microservices', 'data_vis']
+var designTags = ['industrial-design', 'service-design', 'social-design']
+var developmentTags = ['web-development', 'app-development', 'system-design', 'microservices', 'data-vis']
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (query.includes("focus=design")) folioFilters[tagName] = designTags.includes(tagName)
         if (query.includes("focus=development")) folioFilters[tagName] = developmentTags.includes(tagName)
         each.onclick = toggleSingleFilter
-        renderFolioItems()
       })
+      renderFolioItems()
       renderFolioTags()
     } else {
       filterTags.forEach(each => {
