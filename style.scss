@@ -2551,6 +2551,22 @@ $header_height: 70px;
   }
 }
 
+.contact-follower {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  .contact-follower_container {
+    background: #fff;
+
+  }
+  &.open {
+    display: flex;
+  }
+}
+
 .pagination  {
   display: flex;
   justify-content: center;

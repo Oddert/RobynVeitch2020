@@ -532,6 +532,9 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .page-services .process .process_section.p1c{grid-template-rows:auto}
 .page-services .process .process_section.p3c{grid-template-rows:repeat(3,auto)}
 .page-services .process .process_section.p4c{grid-template-rows:repeat(4,auto)}
+.contact-follower{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh}
+.contact-follower .contact-follower_container{background:#fff}
+.contact-follower.open{display:-webkit-box;display:-ms-flexbox;display:flex}
 .pagination{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:30px}
 .pagination .page-numbers{background:#9d5fdd;color:#ecf0f1;font-size:22px;margin:0 10px;padding:10px 20px;text-decoration:none;-webkit-transition:.05s linear;transition:.05s linear}
 .pagination .page-numbers:hover{background:#ba8fe7}

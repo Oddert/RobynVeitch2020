@@ -161,6 +161,15 @@ function robynVeitch_scripts() {
 		wp_enqueue_script( 'robynVeitch-home', get_template_directory_uri() . '/js/home.js', array(), _ROBYNVEITCH_VERSION );
 	}
 
+	global $post;
+
+	if ( is_page() || is_single() ) {
+		switch( $post->post_name ) {
+			case 'services':
+				wp_enqueue_script( 'pageservices', get_template_directory_uri() . '/js/page-services.js', array(), _ROBYNVEITCH_VERSION, true );
+				break;
+		}
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'robynVeitch_scripts' );
