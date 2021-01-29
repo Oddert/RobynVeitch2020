@@ -20,10 +20,21 @@ Installation
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+Development Environment
+==
+This repository uses SASS and hot reloading facilitated by gulp
+```
+# navigate to the /wp-content/themes directory
+$ git clone https://github.com/Oddert/RobynVeitch2020.git
+$ cd RobynVeitch2020
+$ npm i
+$ npm run start
+```
+
 Frequently Asked Questions 
 ==
 
-= Does this theme support any plugins? =
+### Does this theme support any plugins?
 
 RobynVeitch includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
