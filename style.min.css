@@ -405,6 +405,7 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .entry-content .subtitle{grid-column:4 / -4;font-size:26px;text-align:center;margin-bottom:50px}
 .entry-content:after{position:absolute}
 .entry-content:after{content:'';background:#dbdfe0;height:10px;width:98%;top:-10px;left:1%;z-index:-1;position:absolute}
+.template-full-width .entry-content{grid-template-columns:50px 3vw 3vw 3vw 1fr 3vw 3vw 3vw 50px}
 .caution{background:#444;border-left:25px solid #e67f22;margin:0;padding:20px 40px;color:#ecf0f1}
 .warning{background:#444;border-left:25px solid #e84c3d;margin:0;padding:20px 40px;color:#ecf0f1}
 .entry-footer{padding:0 20vw 100px;padding:60px 20vw}

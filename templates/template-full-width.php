@@ -11,13 +11,15 @@
     get_template_part('template-parts/navigation/navbar');
  ?>
 
- <main id="site-content" role="main">
+ <main id="site-content" class="template-full-width" role="main">
     <div data-oddert='templates/template-full-width.php'></div>
     <?php
     
-    if (have_posts()) {
-      while (have_posts()) {
+    if ( have_posts() ) {
+      while ( have_posts() ) {
         the_post();
+      
+				get_template_part( 'template-parts/post/content', get_post_type() );
       }
     }
 

@@ -1789,6 +1789,17 @@ $header_height: 70px;
   @include odd_shadow_after(1%, -10px, $off_eecf, -1, 98%, 10px);
 }
 
+.template-full-width .entry-content {
+  $ec_page_margin: 50px;
+  $ec_gutter_width: 3vw;
+  $ec_content_margin: 3vw;
+  $ec_header_padding: 3vw;
+
+  grid-template-columns: 
+    $ec_page_margin $ec_gutter_width $ec_content_margin $ec_header_padding 1fr $ec_header_padding $ec_content_margin $ec_gutter_width $ec_page_margin;
+    // 5vw 12vw 5vw 5vw 1fr 5vw 5vw 12vw 5vw
+}
+
 @mixin warn ($highlight) {
   background: #444;
   border-left: 25px solid $highlight;

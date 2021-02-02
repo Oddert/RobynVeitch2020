@@ -11,7 +11,7 @@
 	get_template_part('template-parts/navigation/navbar');
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main  template-code-project">
 		<div data-oddert='single.php'></div>
 
 			
