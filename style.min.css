@@ -347,6 +347,9 @@ textarea{width:100%}
 .entry-content .block-code-links .wrapper .code-link:hover{background:#5c7ea3;color:#fff}
 .entry-content .block-code-links .wrapper .code-link:hover:after{content:'';background:#1c2631;height:100%;width:90%;top:10px;left:5%;z-index:-1;position:absolute}
 .entry-content .block-code-links .wrapper .code-link:active{background:#8da5bf}
+.entry-content .block-code-links.code-links-sm .wrapper .code-link{padding:15px}
+.entry-content .block-code-links.code-links-sm .wrapper .code-link.repo{margin-right:2px}
+.entry-content .block-code-links.code-links-sm .wrapper .code-link.demo{margin-left:2px}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
 .infinity-end.neverending .site-footer{display:block}
 .screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute !important;width:1px;word-wrap:normal !important}
@@ -405,7 +408,7 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .entry-content .subtitle{grid-column:4 / -4;font-size:26px;text-align:center;margin-bottom:50px}
 .entry-content:after{position:absolute}
 .entry-content:after{content:'';background:#dbdfe0;height:10px;width:98%;top:-10px;left:1%;z-index:-1;position:absolute}
-.template-full-width .entry-content{grid-template-columns:50px 3vw 3vw 3vw 1fr 3vw 3vw 3vw 50px}
+.template-full-width .entry-content{grid-template-columns:50px 3vw 3vw 5vw 1fr 5vw 3vw 3vw 50px}
 .caution{background:#444;border-left:25px solid #e67f22;margin:0;padding:20px 40px;color:#ecf0f1}
 .warning{background:#444;border-left:25px solid #e84c3d;margin:0;padding:20px 40px;color:#ecf0f1}
 .entry-footer{padding:0 20vw 100px;padding:60px 20vw}

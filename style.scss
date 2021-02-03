@@ -1461,6 +1461,18 @@ textarea {
       }
     }
   }
+  &.code-links-sm {
+    .wrapper .code-link {
+      padding: 15px;
+      $item_gap: 2px;
+      &.repo {
+        margin-right: $item_gap;
+      }
+      &.demo {
+        margin-left: $item_gap;
+      }
+    }
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1793,7 +1805,7 @@ $header_height: 70px;
   $ec_page_margin: 50px;
   $ec_gutter_width: 3vw;
   $ec_content_margin: 3vw;
-  $ec_header_padding: 3vw;
+  $ec_header_padding: 5vw;
 
   grid-template-columns: 
     $ec_page_margin $ec_gutter_width $ec_content_margin $ec_header_padding 1fr $ec_header_padding $ec_content_margin $ec_gutter_width $ec_page_margin;

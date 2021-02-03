@@ -27,6 +27,6 @@
 
 </main> <!-- #site-content -->
 
-<h3>template-full-width.php</h3>
+<!-- <h3>template-full-width.php</h3> -->
 
 <?php get_footer(); ?>
