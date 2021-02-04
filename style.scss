@@ -1555,7 +1555,7 @@ main.robyn-veitch-cv {
 	$cv_width: 900px;
 	$cv_height: $cv_width * 1.4142857142857144;
   @include font_cv_open_sans;
-	background: #ecf0f1;
+  background: #ecf0f1;
 	.cv-container {
 		// margin: $header_shadow_emphesis_y 0 0 0;
 		padding: 150px 0;
@@ -1565,7 +1565,10 @@ main.robyn-veitch-cv {
 		justify-content: center;
 		.cv {
 			background: #fff;
-			box-shadow: 0 20px 20px rgba(0,0,0,.3);
+      box-shadow: 0 20px 20px rgba(0,0,0,.3);
+      h4 {
+        font-size: 1em;
+      }
 			.cv-grid {
 				width: $cv_width;
 				height: $cv_height;
@@ -1579,7 +1582,7 @@ main.robyn-veitch-cv {
 					grid-column: 1 / -1;
 					text-align: right;
 					.cv-title__name {
-						letter-spacing: 3px;
+						letter-spacing: 5px;
 						font-weight: 400;
 						font-size: 30px;
 					}
@@ -1592,7 +1595,8 @@ main.robyn-veitch-cv {
 			}
 			p {
 				margin: 0;
-				padding: 0;
+        padding: 0;
+        font-size: .9em;
 			}
 			h3 {
 				border-bottom: 3px solid $theme_primary;

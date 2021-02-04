@@ -362,11 +362,12 @@ textarea{width:100%}
 main.robyn-veitch-cv{font-family:'open sans','Avenir Next LT Pro','roboto','droid sans','helvetica','sans-serif','arial';background:#ecf0f1}
 main.robyn-veitch-cv .cv-container{padding:150px 0;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 main.robyn-veitch-cv .cv-container .cv{background:#fff;-webkit-box-shadow:0 20px 20px rgba(0,0,0,0.3);box-shadow:0 20px 20px rgba(0,0,0,0.3)}
+main.robyn-veitch-cv .cv-container .cv h4{font-size:1em}
 main.robyn-veitch-cv .cv-container .cv .cv-grid{width:900px;height:1272.85714286px;display:grid;grid-template-columns:5fr 11fr;grid-template-rows:auto 1fr;padding:.029vw .058vw;padding:40px 80px;grid-gap:0 40px}
 main.robyn-veitch-cv .cv-container .cv .cv-grid .cv-title{grid-column:1 / -1;text-align:right}
-main.robyn-veitch-cv .cv-container .cv .cv-grid .cv-title .cv-title__name{letter-spacing:3px;font-weight:400;font-size:30px}
+main.robyn-veitch-cv .cv-container .cv .cv-grid .cv-title .cv-title__name{letter-spacing:5px;font-weight:400;font-size:30px}
 main.robyn-veitch-cv .cv-container .cv .cv-grid .cv-title .cv-title__tagline{font-weight:400;font-size:18px;border-bottom:0}
-main.robyn-veitch-cv .cv-container .cv p{margin:0;padding:0}
+main.robyn-veitch-cv .cv-container .cv p{margin:0;padding:0;font-size:.9em}
 main.robyn-veitch-cv .cv-container .cv h3{border-bottom:3px solid #9d5fdd;font-weight:400;font-size:22px;margin:15px 0 10px}
 main.robyn-veitch-cv .cv-container .cv h4{margin:10px 0 0 0}
 main.robyn-veitch-cv .cv-container .cv .cv-content__subtitle{color:#7e8c8d;margin:0 0 10px 0}

@@ -58,6 +58,8 @@
           github.com/Oddert/
           <h4>LinkedIn</h4>
           linkedin.com/in/robyn-veitch/
+          <h4>Phone</h4>
+          +44 07767 297041
 
           <p class='cv-references'>
             References can be provided on request
@@ -66,12 +68,12 @@
 
         <div class='cv-column--two'>
           <h3>Experience</h3>
-          <h4>Web Developer Consultant | Matter of Stuff</h4>
+          <h4>Web Developer | Freelance</h4>
           <p class='cv-content__subtitle'>
-            1 April 2019 - 1 March 2020
+            1 August 2020 - ongoing
           </p>
           <p>
-            Beginning with content curation I worked on a product visualisation tool to enhance the customer experience. I built their new Moodboard tool to allow on-site collaborative curation of project themes and resources.
+            Helped several small businesses to launch, designed a custom stock tracking system for a growing start up. Advised a number of large companies on successful technological strategy.
           </p>
 
           <h4>Operations & Retail Associate | Waitrose & Partners</h4>
@@ -80,6 +82,14 @@
           </p>
           <p>
             Working across multiple branches, running the cash control processes I designed and implemented new resources and management processes to minimise wastage and successfully eliminated ongoing theft issues.
+          </p>
+
+          <h4>Web Developer Consultant | Matter of Stuff</h4>
+          <p class='cv-content__subtitle'>
+            1 April 2019 - 1 March 2020
+          </p>
+          <p>
+            Beginning with content curation I worked on a product visualisation tool to enhance the customer experience. I built their new Moodboard tool to allow on-site collaborative curation of project themes and resources.
           </p>
 
           <h4>Product Designer | Design Against Crime</h4>
@@ -111,13 +121,6 @@
           </p>
           <p>
             Self-directed study into coding and development technologies through the FCC online curriculum.
-          </p>
-          <h4>Eastwood High School</h4>
-          <p class='cv-content__subtitle'>
-            4 August 2015
-          </p>
-          <p>
-            Attained SQA 5 Higher A’s, 1 Higher B, 1 Advanced Higher  
           </p>
         </div>
 
