@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval (typeAnimationTimer)
       }
     }
-    typeAnimationTimer = setInterval (interval, 20)
+    typeAnimationTimer = setInterval (interval, 10)
   }
 
   function resetTags () {

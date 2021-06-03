@@ -6,6 +6,8 @@ $gutter_inner: 10vw;
 $header: 80px;
 $foot_portion: $header / 2;
 
+$about-top-margin: 200px;
+
 @mixin no_scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -342,7 +344,7 @@ body .site .site__main.homepage {
       display: none;
     }
     .about {
-      margin: 400px 0 200px;
+      margin: $about-top-margin 0 200px;
     }
     .footer {
       display: grid;
@@ -614,8 +616,8 @@ body .site .site__main.homepage div.content {
   background: none;
   border: none;
   $radius: 250px;
-  margin: 400px 0 800px;
-  margin: 400px 0 120px;
+  margin: $about-top-margin 0 800px;
+  margin: $about-top-margin 0 120px;
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: $gutter_inner 1fr $gutter_inner;
@@ -641,7 +643,7 @@ body .site .site__main.homepage div.content {
       }
     }
     .profile-picture {
-      flex: 2;
+      // flex: 2;
       height: $radius;
       width: $radius;
       // zdebug

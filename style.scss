@@ -2881,7 +2881,9 @@ $header_height: 70px;
 
 @media only screen and (max-width: 960px) {
 
-  body .site .site__main, body .site .site__main.top {
+  body .site .site__main.homepage, 
+	body .site .site__main.top,
+  body .site .site__main.homepage.top {
     grid-template-columns: $menu_collapse $gutter_outer $gutter_inner 1fr $gutter_inner;  
     .nav-container {
       position: fixed;
@@ -2897,6 +2899,12 @@ $header_height: 70px;
           li {
             display: none;
             &.nav-top-of-page {
+              display: none;
+            }
+            &.nav-design {
+              display: none;
+            }
+            &.nav-development {
               display: none;
             }
             a {
@@ -2919,6 +2927,12 @@ $header_height: 70px;
           ul li {
             display: flex;
             &.nav-top-of-page {
+              display: flex;
+            }
+            &.nav-design {
+              display: flex;
+            }
+            &.nav-development {
               display: flex;
             }
           }

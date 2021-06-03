@@ -58,7 +58,7 @@ body .site .site__main.homepage.top .nav-container nav ul li{-webkit-box-pack:en
 body .site .site__main.homepage.top .nav-container nav ul li.nav-design,body .site .site__main.homepage.top .nav-container nav ul li.nav-development{display:-webkit-box;display:-ms-flexbox;display:flex}
 body .site .site__main.homepage.noscript .landing{opacity:1}
 body .site .site__main.homepage.noscript .nav-container .nav-toggle{display:none}
-body .site .site__main.homepage.noscript .about{margin:400px 0 200px}
+body .site .site__main.homepage.noscript .about{margin:200px 0 200px}
 body .site .site__main.homepage.noscript .footer{display:grid;grid-column:3 / -1;height:40vh}
 body .site .site__main.homepage .footer{display:grid;height:40vh;bottom:0}
 body .site .site__main.homepage div{min-width:10px;min-height:10px}
@@ -91,12 +91,12 @@ body .site .site__main.homepage .landing .landing-subtitle span{color:#2d3e50;ma
 .portfolio .content .folio-items .folio-item.hidden{display:none;opacity:0}
 .site__main.homepage .portfolio .content .folio-items{color:#2d3e50}
 body .site .site__main.homepage div.content{min-height:400px}
-.about{grid-column:3 / -1;background:0;border:0;margin:400px 0 800px;margin:400px 0 120px;display:grid;grid-auto-rows:auto;grid-template-columns:10vw 1fr 10vw}
+.about{grid-column:3 / -1;background:0;border:0;margin:200px 0 800px;margin:200px 0 120px;display:grid;grid-auto-rows:auto;grid-template-columns:10vw 1fr 10vw}
 .about .content{display:grid;grid-template-columns:1fr 250px;grid-column:1 / -1}
 .about .content .intro{-webkit-box-flex:3;-ms-flex:3;flex:3;display:-webkit-box;display:-ms-flexbox;display:flex;padding:40px}
 .about .content .intro .intro-text{margin:0;font-size:2.5rem;font-weight:400;letter-spacing:4px}
 .about .content .intro .intro-text .cursor{-webkit-animation:blink 1.2s infinite;animation:blink 1.2s infinite}
-.about .content .profile-picture{-webkit-box-flex:2;-ms-flex:2;flex:2;height:250px;width:250px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;z-index:1}
+.about .content .profile-picture{height:250px;width:250px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;z-index:1}
 .about .content .profile-picture img{width:250px;height:250px;-o-object-fit:cover;object-fit:cover}
 .about .content .profile-picture:after{-webkit-transition:.2s linear;transition:.2s linear}
 .about .content .profile-picture:after{content:'';background:#ecf0f1;height:250px;width:250px;top:-14px;left:-14px;z-index:-1;position:absolute}
@@ -601,17 +601,21 @@ main.robyn-veitch-cv .cv-container .cv .cv-grid{width:600px;height:848.571428571
 main.robyn-veitch-cv .cv-container .cv .cv-grid .cv-title .cv-title__name{font-size:1.4em}
 main.robyn-veitch-cv .cv-container .cv .cv-grid .cv-title .cv-title__tagline{font-size:.8em}
 .page-services .cta .cta__container .cta--wrapper .cta-image{padding:20px}
-}@media only screen and (max-width:960px){body .site .site__main,body .site .site__main.top{grid-template-columns:7vw 15vw 10vw 1fr 10vw}
-body .site .site__main .nav-container,body .site .site__main.top .nav-container{position:fixed;top:0;right:0;height:100vh;z-index:10}
-body .site .site__main .nav-container nav,body .site .site__main.top .nav-container nav{width:100px;-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
-body .site .site__main .nav-container nav ul li,body .site .site__main.top .nav-container nav ul li{display:none}
-body .site .site__main .nav-container nav ul li.nav-top-of-page,body .site .site__main.top .nav-container nav ul li.nav-top-of-page{display:none}
-body .site .site__main .nav-container nav ul li a,body .site .site__main.top .nav-container nav ul li a{padding:0 3rem 0 0}
-body .site .site__main .nav-container nav .nav-toggle i,body .site .site__main.top .nav-container nav .nav-toggle i{-webkit-text-stroke-width:1px;-webkit-text-stroke-color:black}
-body .site .site__main .nav-container.open,body .site .site__main.top .nav-container.open{background:rgba(0,0,0,0.7)}
-body .site .site__main .nav-container.open nav,body .site .site__main.top .nav-container.open nav{width:100vw}
-body .site .site__main .nav-container.open nav ul li,body .site .site__main.top .nav-container.open nav ul li{display:-webkit-box;display:-ms-flexbox;display:flex}
-body .site .site__main .nav-container.open nav ul li.nav-top-of-page,body .site .site__main.top .nav-container.open nav ul li.nav-top-of-page{display:-webkit-box;display:-ms-flexbox;display:flex}
+}@media only screen and (max-width:960px){body .site .site__main.homepage,body .site .site__main.top,body .site .site__main.homepage.top{grid-template-columns:7vw 15vw 10vw 1fr 10vw}
+body .site .site__main.homepage .nav-container,body .site .site__main.top .nav-container,body .site .site__main.homepage.top .nav-container{position:fixed;top:0;right:0;height:100vh;z-index:10}
+body .site .site__main.homepage .nav-container nav,body .site .site__main.top .nav-container nav,body .site .site__main.homepage.top .nav-container nav{width:100px;-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
+body .site .site__main.homepage .nav-container nav ul li,body .site .site__main.top .nav-container nav ul li,body .site .site__main.homepage.top .nav-container nav ul li{display:none}
+body .site .site__main.homepage .nav-container nav ul li.nav-top-of-page,body .site .site__main.top .nav-container nav ul li.nav-top-of-page,body .site .site__main.homepage.top .nav-container nav ul li.nav-top-of-page{display:none}
+body .site .site__main.homepage .nav-container nav ul li.nav-design,body .site .site__main.top .nav-container nav ul li.nav-design,body .site .site__main.homepage.top .nav-container nav ul li.nav-design{display:none}
+body .site .site__main.homepage .nav-container nav ul li.nav-development,body .site .site__main.top .nav-container nav ul li.nav-development,body .site .site__main.homepage.top .nav-container nav ul li.nav-development{display:none}
+body .site .site__main.homepage .nav-container nav ul li a,body .site .site__main.top .nav-container nav ul li a,body .site .site__main.homepage.top .nav-container nav ul li a{padding:0 3rem 0 0}
+body .site .site__main.homepage .nav-container nav .nav-toggle i,body .site .site__main.top .nav-container nav .nav-toggle i,body .site .site__main.homepage.top .nav-container nav .nav-toggle i{-webkit-text-stroke-width:1px;-webkit-text-stroke-color:black}
+body .site .site__main.homepage .nav-container.open,body .site .site__main.top .nav-container.open,body .site .site__main.homepage.top .nav-container.open{background:rgba(0,0,0,0.7)}
+body .site .site__main.homepage .nav-container.open nav,body .site .site__main.top .nav-container.open nav,body .site .site__main.homepage.top .nav-container.open nav{width:100vw}
+body .site .site__main.homepage .nav-container.open nav ul li,body .site .site__main.top .nav-container.open nav ul li,body .site .site__main.homepage.top .nav-container.open nav ul li{display:-webkit-box;display:-ms-flexbox;display:flex}
+body .site .site__main.homepage .nav-container.open nav ul li.nav-top-of-page,body .site .site__main.top .nav-container.open nav ul li.nav-top-of-page,body .site .site__main.homepage.top .nav-container.open nav ul li.nav-top-of-page{display:-webkit-box;display:-ms-flexbox;display:flex}
+body .site .site__main.homepage .nav-container.open nav ul li.nav-design,body .site .site__main.top .nav-container.open nav ul li.nav-design,body .site .site__main.homepage.top .nav-container.open nav ul li.nav-design{display:-webkit-box;display:-ms-flexbox;display:flex}
+body .site .site__main.homepage .nav-container.open nav ul li.nav-development,body .site .site__main.top .nav-container.open nav ul li.nav-development,body .site .site__main.homepage.top .nav-container.open nav ul li.nav-development{display:-webkit-box;display:-ms-flexbox;display:flex}
 .homepage-main{grid-column:1 / -1}
 .portfolio .content .folio-items{grid-template-columns:repeat(2,1fr);margin:30px 0;padding:20px;grid-gap:20px}
 .portfolio .content .folio-items .folio-item .folio-item__wrapper img{height:40vw}
