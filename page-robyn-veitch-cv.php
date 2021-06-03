@@ -42,11 +42,11 @@
           <h3>Skills</h3>
           <h4>General</h4>
           <p>
-            Research and human insight lead design, team management, communication, workshop skills, CAD / CAM, complex problem-solving, Data Visualisation, DevOps, microservices, design for manufacture
-          </p>
+						Research and human insight lead design, team leadership & management, communication, workshop skills, CAD / CAM, complex problem-solving, Data Visualisation, DevOps, CI/CD, Microservices, design for manufacture, code structuring, reverse engineering
+					</p>
           <h4>Tools</h4>
           <p>
-            JavaScript (ES6+), React-Redux, react-Native, Processing, D3.js, P5.js, Node.js, PHP, Adobe suite, WebSockets, SASS, Python, SolidWorks, WebGL
+						JavaScript (ES6+), Typescript, React-Redux, React-Native, SQL, MongoDB, D3.js, P5.js, Node, PHP, Adobe suite, Figma, REST API’s, GraphQL, WebSockets, SASS, Python, SolidWorks, WebGL
           </p>
           
           <h3>Contact</h3>
