@@ -201,6 +201,7 @@ dd{margin:0 1.5em 1.5em}
 embed,iframe,object{max-width:100%}
 img{height:auto;max-width:100%}
 figure{margin:1em 0}
+figcaption,.wp-block-caption figcaption{word-break:break-all}
 table{margin:0 0 1.5em;width:100%}
 code{background:#ecf0f1;border-radius:5px;padding:0 5px;color:#c1392b}
 a{color:#4169e1}
@@ -403,12 +404,15 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .entry-content .wp-block-cover{grid-column:1 / -1;height:100vh}
 .entry-content .wp-block-image{text-align:center}
 .entry-content .wp-block-video{text-align:center}
-.entry-content .wp-block-gallery .blocks-gallery-grid{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}
+.entry-content .wp-block-gallery .blocks-gallery-grid{-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}
 .entry-content .wp-block-gallery .blocks-gallery-grid .blocks-gallery-item figure{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .entry-content .wp-block-gallery .blocks-gallery-grid .blocks-gallery-item figure .blocks-gallery-item__caption{background:0;color:black;position:relative}
 .entry-content .subtitle{grid-column:4 / -4;font-size:26px;text-align:center;margin-bottom:50px}
 .entry-content:after{position:absolute}
 .entry-content:after{content:'';background:#dbdfe0;height:10px;width:98%;top:-10px;left:1%;z-index:-1;position:absolute}
+.blocks-gallery-grid,.wp-block-gallery{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;list-style-type:none;padding:0;margin:0}
+.wp-block-gallery .blocks-gallery-grid,.entry-content .wp-block-gallery .blocks-gallery-grid{-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}
+.wp-block-gallery.is-cropped .blocks-gallery-item img{-o-object-fit:contain;object-fit:contain;-o-object-position:50% 0;object-position:50% 0}
 .template-full-width .entry-content{grid-template-columns:50px 3vw 3vw 5vw 1fr 5vw 3vw 3vw 50px}
 .caution{background:#444;border-left:25px solid #e67f22;margin:0;padding:20px 40px;color:#ecf0f1}
 .warning{background:#444;border-left:25px solid #e84c3d;margin:0;padding:20px 40px;color:#ecf0f1}
