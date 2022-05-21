@@ -61,6 +61,8 @@
     "customJS": "gulp customJS",
     "images": "gulp images",
     "clearCache": "gulp clearCache",
-    "translate": "gulp translate"
+    "translate": "gulp translate",
+	"lint": "eslint",
+	"lint:fix": "eslint --fix"
   }
 }
