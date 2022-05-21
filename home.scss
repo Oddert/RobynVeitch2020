@@ -92,7 +92,7 @@ body.home .site {
   background-color: #fff;
   background-image: url("https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_960_720.jpg");
   background-image: url("https://raw.githubusercontent.com/Oddert/oddert.github.io/master/img/banner_code.jpg");
-  background-image: url("/wp-content/uploads/2020/09/banner_code-scaled.jpg");
+  background-image: url("https://robynveitch.com/wp-content/uploads/2020/09/banner_code-scaled.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -346,14 +346,14 @@ body .site .site__main.homepage {
     .about {
       margin: $about-top-margin 0 200px;
     }
-    .footer {
+    .footer-buttons {
       display: grid;
       grid-column: 3 / -1;
       height: 40vh;
     }
   }
   
-  .footer {
+  .footer-buttons {
     display: grid;
     height: 40vh;
     // zdebug
@@ -363,6 +363,20 @@ body .site .site__main.homepage {
   // &.bottom {
   //   // grid-template-rows: auto 1fr 10vh;
   // }
+
+  .footer {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start;
+	  justify-content: flex-end;
+	  border: none;
+      grid-column: 1 / 3;
+	  min-height: max-content;
+	  p {
+		  margin: 0;
+		  color: #abb8c3;
+	  }
+  }
   
   div {
     // border: 1px dashed tomato;
@@ -755,7 +769,7 @@ body .site .site__main.homepage div.content {
   }
 }
 
-.footer {
+.footer-buttons {
   grid-column: 1 / -1;
   grid-column: 3 / -1;
   // grid-row: -1;

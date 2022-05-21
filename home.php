@@ -18,20 +18,20 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Poiret+One&display=swap" rel="stylesheet">
+	<meta charset='<?php bloginfo( 'charset' ); ?>'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='profile' href='https://gmpg.org/xfn/11'>
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.1/css/all.css' integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz' crossorigin='anonymous'>
+	<link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Poiret+One&display=swap' rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
+<div id='page' class='site'>
 	<div data-oddert='header.php'></div>
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'RobynVeitch' ); ?></a>
+	<a class='skip-link screen-reader-text' href='#primary'><?php esc_html_e( 'Skip to content', 'RobynVeitch' ); ?></a>
 
 
   <div class='site__main homepage noscript'>
@@ -66,7 +66,7 @@
             </a>
           </li>
           <li title='blog' class='nav-blog'>
-            <a href='/blog'>
+            <a href='<?php echo get_site_url(); ?>/blog'>
               <span>blog</span>
               <!-- <i class='fa fa-rss'></i> -->
               <!-- <i class='far fa-newspaper'></i> -->
@@ -80,7 +80,7 @@
             </a>
           </li>
           <li title='contact' class='nav-contact'>
-            <a href='/services'>
+            <a href='<?php echo get_site_url(); ?>/services'>
               <span>services</span>
               <!-- <i class='fa fa-comment-dots'></i> -->
               <i class='fa fa-shapes'></i>
@@ -201,7 +201,7 @@
               $sorted_posts = array();
 
               foreach( $posts as $post ) {
-                $priority = get_the_terms($post->ID, "priority")[0]->name;
+                $priority = get_the_terms($post->ID, 'priority')[0]->name;
 
                 if ( (int)$priority <= $miniumn_priority ) continue;
 
@@ -221,7 +221,7 @@
                   $thumb = get_the_post_thumbnail_url( $id );
                   
                   $post_categories = get_the_category( $id );
-                  $folio_tags = "";
+                  $folio_tags = '';
   
                   $idx = sizeof($post_categories) > 0 ? sizeof($post_categories) - 1 : 0;
                   $idxCopy = sizeof($post_categories) > 0 ? sizeof($post_categories) - 1 : 0;
@@ -307,7 +307,7 @@
           </div>
           <div class='profile-picture'>
             <!-- <img src='https://res.cloudinary.com/oddert/image/upload/v1581962527/Portfolio/folio_profile.jpg' /> -->
-            <img src='/wp-content/uploads/2020/09/main_profile.jpg' />
+            <img src='<?php echo get_site_url(); ?>/wp-content/uploads/2020/09/main_profile.jpg' />
           </div>
         </div>
         <div class='bio'>
@@ -318,15 +318,15 @@
             I come from a background in industrial design and have worked in development and code for over four years. I take a research-first approach to my work with the core ethos of adding genuine value to the world and improving people's lives. 
           </p>
         </div>
-        <ul class="about-contact">
+        <ul class='about-contact'>
           <li>
-            <i class="fa fa-envelope"></i> <p><a href='mailto:robynv@robynveitch.com'>robyn@robynveitch.com</a></p>
+            <i class='fa fa-envelope'></i> <p><a href='mailto:robyn@robynveitch.com'>robyn@robynveitch.com</a></p>
           </li>
+          <!-- <li>
+            <i class='fa fa-phone'></i> <p><a href='tel:+44-07767-297041'>(+44) 07767 297041</a></p>
+          </li> -->
           <li>
-            <i class="fa fa-phone"></i> <p><a href='tel:+44-07767-297041'>(+44) 07767 297041</a></p>
-          </li>
-          <li>
-            <i class="fa fa-map-marker"></i> <p>Isle of Dogs, London, England, UK</p>
+            <i class='fa fa-map-marker'></i> <p>Glasgow, Scotland, UK</p>
           </li>
         </ul>
         <ul class='social-links' id='contact'>
@@ -348,21 +348,32 @@
         </ul>
       </section>
 
-      <div class='footer'>
+	  <div class='footer'>
+		  <p>
+			  <?php 
+				  printf( esc_html__( '© Copyright Robyn Veitch %1$s/%2$s.', 'RobynVeitch' ), date('Y') - 1, date('Y') );
+			  ?>
+		  </p>
+		  <p>
+			  All rights reserved.
+		  </p>
+	  </div>
+
+      <div class='footer-buttons'>
         <div class='contact'>
-          <a href='/services'>
+          <a href='<?php echo get_site_url(); ?>/services'>
             <i class='fa fa-chevron-left'></i> Services
           </a>
         </div>
         <div class='contact-wedge'></div>
         <div class='cv'>
-          <a href='/robyn-veitch-cv'>
+          <a href='<?php echo get_site_url(); ?>/robyn-veitch-cv'>
             CV <i class='fa fa-chevron-right'></i>
           </a>
         </div>
         <div class='cv-wedge'></div>
         <div class='blog'>
-          <a href='/blog'>
+          <a href='<?php echo get_site_url(); ?>/blog'>
             Blog <i class='fa fa-chevron-down'></i>
           </a>
         </div>
