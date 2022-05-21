@@ -312,8 +312,6 @@ function main () {
 	initFolioFilters()
 }
 
-document.addEventListener('DOMContentLoaded', main)
-
 /**
  * Standard debound function.
  * Prevents the given function from being called too many times.
@@ -322,20 +320,22 @@ document.addEventListener('DOMContentLoaded', main)
  * @param {boolean} immediate (default: true) Calls the function now if the debounce time has elaspsed. If false an additional wait will be applied.
  * @returns {function} The debounced function.
  */
-function debounce (func, wait=20, immediate=true) {
-  var timeout
-  return function () {
-    var ctx = this, args = arguments
-    var later = function () {
-      timeout = null
-      if (!immediate) func.apply(ctx, args)
-    }
-    var callNow = immediate && !timeout
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
-    if (callNow) func.apply(ctx, args)
-  }
-}
+ function debounce (func, wait=20, immediate=true) {
+	var timeout
+	return function () {
+	  var ctx = this, args = arguments
+	  var later = function () {
+		timeout = null
+		if (!immediate) func.apply(ctx, args)
+	  }
+	  var callNow = immediate && !timeout
+	  clearTimeout(timeout)
+	  timeout = setTimeout(later, wait)
+	  if (callNow) func.apply(ctx, args)
+	}
+  }  
+
+document.addEventListener('DOMContentLoaded', main)
 
 // TODO: Potential future implamentation of cycling gradient
 // function randomBodyTint (e, cover) {
