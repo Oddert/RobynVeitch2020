@@ -994,6 +994,9 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: calc(100vh - #{$header_height});
   .page-content {
     margin: 2em 0 100px;
   }
@@ -1002,6 +1005,7 @@ textarea {
   }
   .nf-error-message {
     font-weight: bolder;
+	font-size: 1.2rem;
   }
   .search-form {
     margin: 4em 0 0;
@@ -1039,6 +1043,13 @@ textarea {
   .nf-contact {
     text-align: center;
   }
+}
+
+.background_canvas {
+	position: absolute;
+	top: $header_height;
+	left: 0;
+	z-index: -1;
 }
 
 /* Comments
@@ -2074,9 +2085,18 @@ $header_height: 70px;
         display: inline-block;
         margin-bottom: $tag_bottom_margin;
         a {
-          @include tag;
-          @include odd_shadow_after(2px, 2px, #9ea2a5, -1, 100%, 100%);
+			display: flex;
+			position: relative;
+			z-index: -999;
+			@include tag;
+			margin: 0;
         }
+		position: relative;
+		margin: 8px 4px;
+		@include odd_shadow_before(3px, 3px, #808488, 0, 100%, 100%);
+		&:hover {
+			@include odd_shadow_before(4px, 4px, #70757a, 0, 100%, 100%);
+		}
       }
     }
   }
@@ -2800,12 +2820,22 @@ $header_height: 70px;
   .about {
     grid-column: 1 / -1;
   }
-  .footer {
+  body .site .site__main.homepage .footer {
     grid-column: 1 / -1;
+		flex-direction: row;
+		justify-content: center;
   }
   body .site .site__main.noscript .footer {
-    grid-column: 1 / -1;
-  }
+	  grid-column: 1 / -1;
+		flex-direction: row;
+		justify-content: center;
+	}
+	body .site .site__main.homepage .footer-buttons {
+		grid-column: 1 / -1;
+	}
+	body .site .site__main.noscript .footer-buttons {
+		grid-column: 1 / -1;
+	}
   .page-blog {
     width: 95vw;
   }
