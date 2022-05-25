@@ -10,7 +10,8 @@
 get_header();
 get_template_part('template-parts/navigation/navbar');
 ?>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src='<?php echo get_site_url(); ?>/wp-content/themes/robynveitch/js/notfound.js'></script>
 	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found">
