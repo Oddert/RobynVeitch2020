@@ -1,8 +1,12 @@
 
 function main () {
     const sectionLables = document.querySelectorAll('.section_label')
-    const collapse = document.querySelectorAll('.section_content')
+    const sectionContent = document.querySelectorAll('.section_content')
 
+	/**
+	 * Toggles the display class for the expandable section content.
+	 * @param {HTMLClickEvent} e The button click event
+	 */
     function collapseToggle (e) {
       e.target
         .closest('.section_content')
@@ -10,12 +14,21 @@ function main () {
         .classList.toggle('open')
     }
 
+	/**
+	 * Explicitly sets an element's height to the total content scroll height.
+	 * @param {HTMLElement} expandable The element to be resized.
+	 */
     function collapseSetHeight (expandable) {
       expandable.style.height = null
       const nativeHeight = expandable.scrollHeight
       expandable.style.height = `${nativeHeight}px`
     }
 
+	/**
+	 * Event handler for the section labels.
+	 * Expands or collapses sections depending on their current state.
+	 * @param {HTMLClickEvent} e The button click event.
+	 */
     function sectionLableToggle (e) {
       const section = e.target.closest('.process_section')
       const expandables = section.querySelectorAll('.section_content-expandable')
@@ -30,6 +43,11 @@ function main () {
       }
     }
 
+	/**
+	 * Sets up the expandable section content and binds the event listeners to toggle them.
+	 * @param {HTMLElement} colapse The section content to be instantiated.
+	 * @param {*} firstTime 
+	 */
     function itirateCollapse (colapse, firstTime = false) {
       let expandable = colapse.querySelector('.section_content-expandable')
       collapseSetHeight(expandable)
@@ -39,13 +57,13 @@ function main () {
       }
     }
 
-    collapse.forEach(each => itirateCollapse(each, true))
+    sectionContent.forEach(each => itirateCollapse(each, true))
 
     sectionLables.forEach(each => each.onclick = sectionLableToggle)
 
     window.addEventListener('resize', debounce(() => {
       console.log('resizing, adjusting inline styles...')
-      collapse.forEach(each => itirateCollapse(each, false))
+      sectionContent.forEach(each => itirateCollapse(each, false))
     }), 250)
 }
 
