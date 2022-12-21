@@ -203,7 +203,7 @@ dd{margin:0 1.5em 1.5em}
 embed,iframe,object{max-width:100%}
 img{height:auto;max-width:100%}
 figure{margin:1em 0}
-figcaption,.wp-block-caption figcaption{word-break:break-all}
+figcaption,.wp-block-caption figcaption{word-break:break-word}
 table{margin:0 0 1.5em;width:100%}
 code{background:#ecf0f1;border-radius:5px;padding:0 5px;color:#c1392b}
 a{color:#4169e1}
@@ -290,8 +290,9 @@ textarea{width:100%}
 .comments-area .comment-list .comment .comment-body .comment-meta .comment-metadata .edit-link{margin-left:20px}
 .comments-area .comment-list .comment .comment-body .comment-meta .comment-metadata a{color:#bec3c7;font-weight:bold;font-size:18px;text-decoration:none;-webkit-transition:.05s linear;transition:.05s linear}
 .comments-area .comment-list .comment .comment-body .comment-meta .comment-metadata a:hover{color:#95a5a5}
-.comments-area .comment-list .comment .comment-body .comment-content{background:#fff;padding:50px 100px 0}
-.comments-area .comment-list .comment .comment-body .reply{padding:10px 100px 50px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.comments-area .comment-list .comment .comment-body .comment-content{background:#fff;padding:25px 100px 0}
+.comments-area .comment-list .comment .comment-body .comment-content p{margin-bottom:0}
+.comments-area .comment-list .comment .comment-body .reply{padding:0 50px 20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .comments-area .comment-list .comment .comment-body .reply .comment-reply-link{color:#bec3c7;font-size:18px;text-decoration:none;font-weight:700;letter-spacing:2px;-webkit-transition:.05s linear;transition:.05s linear}
 .comments-area .comment-list .comment .comment-body .reply .comment-reply-link:hover{color:#95a5a5}
 .comments-area .comment-respond{grid-column:2;margin:50px 0}
@@ -430,10 +431,10 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .entry-footer .tags-links a[rel=tag]:hover:after{content:'';background:#297fb8;height:100%;width:100%;top:7px;left:7px;z-index:-1;position:absolute}
 .site-main .post-navigation{margin:100px 0}
 .site-main .post-navigation .nav-links>div{max-width:50vw}
-.site-main .post-navigation .nav-links>div a{font-weight:600;font-size:24px;text-decoration:none;background:#fff;padding:100px 50px;color:#2d3e50;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-transition:.1s linear;transition:.1s linear;border:1px solid #fff;position:relative}
+.site-main .post-navigation .nav-links>div a{font-weight:600;font-size:24px;text-decoration:none;background:#fff;padding:50px 100px;color:#2d3e50;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-transition:.1s linear;transition:.1s linear;border:1px solid #fff;position:relative}
 .site-main .post-navigation .nav-links>div a .nav-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .site-main .post-navigation .nav-links>div a .nav-wrapper .nav-title{font-size:28px}
-.site-main .post-navigation .nav-links>div a .nav-wrapper .nav-subtitle{font-size:21px;letter-spacing:2px;font-weight:600;color:#95a5a5;margin-top:5px}
+.site-main .post-navigation .nav-links>div a .nav-wrapper .nav-subtitle{font-size:21px;letter-spacing:2px;font-weight:600;color:#95a5a5;margin-top:5px;-ms-flex-item-align:end;align-self:flex-end}
 .site-main .post-navigation .nav-links>div a:before{-webkit-transition:.1s linear;transition:.1s linear}
 .site-main .post-navigation .nav-links>div a:before{content:'';background:#95a5a5;height:100%;width:100%;position:absolute;top:5px;left:0;z-index:-1}
 .site-main .post-navigation .nav-links>div a:hover{border:1px solid #95a5a5}
@@ -473,6 +474,8 @@ main.robyn-veitch-cv .cv-download .wp-block-file a:hover{color:#3598db}
 .site-footer{background:#2d3e50;color:#ecf0f1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:100px}
 .site-footer .site-info{letter-spacing:3px;font-size:20px;padding:60px}
 .site-footer .site-copyright{font-size:14px;padding:10px}
+.site-footer .site-privacy-policy{font-size:14px;padding:10px}
+.site-footer .site-privacy-policy a{font-size:14px}
 .site-footer a{color:#ecf0f1}
 .page-blog{width:60vw;margin:0 auto;padding:150px 0}
 .page-services .intro{width:100%;height:calc(100vh - 70px);position:relative}

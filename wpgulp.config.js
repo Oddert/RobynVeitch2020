@@ -4,10 +4,10 @@
  * 1. Edit the variables as per your project requirements.
  * 2. In paths you can add <<glob or array of globs>>.
  *
- * @package WPGulp
+ * @package
  */
 
-module.exports = {
+export default {
 
 	// Project options.
 	projectURL: 'localhost/robynveitchdev', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
@@ -66,4 +66,4 @@ module.exports = {
 		'last 2 Edge versions',
 		'last 2 Opera versions'
 	]
-};
+}

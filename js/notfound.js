@@ -1,12 +1,17 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+// FIle is a p5.js script and uses document level utilities hence no-undef is used.
 /**
  * Assumed height of the text.
- * Must be calculated manualy as no utility exists to mesure it.
+ * Must be calculated manually as no utility exists to measure it.
+ *
  * @type {number}
  */
 const globalH = 30
 
 /**
- * Height of the header component, coppied from the CSS files.
+ * Height of the header component, copied from the CSS files.
+ *
  * @type {number}
  */
 const headerHeight = 70
@@ -18,7 +23,7 @@ class Boid {
 	/**
 	 * @param {number} x The starting X position.
 	 * @param {number} y The starting Y position.
-	*/
+	 */
 	constructor(x, y) {
 		this.text = '404'
 		this.h = globalH
@@ -87,20 +92,20 @@ let boid
  * Initialises the canvas and creates the sprite.
  */
 function setup () {
-  const cnv = createCanvas(document.querySelector('body').clientWidth, windowHeight - headerHeight);
-  cnv.attribute('class', 'background_canvas')
-  background('#ecf0f1');
-  boid = new Boid(random(width), random(height))
-  boid.draw()
+	const cnv = createCanvas(document.querySelector('body').clientWidth, windowHeight - headerHeight)
+	cnv.attribute('class', 'background_canvas')
+	background('#ecf0f1')
+	boid = new Boid(random(width), random(height))
+	boid.draw()
 }
 
 /**
  * Updates the canvas each tick.
  */
 function draw () {
-  background('#ecf0f1');
-  boid.update()
-  boid.draw()
+	background('#ecf0f1')
+	boid.update()
+	boid.draw()
 }
 
 /**
@@ -108,7 +113,7 @@ function draw () {
  */
 function windowResized () {
 	console.log('##resize')
-	resizeCanvas(document.querySelector('body').clientWidth, windowHeight);
+	resizeCanvas(document.querySelector('body').clientWidth, windowHeight)
 }
 
 document.addEventListener('resize', windowResized)

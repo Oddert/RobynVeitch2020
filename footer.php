@@ -32,6 +32,9 @@
 				printf( esc_html__( '© Copyright Robyn Veitch %1$s/%2$s. All rights reserved.', 'RobynVeitch' ), date("Y") - 1, date("Y") );
 			?>
 		</div>
+		<div class='site-privacy-policy'>
+			View the <a href='<?php echo get_site_url(); ?>/privacy-policy'>Privacy Policy</a>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

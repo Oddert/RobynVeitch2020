@@ -578,7 +578,7 @@ figure {
 
 figcaption,
 .wp-block-caption figcaption {
-	word-break: break-all;
+	word-break: break-word;
 }
 
 table {
@@ -1147,10 +1147,13 @@ textarea {
         }
         .comment-content {
           background: #fff;
-          padding: 50px 100px 0;
+          padding: 25px 100px 0;
+		  p {
+			  margin-bottom: 0;
+		  }
         }
         .reply {
-          padding: 10px 100px 50px;
+          padding: 0px 50px 20px;
           display: flex;
           justify-content: flex-end;
           .comment-reply-link {
@@ -1918,7 +1921,7 @@ $header_height: 70px;
         font-size: 24px;
         text-decoration: none;
         background: #fff;
-        padding: 100px 50px;
+        padding: 50px 100px;
         color: #2d3e50;
         display: flex;
         flex-direction: column;
@@ -1939,6 +1942,7 @@ $header_height: 70px;
             font-weight: 600;
             color: #95a5a5;
             margin-top: 5px;
+			align-self: flex-end;
           }
         }
         &:before {
@@ -2132,6 +2136,13 @@ $header_height: 70px;
   .site-copyright {
     font-size: 14px;
     padding: 10px;
+}
+.site-privacy-policy {
+	  font-size: 14px;
+	  padding: 10px;
+	  a {
+		  font-size: 14px;
+	  }
   }
   a {
     color: #ecf0f1;

@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+		"node": true
+        // "es2021": true
     },
 	"extends": [
         "plugin:@wordpress/eslint-plugin/esnext",
@@ -10,6 +11,7 @@ module.exports = {
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+	// "ignorePatterns": ["gulpfile.babel.js"],
     "rules": {
         "indent": [
             "error",
@@ -26,6 +28,8 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
+        ],
+		"no-console": "off",
+		// "require-jsdoc" : 0,
     }
 }
