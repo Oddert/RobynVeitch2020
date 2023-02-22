@@ -1,6 +1,6 @@
 /* eslint-disable jsdoc/no-undefined-types */
 
-function main () {
+function main() {
 	const sectionLables = document.querySelectorAll('.section_label')
 	const sectionContent = document.querySelectorAll('.section_content')
 
@@ -9,7 +9,7 @@ function main () {
 	 *
 	 * @param {HTMLClickEvent} e The button click event
 	 */
-	function collapseToggle (e) {
+	function collapseToggle(e) {
 		e.target
 			.closest('.section_content')
 			.querySelector('.section_content-expandable')
@@ -21,7 +21,7 @@ function main () {
 	 *
 	 * @param {HTMLElement} expandable The element to be resized.
 	 */
-	function collapseSetHeight (expandable) {
+	function collapseSetHeight(expandable) {
 		expandable.style.height = null
 		const nativeHeight = expandable.scrollHeight
 		expandable.style.height = `${nativeHeight}px`
@@ -33,7 +33,7 @@ function main () {
 	 *
 	 * @param {HTMLClickEvent} e The button click event.
 	 */
-	function sectionLableToggle (e) {
+	function sectionLableToggle(e) {
 		const section = e.target.closest('.process_section')
 		const expandables = section.querySelectorAll('.section_content-expandable')
 		let open = false
@@ -53,7 +53,7 @@ function main () {
 	 * @param {HTMLElement} colapse   The section content to be instantiated.
 	 * @param {*}           firstTime
 	 */
-	function itirateCollapse (colapse, firstTime = false) {
+	function itirateCollapse(colapse, firstTime = false) {
 		let expandable = colapse.querySelector('.section_content-expandable')
 		collapseSetHeight(expandable)
 		if (firstTime) {
@@ -83,11 +83,11 @@ document.addEventListener('DOMContentLoaded', main)
  * @param {boolean}  immediate (default: true) Calls the function now if the debounce time has elaspsed. If false an additional wait will be applied.
  * @return {Function} The debounced function.
  */
-function debounce (func, wait=20, immediate=true) {
+function debounce(func, wait=20, immediate=true) {
 	var timeout
-	return function () {
+	return function() {
 		var ctx = this, args = arguments
-		var later = function () {
+		var later = function() {
 			timeout = null
 			if (!immediate) func.apply(ctx, args)
 		}

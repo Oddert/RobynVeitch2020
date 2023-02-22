@@ -38,7 +38,7 @@ class Boid {
 	/**
 	 * Renders the text on the canvas.
 	 */
-	draw () {
+	draw() {
 		fill(this.colour.x, this.colour.y, this.colour.z)
 		textSize(36)
 		text(this.text, this.position.x, this.position.y)
@@ -47,7 +47,7 @@ class Boid {
 	/**
 	 * Checks the velocity of the element has gone too high and halfs / doubles its velocity. 
 	 */
-	checkOob () {
+	checkOob() {
 		if (this.velocity.x > 2) this.velocity.x -= random(1)
 		if (this.velocity.x < -2) this.velocity.x += random(1)
 		if (this.velocity.y > 2) this.velocity.y -= random(1)
@@ -58,7 +58,7 @@ class Boid {
 	 * Updates the sprites position.
 	 * Checks if the element has reached the canvas edges and changes it's direction.
 	 */
-	update () {
+	update() {
 		const deviation = .35
 		this.position.add(this.velocity)
 		if (this.position.x > width - this.w || this.position.x <= 0) {
@@ -79,7 +79,7 @@ class Boid {
 	 * Picks a random colour to change the text to.
 	 * Used when the sprite bounces at the edge of the canvas.
 	 */
-	changeColour () {
+	changeColour() {
 		this.colour.x = random(0, 255)
 		this.colour.y = random(0, 255)
 		this.colour.z = random(0, 255)
@@ -91,7 +91,7 @@ let boid
 /**
  * Initialises the canvas and creates the sprite.
  */
-function setup () {
+function setup() {
 	const cnv = createCanvas(document.querySelector('body').clientWidth, windowHeight - headerHeight)
 	cnv.attribute('class', 'background_canvas')
 	background('#ecf0f1')
@@ -102,7 +102,7 @@ function setup () {
 /**
  * Updates the canvas each tick.
  */
-function draw () {
+function draw() {
 	background('#ecf0f1')
 	boid.update()
 	boid.draw()
@@ -111,7 +111,7 @@ function draw () {
 /**
  * Re-draws the canvas when the window is resized.
  */
-function windowResized () {
+function windowResized() {
 	console.log('##resize')
 	resizeCanvas(document.querySelector('body').clientWidth, windowHeight)
 }

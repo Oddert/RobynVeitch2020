@@ -32,7 +32,7 @@ var designTags = ['industrial-design', 'service-design', 'social-design']
  */
 var developmentTags = ['web-development', 'app-development', 'system-design', 'microservices', 'data-vis']
 
-function main () {
+function main() {
 	const siteMain = document.querySelector('.site__main ')
 	const content = document.querySelector('.homepage-main')
 	const nav = document.querySelector('.nav-container')
@@ -101,7 +101,7 @@ function main () {
 	 *
 	 * @param {HTMLClickEvent} e The click event from the button.
 	 */
-	function handleNavToggleChange (e) {
+	function handleNavToggleChange(e) {
 		e.stopPropagation()
 		const openState = nav.classList.contains('open')
 		if (openState) nav.classList.remove('open')
@@ -117,7 +117,7 @@ function main () {
 	 *
 	 * @return {void}
 	 */
-	function initFolioFilters () {
+	function initFolioFilters() {
 		const filterTags = document.querySelectorAll('[data-folio-filter-tagname]')
 	
 		const query = window.location.href.match(/focus=(\w+)/gi)
@@ -147,7 +147,7 @@ function main () {
 	 * @param {HTMLClickEvent} e The click event from the button.
 	 * @return {void}
 	 */
-	function toggleSingleFilter (e) {
+	function toggleSingleFilter(e) {
 		const { target: t } = e
 		const prev = { ...folioFilters }
 		const next = { ...folioFilters }
@@ -169,7 +169,7 @@ function main () {
 	 * @param {FolioFilters} next The next filter state after update.
 	 * @return {void}
 	 */
-	function folioItemsShouldUpdate (prev, next) {
+	function folioItemsShouldUpdate(prev, next) {
 		if (JSON.stringify(prev) === JSON.stringify(next)) return 
 		else {
 			folioFilters = next
@@ -182,7 +182,7 @@ function main () {
 	 *
 	 * @return {void}
 	 */
-	function renderFolioItems () {
+	function renderFolioItems() {
 		const folioItems = document.querySelectorAll('[data-folio-tags]')
 			
 		const allFiltersInactive = Object.keys(folioFilters).reduce((acc, e) => {
@@ -219,7 +219,7 @@ function main () {
 	 *
 	 * @return {void}
 	 */
-	function renderFolioTags () {
+	function renderFolioTags() {
 		const filterTags = document.querySelectorAll('[data-folio-filter-tagname]')
 			
 		filterTags.forEach(tag => {
@@ -237,7 +237,7 @@ function main () {
 	 *
 	 * @return {void}
 	 */
-	function checkSlide () {
+	function checkSlide() {
 		console.log('[checkSlide] started...')
 		window.clearTimeout(isScrolling)
 	
@@ -254,7 +254,7 @@ function main () {
 		 *
 		 * @return {void}
 		 */
-		function performCheck () {
+		function performCheck() {
 			console.log('[performCheck] started...')
 			if (odd_debug) console.log(content.scrollHeight, content.offsetHeight, contentOffsetHeight, content.scrollTop, content.scrollTop + content.offsetHeight)
 	
@@ -292,7 +292,7 @@ function main () {
 	 * @param {number} length The length of string to render.
 	 * @return {void}
 	 */
-	function updateText (length) {
+	function updateText(length) {
 		profileHeader.innerHTML = profileHeaderText.substring(0, length + 1)
 	}
 	
@@ -301,7 +301,7 @@ function main () {
 	 *
 	 * @return {void}
 	 */
-	function initTypeAnimation () {
+	function initTypeAnimation() {
 		clearInterval(typeAnimationTimer)
 		typeAnimationTimer = 0
 		const interval = () => {
@@ -321,7 +321,7 @@ function main () {
 	 *
 	 * @return {void}
 	 */
-	function resetTags () {
+	function resetTags() {
 		const tags = Object.keys(folioFilters)
 		tags.forEach(e => folioFilters[e] = false)
 		renderFolioTags()
@@ -344,11 +344,11 @@ function main () {
  * @param {boolean}  immediate (default: true) Calls the function now if the debounce time has elaspsed. If false an additional wait will be applied.
  * @return {Function} The debounced function.
  */
-function debounce (func, wait=20, immediate=true) {
+function debounce(func, wait=20, immediate=true) {
 	var timeout
-	return function () {
+	return function() {
 		var ctx = this, args = arguments
-		var later = function () {
+		var later = function() {
 			timeout = null
 			if (!immediate) func.apply(ctx, args)
 		}

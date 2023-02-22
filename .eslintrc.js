@@ -31,5 +31,10 @@ module.exports = {
         ],
 		"no-console": "off",
 		// "require-jsdoc" : 0,
+		"space-before-function-paren": ["error", {
+			"anonymous": "never",
+			"named": "never",
+			"asyncArrow": "never"
+		}],
     }
 }
