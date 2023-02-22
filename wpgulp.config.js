@@ -7,7 +7,7 @@
  * @package
  */
 
-export default {
+module.exports = {
 
 	// Project options.
 	projectURL: 'localhost/robynveitchdev', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
