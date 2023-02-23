@@ -79,13 +79,13 @@
               <i class='fa fa-user'></i>
             </a>
           </li>
-          <li title='contact' class='nav-contact'>
-            <a href='<?php echo get_site_url(); ?>/services'>
+          <!-- <li title='contact' class='nav-contact'>
+            <a href='<?php #echo get_site_url(); ?>/services'>
               <span>services</span>
-              <!-- <i class='fa fa-comment-dots'></i> -->
+              <i class='fa fa-comment-dots'></i>
               <i class='fa fa-shapes'></i>
             </a>
-          </li>
+          </li> -->
         </ul>
         <button class='nav-toggle'>
           <i class='fa fa-chevron-right nav-toggle__icon--close'></i>
@@ -356,6 +356,9 @@
 		  </p>
 		  <p>
 			  All rights reserved.
+		  </p>
+		  <p>
+			<a href='<?php echo get_site_url(); ?>/privacy-policy'>Privacy Policy</a>
 		  </p>
 	  </div>
 

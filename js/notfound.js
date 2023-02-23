@@ -112,7 +112,6 @@ function draw() {
  * Re-draws the canvas when the window is resized.
  */
 function windowResized() {
-	console.log('##resize')
 	resizeCanvas(document.querySelector('body').clientWidth, windowHeight)
 }
 
