@@ -4,6 +4,7 @@ jobs:
     deploy_job:
     runs-on: ubuntu-latest
     name: deploy
+    if: github.ref == 'refs/head/master'
     steps:
         - name: Checkout
           uses: actions/checkout@v2
