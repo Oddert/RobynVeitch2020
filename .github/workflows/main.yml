@@ -4,6 +4,7 @@ jobs:
     deploy_job:
       runs-on: ubuntu-latest
       name: deploy
+      if: github.ref == 'refs/head/master'
       steps:
           - name: Checkout
             uses: actions/checkout@v2
@@ -12,7 +13,7 @@ jobs:
             with:
               username: 'robynfhveitch'
               server: 'robynveitch.com'
-              ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+              ssh_private_key: ${{ secrets.SSHKEY }} 
               local_path: './*'
               remote_path: '/var/www/html/robynveitch/wp-content/themes/robynveitch'
               sftpArgs: '-o ConnectTimeout=5'
