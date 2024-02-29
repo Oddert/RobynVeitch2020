@@ -24,60 +24,62 @@
  *
  * TODO: Customize your project in the wpgulp.js file.
  */
-const config = require( './wpgulp.config.js' );
+const config = require( './wpgulp.config.js' )
 
 /**
  * Load Plugins.
  *
  * Load gulp plugins and passing them semantic names.
  */
-const gulp = require( 'gulp' ); // Gulp of-course.
+const gulp = require( 'gulp' ) // Gulp of-course.
 
 // CSS related plugins.
-const sass = require( 'gulp-sass' ); // Gulp plugin for Sass compilation.
-const minifycss = require( 'gulp-uglifycss' ); // Minifies CSS files.
-const autoprefixer = require( 'gulp-autoprefixer' ); // Autoprefixing magic.
-const mmq = require( 'gulp-merge-media-queries' ); // Combine matching media queries into one.
-const rtlcss = require( 'gulp-rtlcss' ); // Generates RTL stylesheet.
+const sass = require( 'gulp-sass' ) // Gulp plugin for Sass compilation.
+const minifycss = require( 'gulp-uglifycss' ) // Minifies CSS files.
+const autoprefixer = require( 'gulp-autoprefixer' ) // Autoprefixing magic.
+const mmq = require( 'gulp-merge-media-queries' ) // Combine matching media queries into one.
+const rtlcss = require( 'gulp-rtlcss' ) // Generates RTL stylesheet.
 
 // JS related plugins.
-const concat = require( 'gulp-concat' ); // Concatenates JS files.
-const uglify = require( 'gulp-uglify' ); // Minifies JS files.
-const babel = require( 'gulp-babel' ); // Compiles ESNext to browser compatible JS.
+const concat = require( 'gulp-concat' ) // Concatenates JS files.
+const uglify = require( 'gulp-uglify' ) // Minifies JS files.
+const babel = require( 'gulp-babel' ) // Compiles ESNext to browser compatible JS.
 
 // Image related plugins.
-const imagemin = require( 'gulp-imagemin' ); // Minify PNG, JPEG, GIF and SVG images with imagemin.
+const imagemin = require( 'gulp-imagemin' ) // Minify PNG, JPEG, GIF and SVG images with imagemin.
 
 // Utility related plugins.
-const rename = require( 'gulp-rename' ); // Renames files E.g. style.css -> style.min.css.
-const lineec = require( 'gulp-line-ending-corrector' ); // Consistent Line Endings for non UNIX systems. Gulp Plugin for Line Ending Corrector (A utility that makes sure your files have consistent line endings).
-const filter = require( 'gulp-filter' ); // Enables you to work on a subset of the original files by filtering them using a glob.
-const sourcemaps = require( 'gulp-sourcemaps' ); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css).
-const notify = require( 'gulp-notify' ); // Sends message notification to you.
-const browserSync = require( 'browser-sync' ).create(); // Reloads browser and injects CSS. Time-saving synchronized browser testing.
-const wpPot = require( 'gulp-wp-pot' ); // For generating the .pot file.
-const sort = require( 'gulp-sort' ); // Recommended to prevent unnecessary changes in pot-file.
-const cache = require( 'gulp-cache' ); // Cache files in stream for later use.
-const remember = require( 'gulp-remember' ); //  Adds all the files it has ever seen back into the stream.
-const plumber = require( 'gulp-plumber' ); // Prevent pipe breaking caused by errors from gulp plugins.
-const beep = require( 'beepbeep' );
+const rename = require( 'gulp-rename' ) // Renames files E.g. style.css -> style.min.css.
+const lineec = require( 'gulp-line-ending-corrector' ) // Consistent Line Endings for non UNIX systems. Gulp Plugin for Line Ending Corrector (A utility that makes sure your files have consistent line endings).
+const filter = require( 'gulp-filter' ) // Enables you to work on a subset of the original files by filtering them using a glob.
+const sourcemaps = require( 'gulp-sourcemaps' ) // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css).
+const notify = require( 'gulp-notify' ) // Sends message notification to you.
+const browserSync = require( 'browser-sync' ).create() // Reloads browser and injects CSS. Time-saving synchronized browser testing.
+const wpPot = require( 'gulp-wp-pot' ) // For generating the .pot file.
+const sort = require( 'gulp-sort' ) // Recommended to prevent unnecessary changes in pot-file.
+const cache = require( 'gulp-cache' ) // Cache files in stream for later use.
+const remember = require( 'gulp-remember' ) //  Adds all the files it has ever seen back into the stream.
+const plumber = require( 'gulp-plumber' ) // Prevent pipe breaking caused by errors from gulp plugins.
+const beep = require( 'beepbeep' )
 
 /**
  * Custom Error Handler.
  *
- * @param Mixed err
+ * @param  Mixed err
+ * @param  r
  */
 const errorHandler = r => {
-	notify.onError( '\n\n❌  ===> ERROR: <%= error.message %>\n' )( r );
-	beep();
+	notify.onError( '\n\n❌  ===> ERROR: <%= error.message %>\n' )( r )
+	beep()
 
 	// this.emit('end');
-};
+}
 
 /**
  * Task: `browser-sync`.
  *
  * Live Reloads, CSS injections, Localhost tunneling.
+ *
  * @link http://www.browsersync.io/docs/options/
  *
  * @param {Mixed} done Done.
@@ -88,15 +90,15 @@ const browsersync = done => {
 		open: config.browserAutoOpen,
 		injectChanges: config.injectChanges,
 		watchEvents: [ 'change', 'add', 'unlink', 'addDir', 'unlinkDir' ]
-	});
-	done();
-};
+	})
+	done()
+}
 
 // Helper function to allow browser reload with Gulp 4.
 const reload = done => {
-	browserSync.reload();
-	done();
-};
+	browserSync.reload()
+	done()
+}
 
 /**
  * Task: `styles`.
@@ -140,8 +142,8 @@ gulp.task( 'styles', () => {
 		.pipe( gulp.dest( config.styleDestination ) )
 		.pipe( filter( '**/*.css' ) ) // Filtering stream to only css files.
 		.pipe( browserSync.stream() ) // Reloads style.min.css if that is enqueued.
-		.pipe( notify({ message: '\n\n✅  ===> STYLES — completed!\n', onLast: true }) );
-});
+		.pipe( notify({ message: '\n\n✅  ===> STYLES — completed!\n', onLast: true }) )
+})
 
 /**
  * Task: `stylesRTL`.
@@ -188,8 +190,8 @@ gulp.task( 'stylesRTL', () => {
 		.pipe( gulp.dest( config.styleDestination ) )
 		.pipe( filter( '**/*.css' ) ) // Filtering stream to only css files.
 		.pipe( browserSync.stream() ) // Reloads style.css or style-rtl.css, if that is enqueued.
-		.pipe( notify({ message: '\n\n✅  ===> STYLES RTL — completed!\n', onLast: true }) );
-});
+		.pipe( notify({ message: '\n\n✅  ===> STYLES RTL — completed!\n', onLast: true }) )
+})
 
 /**
  * Task: `vendorsJS`.
@@ -231,8 +233,8 @@ gulp.task( 'vendorsJS', () => {
 		.pipe( uglify() )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
 		.pipe( gulp.dest( config.jsVendorDestination ) )
-		.pipe( notify({ message: '\n\n✅  ===> VENDOR JS — completed!\n', onLast: true }) );
-});
+		.pipe( notify({ message: '\n\n✅  ===> VENDOR JS — completed!\n', onLast: true }) )
+})
 
 /**
  * Task: `customJS`.
@@ -274,8 +276,8 @@ gulp.task( 'customJS', () => {
 		.pipe( uglify() )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
 		.pipe( gulp.dest( config.jsCustomDestination ) )
-		.pipe( notify({ message: '\n\n✅  ===> CUSTOM JS — completed!\n', onLast: true }) );
-});
+		.pipe( notify({ message: '\n\n✅  ===> CUSTOM JS — completed!\n', onLast: true }) )
+})
 
 /**
  * Task: `images`.
@@ -291,6 +293,7 @@ gulp.task( 'customJS', () => {
  * again, do it with the command `gulp images`.
  *
  * Read the following to change these options.
+ *
  * @link https://github.com/sindresorhus/gulp-imagemin
  */
 gulp.task( 'images', () => {
@@ -309,8 +312,8 @@ gulp.task( 'images', () => {
 			)
 		)
 		.pipe( gulp.dest( config.imgDST ) )
-		.pipe( notify({ message: '\n\n✅  ===> IMAGES — completed!\n', onLast: true }) );
-});
+		.pipe( notify({ message: '\n\n✅  ===> IMAGES — completed!\n', onLast: true }) )
+})
 
 /**
  * Task: `clear-images-cache`.
@@ -319,8 +322,8 @@ gulp.task( 'images', () => {
  * each image will be regenerated.
  */
 gulp.task( 'clearCache', function( done ) {
-	return cache.clearAll( done );
-});
+	return cache.clearAll( done )
+})
 
 /**
  * WP POT Translation File Generator.
@@ -345,8 +348,8 @@ gulp.task( 'translate', () => {
 			})
 		)
 		.pipe( gulp.dest( config.translationDestination + '/' + config.translationFile ) )
-		.pipe( notify({ message: '\n\n✅  ===> TRANSLATE — completed!\n', onLast: true }) );
-});
+		.pipe( notify({ message: '\n\n✅  ===> TRANSLATE — completed!\n', onLast: true }) )
+})
 
 /**
  * Watch Tasks.
@@ -356,10 +359,10 @@ gulp.task( 'translate', () => {
 gulp.task(
 	'default',
 	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'images', browsersync, () => {
-		gulp.watch( config.watchPhp, reload ); // Reload on PHP file changes.
-		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
-		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS', reload ) ); // Reload on vendorsJS file changes.
-		gulp.watch( config.watchJsCustom, gulp.series( 'customJS', reload ) ); // Reload on customJS file changes.
-		gulp.watch( config.imgSRC, gulp.series( 'images', reload ) ); // Reload on customJS file changes.
+		gulp.watch( config.watchPhp, reload ) // Reload on PHP file changes.
+		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ) // Reload on SCSS file changes.
+		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS', reload ) ) // Reload on vendorsJS file changes.
+		gulp.watch( config.watchJsCustom, gulp.series( 'customJS', reload ) ) // Reload on customJS file changes.
+		gulp.watch( config.imgSRC, gulp.series( 'images', reload ) ) // Reload on customJS file changes.
 	})
-);
+)

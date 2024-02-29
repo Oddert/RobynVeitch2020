@@ -1,25 +1,48 @@
 module.exports = {
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-    node: true
-  },
-  extends: ["eslint:recommended", "wordpress"],
-  parserOptions: {
-    sourceType: "module"
-  },
-  rules: {
-    indent: ["error", "tab"],
-    "linebreak-style": ["off", "unix"],
-    quotes: ["error", "single"],
-    semi: ["error", "never"],
-    "space-in-parens": ["error", "always"],
-    "spaced-comment": ["warn", "always"],
-    "lines-around-comment": "off",
-    "comma-dangle": "off",
-    "no-trailing-spaces": {
-      "skipBlankLines": true
-    }
-  }
-};
+	env: {
+		browser: true,
+		node: true,
+		// "es2021": true
+	},
+	extends: [
+		'plugin:@wordpress/eslint-plugin/esnext',
+		'eslint:recommended',
+	],
+	parserOptions: {
+		ecmaVersion: 'latest',
+	},
+	// "ignorePatterns": ["gulpfile.babel.js"],
+	rules: {
+		indent: [
+			'error',
+			'tab',
+		],
+		quotes: [
+			'error',
+			'single',
+		],
+		semi: [
+			'error',
+			'never',
+		],
+		'no-console': 'off',
+		// "require-jsdoc" : 0,
+		'space-before-function-paren': [ 'error', {
+			anonymous: 'never',
+			named: 'never',
+			asyncArrow: 'never',
+		} ],
+		'space-in-parens': [ 'error', 'never' ],
+		'linebreak-style': [ 'error', 'windows' ],
+		'computed-property-spacing': [ 'error', 'never' ],
+		'space-unary-ops': [
+			1, {
+				words: true,
+				nonwords: false,
+				overrides: {
+					new: true,
+					'++': false,
+				},
+			} ],
+	},
+}

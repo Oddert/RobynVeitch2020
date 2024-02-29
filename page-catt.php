@@ -56,7 +56,7 @@
                     rel="bookmark" 
                     title="Permanent Link to <?php the_title_attribute(); ?>"
                   >
-                    <?php #the_title(); ?>
+                    <?php echo the_title(); ?>
                   </a>
                 </p>
                 -->
