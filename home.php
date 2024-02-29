@@ -201,7 +201,11 @@
               $sorted_posts = array();
 
               foreach( $posts as $post ) {
-                $priority = get_the_terms($post->ID, 'priority')[0]->name;
+                $priority_term = get_the_terms($post->ID, 'priority');
+
+                if ($priority_term == NULL) continue;
+
+                $priority = $priority_term[0]->name;
 
                 if ( (int)$priority <= $miniumn_priority ) continue;
 
