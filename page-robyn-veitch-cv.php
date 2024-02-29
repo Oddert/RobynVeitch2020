@@ -36,7 +36,7 @@
         <div class='cv-column--one'>
           <h3>Summary</h3>
           <p>
-            Practicing freelance developer, trained in principles of social focused design and systems-based solutions.
+            Practising freelance developer, trained in principles of social focused design and systems-based solutions.
           </p>
           
           <h3>Skills</h3>
