@@ -35,5 +35,14 @@ module.exports = {
 		'space-in-parens': [ 'error', 'never' ],
 		'linebreak-style': [ 'error', 'windows' ],
 		'computed-property-spacing': [ 'error', 'never' ],
+		'space-unary-ops': [
+			1, {
+				words: true,
+				nonwords: false,
+				overrides: {
+					new: true,
+					'++': false,
+				},
+			} ],
 	},
 }

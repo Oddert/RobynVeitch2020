@@ -92,11 +92,11 @@ function debounce(func, wait = 20, immediate = true) {
 			args = arguments
 		const later = function() {
 			timeout = null
-			if (! immediate) {
+			if (!immediate) {
 				func.apply(ctx, args)
 			}
 		}
-		const callNow = immediate && ! timeout
+		const callNow = immediate && !timeout
 		clearTimeout(timeout)
 		timeout = setTimeout(later, wait)
 		if (callNow) {

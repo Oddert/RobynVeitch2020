@@ -160,7 +160,7 @@ function main() {
 		const next = { ...folioFilters }
 		const filterName = t.dataset.folioFilterTagname
 
-		next[filterName] = ! next[filterName]
+		next[filterName] = !next[filterName]
 
 		if (next[filterName]) {
 			t.classList.add('active')
@@ -295,7 +295,7 @@ function main() {
 				if (debug) {
 					console.log('[checkSlide > performCheck] C:')
 				}
-				if (! siteMain.classList.contains('bottom')) {
+				if (!siteMain.classList.contains('bottom')) {
 					siteMain.classList.add('bottom')
 				}
 			} else {
@@ -308,7 +308,7 @@ function main() {
 			}
 
 			if (
-				! typeAnimationFinished &&
+				!typeAnimationFinished &&
 		content.scrollTop >= profileHeader.offsetTop - 500
 			) {
 				initTypeAnimation()
@@ -319,7 +319,7 @@ function main() {
 				if (debug) {
 					console.log('[checkSlide > performCheck] adding top class', content.scrollTop, pageTopBoundary)
 				}
-				if (! siteMain.classList.contains('top')) {
+				if (!siteMain.classList.contains('top')) {
 					siteMain.classList.add('top')
 				}
 			} else {
@@ -400,11 +400,11 @@ function debounce(func, wait = 20, immediate = true) {
 			args = arguments
 		const later = function() {
 			timeout = null
-			if (! immediate) {
+			if (!immediate) {
 				func.apply(ctx, args)
 			}
 		}
-		const callNow = immediate && ! timeout
+		const callNow = immediate && !timeout
 		clearTimeout(timeout)
 		timeout = setTimeout(later, wait)
 		if (callNow) {
