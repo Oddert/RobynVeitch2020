@@ -64,6 +64,6 @@ module.exports = {
 		'last 2 Safari versions',
 		'last 2 iOS versions',
 		'last 2 Edge versions',
-		'last 2 Opera versions'
-	]
+		'last 2 Opera versions',
+	],
 }

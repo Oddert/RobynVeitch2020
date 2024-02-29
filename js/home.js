@@ -9,28 +9,28 @@
  *
  * @type {FolioFilters}
  */
-var folioFilters = {}
+let folioFilters = {}
 
 /**
  * If true console logs will be enabled.
  *
  * @type {boolean}
  */
-var odd_debug = false
+const debug = false
 
 /**
  * Defines which portfolio tags are to be shown when the "industrial design" filter is applied.
  *
  * @type {string[]}
  */
-var designTags = ['industrial-design', 'service-design', 'social-design']
+const designTags = [ 'industrial-design', 'service-design', 'social-design' ]
 
 /**
  * Defines which portfolio tags are to be shown when the "development" filter is applied.
  *
  * @type {string[]}
  */
-var developmentTags = ['web-development', 'app-development', 'system-design', 'microservices', 'data-vis']
+const developmentTags = [ 'web-development', 'app-development', 'system-design', 'microservices', 'data-vis' ]
 
 function main() {
 	const siteMain = document.querySelector('.site__main ')
@@ -39,7 +39,7 @@ function main() {
 	const navToggle = nav.querySelector('.nav-toggle')
 	const profileHeader = document.querySelector('.intro-text .text')
 	const tagClear = document.querySelector('.tag-clear .tag-clear__button')
-	
+
 	/**
 	 * Determines the 'top of the page' for chaging the display of navigation elements.
 	 *
@@ -52,7 +52,7 @@ function main() {
 	 * @type {number}
 	 */
 	const pageBottomBoundary = 350
-	
+
 	/**
 	 * Holds the current length of the profile title, incremented to facilitate the animation.
 	 *
@@ -73,28 +73,28 @@ function main() {
 	 * @type {boolean}
 	 */
 	let typeAnimationFinished = false
-	
+
 	/**
 	 * Holds the interval reference for the scrolling debounce checker.
 	 *
 	 * @type {number}
 	 */
 	let isScrolling
-	
+
 	/**
 	 * The offset height for the main content body.
 	 *
 	 * @type {number}
 	 */
-	let contentOffsetHeight = content.offsetHeight
-	
+	const contentOffsetHeight = content.offsetHeight
+
 	siteMain.classList.remove('noscript')
 	siteMain.classList.add('top')
-	
+
 	if (window.innerWidth <= 960) {
 		nav.classList.remove('open')
 	}
-	
+
 	/**
 	 * Event handler for the nav toggle button.
 	 * Opens and closes the navigation plane.
@@ -104,12 +104,15 @@ function main() {
 	function handleNavToggleChange(e) {
 		e.stopPropagation()
 		const openState = nav.classList.contains('open')
-		if (openState) nav.classList.remove('open')
-		else nav.classList.add('open')
+		if (openState) {
+			nav.classList.remove('open')
+		} else {
+			nav.classList.add('open')
+		}
 	}
 
 	navToggle.onclick = handleNavToggleChange
-	
+
 	/**
 	 * Sets up the portfolio items filtering if applicable.
 	 * If the "focus" query parameter is found filters will be selectively applied.
@@ -119,27 +122,31 @@ function main() {
 	 */
 	function initFolioFilters() {
 		const filterTags = document.querySelectorAll('[data-folio-filter-tagname]')
-	
+
 		const query = window.location.href.match(/focus=(\w+)/gi)
-	
+
 		if (query && query.length) {
-			filterTags.forEach(each => {
+			filterTags.forEach((each) => {
 				const tagName = each.dataset.folioFilterTagname
-				if (query.includes('focus=design')) folioFilters[tagName] = designTags.includes(tagName)
-				if (query.includes('focus=development')) folioFilters[tagName] = developmentTags.includes(tagName)
+				if (query.includes('focus=design')) {
+					folioFilters[tagName] = designTags.includes(tagName)
+				}
+				if (query.includes('focus=development')) {
+					folioFilters[tagName] = developmentTags.includes(tagName)
+				}
 				each.onclick = toggleSingleFilter
 			})
 			renderFolioItems()
 			renderFolioTags()
 		} else {
-			filterTags.forEach(each => {
+			filterTags.forEach((each) => {
 				const tagName = each.dataset.folioFilterTagname
 				folioFilters[tagName] = each.classList.contains('active')
 				each.onclick = toggleSingleFilter
 			})
 		}
 	}
-	
+
 	/**
 	 * Event handler for the filter buttons.
 	 * Calls {@link folioItemsShouldUpdate} optionally depending on the filter's new state.
@@ -152,15 +159,18 @@ function main() {
 		const prev = { ...folioFilters }
 		const next = { ...folioFilters }
 		const filterName = t.dataset.folioFilterTagname
-			
-		next[filterName] = !next[filterName]
-			
-		if (next[filterName]) t.classList.add('active')
-		else t.classList.remove('active')
-			
+
+		next[filterName] = ! next[filterName]
+
+		if (next[filterName]) {
+			t.classList.add('active')
+		} else {
+			t.classList.remove('active')
+		}
+
 		folioItemsShouldUpdate(prev, next)
 	}
-	
+
 	/**
 	 * Optionally updates the folioFilters and calls {@link renderFolioItems}.
 	 * Will do nothing if prev and next are the same.
@@ -170,13 +180,14 @@ function main() {
 	 * @return {void}
 	 */
 	function folioItemsShouldUpdate(prev, next) {
-		if (JSON.stringify(prev) === JSON.stringify(next)) return 
-		else {
-			folioFilters = next
-			renderFolioItems()
+		if (JSON.stringify(prev) === JSON.stringify(next)) {
+			return
 		}
+
+		folioFilters = next
+		renderFolioItems()
 	}
-	
+
 	/**
 	 * Applies and removes classes to portfolio items based on the folioFilters.
 	 *
@@ -184,36 +195,42 @@ function main() {
 	 */
 	function renderFolioItems() {
 		const folioItems = document.querySelectorAll('[data-folio-tags]')
-			
+
 		const allFiltersInactive = Object.keys(folioFilters).reduce((acc, e) => {
-			if (folioFilters[e]) return false
-			else return acc
+			if (folioFilters[e]) {
+				return false
+			}
+			return acc
 		}, true)
-	
+
 		if (allFiltersInactive) {
-			folioItems.forEach(e => e.classList.remove('hidden'))
+			folioItems.forEach((e) => e.classList.remove('hidden'))
 			return
 		}
-		
-		folioItems.forEach(folioItem => {
+
+		folioItems.forEach((folioItem) => {
 			let tags
 			try {
 				tags = JSON.parse(folioItem.dataset.folioTags)
 			} catch (err) {
-				console.error(err, folioItem.dataset.folioTags)
+				console.error('[renderFolioItems] > folioItems.forEach', err, folioItem.dataset.folioTags)
 			}
-		
+
 			const hide = tags.reduce((acc, tag) => {
-				if (folioFilters[tag]) return false
-				else return acc 
+				if (folioFilters[tag]) {
+					return false
+				}
+				return acc
 			}, true)
-		
-			if (hide) folioItem.classList.add('hidden')
-			else folioItem.classList.remove('hidden')
+
+			if (hide) {
+				folioItem.classList.add('hidden')
+			} else {
+				folioItem.classList.remove('hidden')
+			}
 		})
-		
 	}
-	
+
 	/**
 	 * Applies and removes classes to portfolio tag buttons based on the folioFilters.
 	 *
@@ -221,16 +238,19 @@ function main() {
 	 */
 	function renderFolioTags() {
 		const filterTags = document.querySelectorAll('[data-folio-filter-tagname]')
-			
-		filterTags.forEach(tag => {
+
+		filterTags.forEach((tag) => {
 			const tagName = tag.dataset.folioFilterTagname
-			if (folioFilters[tagName]) tag.classList.add('active')
-			else tag.classList.remove('active')
+			if (folioFilters[tagName]) {
+				tag.classList.add('active')
+			} else {
+				tag.classList.remove('active')
+			}
 		})
 	}
-	
+
 	profileHeader.innerHTML = ''
-	
+
 	/**
 	 * Event handler for scroll events on the main content.
 	 * Controls the display of the navigation and title card.
@@ -238,16 +258,20 @@ function main() {
 	 * @return {void}
 	 */
 	function checkSlide() {
-		console.log('[checkSlide] started...')
+		if (debug) {
+			console.log('[checkSlide] started...')
+		}
 		window.clearTimeout(isScrolling)
-	
+
 		isScrolling = setTimeout(function() {
-			console.log( 'Scrolling has stopped.' )
+			if (debug) {
+				console.log('[checkSlide] Scrolling has stopped.')
+			}
 			performCheck()
 		}, 150)
-		
+
 		performCheck()
-		
+
 		/**
 		 * Optionally adds classes to the main content based on the scroll position.
 		 * Optionally starts the typing animation on the profile.
@@ -255,37 +279,62 @@ function main() {
 		 * @return {void}
 		 */
 		function performCheck() {
-			console.log('[performCheck] started...')
-			if (odd_debug) console.log(content.scrollHeight, content.offsetHeight, contentOffsetHeight, content.scrollTop, content.scrollTop + content.offsetHeight)
-	
-			if (content.scrollTop + contentOffsetHeight >= content.scrollHeight - pageBottomBoundary) {
-				if (odd_debug) console.log('C:')
-				if (!siteMain.classList.contains('bottom')) siteMain.classList.add('bottom')
-			} else {
-				if (odd_debug) console.log(':C')
-				if (siteMain.classList.contains('bottom')) siteMain.classList.remove('bottom')
+			if (debug) {
+				console.log('[checkSlide > performCheck] started...')
+				console.log(
+					'[checkSlide > performCheck]',
+					content.scrollHeight,
+					content.offsetHeight,
+					contentOffsetHeight,
+					content.scrollTop,
+					content.scrollTop + content.offsetHeight,
+				)
 			}
-	
+
+			if (content.scrollTop + contentOffsetHeight >= content.scrollHeight - pageBottomBoundary) {
+				if (debug) {
+					console.log('[checkSlide > performCheck] C:')
+				}
+				if (! siteMain.classList.contains('bottom')) {
+					siteMain.classList.add('bottom')
+				}
+			} else {
+				if (debug) {
+					console.log('[checkSlide > performCheck] :C')
+				}
+				if (siteMain.classList.contains('bottom')) {
+					siteMain.classList.remove('bottom')
+				}
+			}
+
 			if (
-				!typeAnimationFinished && 
+				! typeAnimationFinished &&
 		content.scrollTop >= profileHeader.offsetTop - 500
 			) {
 				initTypeAnimation()
 				typeAnimationFinished = true
 			}
-	
+
 			if (content.scrollTop < pageTopBoundary) {
-				if (odd_debug) console.log('[performCheck] adding top class', content.scrollTop, pageTopBoundary)
-				if (!siteMain.classList.contains('top')) siteMain.classList.add('top')
+				if (debug) {
+					console.log('[checkSlide > performCheck] adding top class', content.scrollTop, pageTopBoundary)
+				}
+				if (! siteMain.classList.contains('top')) {
+					siteMain.classList.add('top')
+				}
 			} else {
-				if (odd_debug) console.log('[performCheck] removing top class', content.scrollTop, pageTopBoundary)
-				if (siteMain.classList.contains('top')) siteMain.classList.remove('top')
+				if (debug) {
+					console.log('[checkSlide > performCheck] removing top class', content.scrollTop, pageTopBoundary)
+				}
+				if (siteMain.classList.contains('top')) {
+					siteMain.classList.remove('top')
+				}
 			}
 		}
 	}
-	
+
 	const profileHeaderText = 'Hello, my name is Robyn. I\'m a problem solver.'
-	
+
 	/**
 	 * Renders the profile title as a substring.
 	 *
@@ -295,7 +344,7 @@ function main() {
 	function updateText(length) {
 		profileHeader.innerHTML = profileHeaderText.substring(0, length + 1)
 	}
-	
+
 	/**
 	 * Begins the profile title "typing" animation.
 	 *
@@ -307,7 +356,7 @@ function main() {
 		const interval = () => {
 			if (Math.floor(Math.random() * 100) > 93) {
 				updateText(typeAnimationTracker)
-				typeAnimationTracker ++
+				typeAnimationTracker++
 			}
 			if (typeAnimationTracker >= profileHeaderText.length) {
 				clearInterval(typeAnimationTimer)
@@ -315,7 +364,7 @@ function main() {
 		}
 		typeAnimationTimer = setInterval(interval, 10)
 	}
-	
+
 	/**
 	 * Removes all filters and re-renders the portfolio section.
 	 *
@@ -323,15 +372,15 @@ function main() {
 	 */
 	function resetTags() {
 		const tags = Object.keys(folioFilters)
-		tags.forEach(e => folioFilters[e] = false)
+		tags.forEach((e) => folioFilters[e] = false)
 		renderFolioTags()
 		renderFolioItems()
 	}
-	
+
 	tagClear.onclick = resetTags
 	profileHeader.addEventListener('click', initTypeAnimation)
 	content.addEventListener('scroll', debounce(checkSlide, 15))
-	
+
 	initFolioFilters()
 }
 
@@ -344,20 +393,25 @@ function main() {
  * @param {boolean}  immediate (default: true) Calls the function now if the debounce time has elaspsed. If false an additional wait will be applied.
  * @return {Function} The debounced function.
  */
-function debounce(func, wait=20, immediate=true) {
-	var timeout
+function debounce(func, wait = 20, immediate = true) {
+	let timeout
 	return function() {
-		var ctx = this, args = arguments
-		var later = function() {
+		const ctx = this,
+			args = arguments
+		const later = function() {
 			timeout = null
-			if (!immediate) func.apply(ctx, args)
+			if (! immediate) {
+				func.apply(ctx, args)
+			}
 		}
-		var callNow = immediate && !timeout
+		const callNow = immediate && ! timeout
 		clearTimeout(timeout)
 		timeout = setTimeout(later, wait)
-		if (callNow) func.apply(ctx, args)
+		if (callNow) {
+			func.apply(ctx, args)
+		}
 	}
-}  
+}
 
 document.addEventListener('DOMContentLoaded', main)
 

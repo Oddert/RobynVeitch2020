@@ -24,7 +24,7 @@ function main() {
 	function collapseSetHeight(expandable) {
 		expandable.style.height = null
 		const nativeHeight = expandable.scrollHeight
-		expandable.style.height = `${nativeHeight}px`
+		expandable.style.height = `${ nativeHeight }px`
 	}
 
 	/**
@@ -37,13 +37,15 @@ function main() {
 		const section = e.target.closest('.process_section')
 		const expandables = section.querySelectorAll('.section_content-expandable')
 		let open = false
-		expandables.forEach(each => {
-			if (each.classList.contains('open')) open = true
+		expandables.forEach((each) => {
+			if (each.classList.contains('open')) {
+				open = true
+			}
 		})
 		if (open) {
-			expandables.forEach(each => each.classList.remove('open'))
+			expandables.forEach((each) => each.classList.remove('open'))
 		} else {
-			expandables.forEach(each => each.classList.add('open'))
+			expandables.forEach((each) => each.classList.add('open'))
 		}
 	}
 
@@ -54,7 +56,7 @@ function main() {
 	 * @param {*}           firstTime
 	 */
 	function itirateCollapse(colapse, firstTime = false) {
-		let expandable = colapse.querySelector('.section_content-expandable')
+		const expandable = colapse.querySelector('.section_content-expandable')
 		collapseSetHeight(expandable)
 		if (firstTime) {
 			colapse.querySelector('.section_content-button').onclick = collapseToggle
@@ -62,13 +64,13 @@ function main() {
 		}
 	}
 
-	sectionContent.forEach(each => itirateCollapse(each, true))
+	sectionContent.forEach((each) => itirateCollapse(each, true))
 
-	sectionLables.forEach(each => each.onclick = sectionLableToggle)
+	sectionLables.forEach((each) => each.onclick = sectionLableToggle)
 
 	window.addEventListener('resize', debounce(() => {
 		console.log('resizing, adjusting inline styles...')
-		sectionContent.forEach(each => itirateCollapse(each, false))
+		sectionContent.forEach((each) => itirateCollapse(each, false))
 	}), 250)
 }
 
@@ -83,17 +85,22 @@ document.addEventListener('DOMContentLoaded', main)
  * @param {boolean}  immediate (default: true) Calls the function now if the debounce time has elaspsed. If false an additional wait will be applied.
  * @return {Function} The debounced function.
  */
-function debounce(func, wait=20, immediate=true) {
-	var timeout
+function debounce(func, wait = 20, immediate = true) {
+	let timeout
 	return function() {
-		var ctx = this, args = arguments
-		var later = function() {
+		const ctx = this,
+			args = arguments
+		const later = function() {
 			timeout = null
-			if (!immediate) func.apply(ctx, args)
+			if (! immediate) {
+				func.apply(ctx, args)
+			}
 		}
-		var callNow = immediate && !timeout
+		const callNow = immediate && ! timeout
 		clearTimeout(timeout)
 		timeout = setTimeout(later, wait)
-		if (callNow) func.apply(ctx, args)
+		if (callNow) {
+			func.apply(ctx, args)
+		}
 	}
 }

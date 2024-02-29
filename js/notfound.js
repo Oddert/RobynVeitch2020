@@ -28,10 +28,14 @@ class Boid {
 		this.text = '404'
 		this.h = globalH
 		this.w = this.h * (this.text.length - 1)
-		if (x < this.w) x += this.w
-		if (y < this.h) y += this.h
+		if (x < this.w) {
+			x += this.w
+		}
+		if (y < this.h) {
+			y += this.h
+		}
 		this.colour = createVector(random(0, 255), random(0, 255), random(0, 255))
-		this.velocity = createVector(random(-2,2),random(-2, 2))
+		this.velocity = createVector(random(-2, 2), random(-2, 2))
 		this.position = createVector(x, y)
 	}
 
@@ -45,13 +49,21 @@ class Boid {
 	}
 
 	/**
-	 * Checks the velocity of the element has gone too high and halfs / doubles its velocity. 
+	 * Checks the velocity of the element has gone too high and halfs / doubles its velocity.
 	 */
 	checkOob() {
-		if (this.velocity.x > 2) this.velocity.x -= random(1)
-		if (this.velocity.x < -2) this.velocity.x += random(1)
-		if (this.velocity.y > 2) this.velocity.y -= random(1)
-		if (this.velocity.y < -2) this.velocity.y += random(1)
+		if (this.velocity.x > 2) {
+			this.velocity.x -= random(1)
+		}
+		if (this.velocity.x < -2) {
+			this.velocity.x += random(1)
+		}
+		if (this.velocity.y > 2) {
+			this.velocity.y -= random(1)
+		}
+		if (this.velocity.y < -2) {
+			this.velocity.y += random(1)
+		}
 	}
 
 	/**
